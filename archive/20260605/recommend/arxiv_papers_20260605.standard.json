@@ -1,0 +1,684 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-05T21:36:20.371520+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 15,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 17,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2605.29599v1",
+      "source": "arxiv",
+      "title": "How to Relieve Distribution Shifts in Semantic Segmentation for Off-Road Environments",
+      "abstract": "Semantic segmentation is crucial for autonomous navigation in off-road environments, enabling precise classification of surroundings to identify traversable regions. However, distinctive factors inherent to off-road conditions, such as source-target domain discrepancies and sensor corruption from rough terrain, can result in distribution shifts that alter the data differently from the trained conditions. This often leads to inaccurate semantic label predictions and subsequent failures in navigation tasks. To address this, we propose ST-Seg, a novel framework that expands the source distribution through style expansion (SE) and texture regularization (TR). Unlike prior methods that implicitly apply generalization within a fixed source distribution, ST-Seg offers an intuitive approach for distribution shift. Specifically, SE broadens domain coverage by generating diverse realistic styles, augmenting the limited style information of the source domain. TR stabilizes local texture representation affected by style-augmented learning through a deep texture manifold. Experiments across various distribution-shifted target domains demonstrate the effectiveness of ST-Seg, with substantial improvements over existing methods. These results highlight the robustness of ST-Seg, enhancing the real-world applicability of semantic segmentation for off-road navigation.",
+      "authors": [
+        "Ji-Hoon Hwang",
+        "Daeyoung Kim",
+        "Hyung-Suk Yoon",
+        "Dong-Wook Kim",
+        "Seung-Woo Seo"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-05-28T08:37:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.29599v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "semantic segmentation for off-road environments with distribution shift",
+      "llm_evidence_cn": "越野环境语义分割处理分布偏移",
+      "llm_evidence": "越野环境语义分割处理分布偏移",
+      "canonical_evidence": "越野环境语义分割处理分布偏移",
+      "llm_tldr_en": "ST-Seg addresses distribution shifts in off-road semantic segmentation by style expansion and texture regularization, improving robustness to domain discrepancies and sensor corruption.",
+      "llm_tldr_cn": "越野环境语义分割面临源-目标域差异和传感器损坏导致的分布偏移，提出ST-Seg框架，通过风格扩展和纹理正则化扩展源分布，隐式增强泛化能力，在多个越野数据集上显著提升分割鲁棒性。",
+      "llm_tldr": "越野环境语义分割面临源-目标域差异和传感器损坏导致的分布偏移，提出ST-Seg框架，通过风格扩展和纹理正则化扩展源分布，隐式增强泛化能力，在多个越野数据集上显著提升分割鲁棒性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29691v1",
+      "source": "arxiv",
+      "title": "Unsupervised Semantic Segmentation Facilitates Model Understanding",
+      "abstract": "Self-supervised learning (SSL) has produced a diverse landscape of vision transformers (ViTs) whose pretrained representations support a wide range of downstream tasks. Towards a better understanding of these models, a body of work has assessed the mechanics of their self-attention as well as the types of information captured across their representations, revealing, for example, stark differences between models trained with contrastive learning (CL) and masked image modeling (MIM). However, these advances in model understanding have not yet fully permeated the broader community, where insights specific to CL models are sometimes generalized to MIM models. To make model understanding straightforward and intuitive for a broad audience, we propose a simple and easily interpretable visualization protocol.   Our protocol is based on visualizing unsupervised semantic segmentation results, yet our goal is not to maximize segmentation performance. Instead, it allows us to convey model behaviors that consistently emerge across images. Benchmarking a diverse set of SSL models across layers and representations, we obtain novel insights into distinct positional biases and scaling behaviors, including strong boundary artifacts in DINOv3-Large model tokens. These insights complement and help communicate a range of previous findings.   Our protocol further enables a clear visual distinction between positional effects and the closely related but distinct locality bias, which has been studied much more extensively in the literature. The protocol is publicly available on GitHub and we believe it will catalyze further model understanding for a broad community.",
+      "authors": [
+        "Xiaoyan Yu",
+        "Lisa Mais",
+        "Jannik Franzen",
+        "Peter Hirsch",
+        "Nick Lechtenbörger",
+        "Andreas Mardt",
+        "Dagmar Kainmüller"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-28T09:52:52+00:00",
+      "link": "https://arxiv.org/pdf/2605.29691v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "unsupervised semantic segmentation with self-supervised ViTs",
+      "llm_evidence_cn": "无监督语义分割方法，直接对应深度学习语义分割",
+      "llm_evidence": "无监督语义分割方法，直接对应深度学习语义分割",
+      "canonical_evidence": "无监督语义分割方法，直接对应深度学习语义分割",
+      "llm_tldr_en": "Proposes a simple unsupervised semantic segmentation method to understand vision transformers, revealing distinct feature properties of contrastive learning vs. masked image modeling.",
+      "llm_tldr_cn": "现有自监督视觉Transformer（ViT）模型的理解多集中于对比学习模型，而对掩码图像建模（MIM）模型的理解不足，且缺乏直观的统一分析工具。本文提出一种简单的无监督语义分割方法，通过将预训练ViT的特征图聚类为语义分割结果，直观展示不同自监督范式下模型内部表示的特性。实验揭示了对比学习与MIM模型在语义粒度、空间定位上的显著差异。该方法为理解ViT提供了通用、直观的接口，有助于社区更准确地认知各类自监督学习模型。",
+      "llm_tldr": "现有自监督视觉Transformer（ViT）模型的理解多集中于对比学习模型，而对掩码图像建模（MIM）模型的理解不足，且缺乏直观的统一分析工具。本文提出一种简单的无监督语义分割方法，通过将预训练ViT的特征图聚类为语义分割结果，直观展示不同自监督范式下模型内部表示的特性。实验揭示了对比学习与MIM模型在语义粒度、空间定位上的显著差异。该方法为理解ViT提供了通用、直观的接口，有助于社区更准确地认知各类自监督学习模型。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.31048v1",
+      "source": "arxiv",
+      "title": "Rethinking Efficient Crack Segmentation with Task-Aligned Structural-Directional Modeling",
+      "abstract": "Recent crack segmentation methods often follow generic semantic segmentation designs, using stronger backbones, hybrid CNN-Transformer-Mamba encoders, and auxiliary enhancement branches. Although effective, this raises whether stronger generic feature mixing is the most suitable direction for crack segmentation. We instead formulate crack segmentation as sparse structural recovery. Cracks have limited category-level semantics but strong morphological regularities, being thin, sparse, anisotropic, locally fragmented, and easily confused with textures or shadows. Thus, the key bottleneck lies in preserving weak structural evidence, recovering directional continuity, and suppressing background coupling. We propose RIFT, a compact family of morphology-aligned crack segmentation models. Rather than compressing a complex generic architecture, RIFT is simple by design, preserving local evidence, aggregating cooperative directional continuity, and restoring crack structures through lightweight multi-scale fusion. Experiments on four public benchmarks show that RIFT achieves the best or tied-best results across the 16 main metrics against reproduced representative baselines. RIFT-B gives the strongest overall accuracy, while RIFT-T provides the best deployment efficiency with only 0.47M parameters and high inference speed. Topology-aware evaluation, ablations, transfer experiments, and visualizations further verify that task-aligned simplicity can match or surpass complex hybrid architectures when its inductive bias fits crack morphology. Code: https://github.com/xauat-liushipeng/RIFT",
+      "authors": [
+        "Shipeng Liu",
+        "Liang Zhao",
+        "Dengfeng Chen",
+        "Weihua Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-29T09:24:26+00:00",
+      "link": "https://arxiv.org/pdf/2605.31048v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "crack segmentation as sparse structural recovery with deep learning",
+      "llm_evidence_cn": "裂缝分割的深度学习方法",
+      "llm_evidence": "裂缝分割的深度学习方法",
+      "canonical_evidence": "裂缝分割的深度学习方法",
+      "llm_tldr_en": "RIFT reformulates crack segmentation as sparse structural recovery with task-aligned structural-directional modeling, using compact networks to preserve weak crack evidence.",
+      "llm_tldr_cn": "裂缝分割任务中，现有通用语义分割设计过于复杂。提出RIFT，将裂缝分割视为稀疏结构恢复，通过任务对齐的结构-方向建模，保留弱结构证据和定向连续性，在多个裂缝数据集上以更少参数达到更优性能。",
+      "llm_tldr": "裂缝分割任务中，现有通用语义分割设计过于复杂。提出RIFT，将裂缝分割视为稀疏结构恢复，通过任务对齐的结构-方向建模，保留弱结构证据和定向连续性，在多个裂缝数据集上以更少参数达到更优性能。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.00999v1",
+      "source": "arxiv",
+      "title": "SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation",
+      "abstract": "Large-scale vision foundation models have driven substantial gains on dense prediction tasks such as semantic segmentation, but their size makes deployment impractical in resource-constrained settings, motivating knowledge distillation as a means of transferring their capabilities to lightweight student networks. However, modern foundation teachers are predominantly transformer-based that encode global context, whereas efficient students are typically convolutional networks with locally biased receptive fields. Existing distillation methods largely assume architectural homogeneity and rely on direct feature mimicry, which fails to bridge this representational gap and neglects the structured spatial dependencies and discriminative organization required for accurate semantic segmentation. In this paper, we propose SWARD, a knowledge distillation framework that addresses this gap through two complementary mechanisms. First, we introduce a Multi-Scale Windowed Attention Distillation (MWAD) module that aligns teacher-student attention-based relations within stochastically shifted window partitions whose offsets are randomly resampled at every training iteration. This removes window boundary bias, and, combined with the multi-scale design, captures both short- and long-range spatial dependencies. Second, we introduce Prototype Discriminative Regularization (PDR), a loss that helps shape the student's feature distribution by enforcing inter-class separation and intra-class compactness, further sharpening the discriminative structure beyond what feature mimicry alone can produce under the student's reduced capacity. Experiments across different vision applications (i.e., urban scene parsing and medical image segmentation) show that SWARD achieves state-of-the-art performance.",
+      "authors": [
+        "Aditya Makineni",
+        "Qing Tian"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-31T04:29:31+00:00",
+      "link": "https://arxiv.org/pdf/2606.00999v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "knowledge distillation for semantic segmentation; cross-architectural",
+      "llm_evidence_cn": "语义分割的知识蒸馏；跨架构模型压缩",
+      "llm_evidence": "语义分割的知识蒸馏；跨架构模型压缩",
+      "canonical_evidence": "语义分割的知识蒸馏；跨架构模型压缩",
+      "llm_tldr_en": "Proposes SWARD, a stochastic window-attention relational distillation method for transferring semantic segmentation knowledge from transformer teachers to CNN students.",
+      "llm_tldr_cn": "该论文针对大型transformer语义分割模型难以在资源受限场景部署的问题，提出SWARD知识蒸馏方法。通过随机窗口注意力机制建立跨架构的表示关系，有效将transformer教师模型的全局上下文知识迁移到轻量级CNN学生网络。实验表明该方法在多个数据集上显著提升了学生网络的语义分割精度，弥合了架构差异带来的表示鸿沟。",
+      "llm_tldr": "该论文针对大型transformer语义分割模型难以在资源受限场景部署的问题，提出SWARD知识蒸馏方法。通过随机窗口注意力机制建立跨架构的表示关系，有效将transformer教师模型的全局上下文知识迁移到轻量级CNN学生网络。实验表明该方法在多个数据集上显著提升了学生网络的语义分割精度，弥合了架构差异带来的表示鸿沟。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.04060v1",
+      "source": "arxiv",
+      "title": "Weakly Supervised Incremental Segmentation via Semantic Anchors and Spatial Arbitration",
+      "abstract": "Weakly Incremental Learning for Semantic Segmentation (WILSS) suffers from the continuous introduction of noisy supervision, which progressively corrupts class-level representations, leading to severe feature drift and semantic corruption, thereby causing newly learned classes to overwrite old ones. To address these issues, we propose a drift-resilient WILSS approach, named SASA, designed to stabilize semantic learning via Semantic Anchors and Spatial Arbitration. Specifically, at the representation level, we introduce semantic anchors of learnable tokens as rigid class-level references to preserve long-term semantic identity. Complementary to this, an elastic residual adaptation facilitates controlled, instance-specific refinement, ensuring a stable yet flexible learning trajectory. At the supervision level, we develop a Spatial Label Arbitration mechanism that performs geometry-aware decisions to directly filter unreliable signals and enforce a strict \"one object, one class\" constraint. By synergistically stabilizing representations and improving supervision reliability, SASA effectively mitigates feature drift under weak supervision. Extensive experiments on standard benchmarks demonstrate that our approach consistently outperforms existing state-of-the-art methods, particularly in challenging multi-step incremental settings. The code is available at https://github.com/ZhonggaiWang/SASA.",
+      "authors": [
+        "Zhonggai Wang",
+        "Kai Fang",
+        "Guangyu Gao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-02T12:10:46+00:00",
+      "link": "https://arxiv.org/pdf/2606.04060v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "weakly supervised incremental semantic segmentation with semantic anchors",
+      "llm_evidence_cn": "弱监督增量语义分割，对应语义分割任务",
+      "llm_evidence": "弱监督增量语义分割，对应语义分割任务",
+      "canonical_evidence": "弱监督增量语义分割，对应语义分割任务",
+      "llm_tldr_en": "Proposes a drift-resilient weakly supervised incremental semantic segmentation method using semantic anchors and spatial arbitration to prevent class overwriting.",
+      "llm_tldr_cn": "弱监督增量语义分割（WILSS）面临噪声标注导致特征漂移和新类覆盖旧类的问题。本文提出SASA方法，在表示层引入可学习语义锚点作为类别级刚性参考，同时配合弹性残差适应和空间仲裁机制，实现实例级精修。实验证明该方法有效抑制了语义漂移，在多个增量分割基准上显著优于现有方法。该工作为增量场景下的弱监督分割提供了稳定且可扩展的解决方案。",
+      "llm_tldr": "弱监督增量语义分割（WILSS）面临噪声标注导致特征漂移和新类覆盖旧类的问题。本文提出SASA方法，在表示层引入可学习语义锚点作为类别级刚性参考，同时配合弹性残差适应和空间仲裁机制，实现实例级精修。实验证明该方法有效抑制了语义漂移，在多个增量分割基准上显著优于现有方法。该工作为增量场景下的弱监督分割提供了稳定且可扩展的解决方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29461v1",
+      "source": "arxiv",
+      "title": "FlowSeg: Dynamic Semantic Guidance for LLM-Conditioned Segmentation",
+      "abstract": "LLM-conditioned segmentation has recently advanced rapidly by coupling large language models with iterative mask generation frameworks. However, we identify a persistent failure mode in current propose-then-select pipelines. Although high-quality mask candidates are often generated, the final prediction may fail to match the given linguistic condition. This failure arises because language semantics are typically used as static prompts or post-hoc matching signals, rather than participating in the iterative mask generation process. Through systematic analysis, we show that many errors stem from semantic misalignment rather than poor mask quality. To address this issue, we propose FlowSeg, which introduces dynamic semantic guidance via a bidirectional semantic flow between intermediate decoding states and LLM-derived condition embeddings throughout the generation process. Language conditions actively guide mask refinement at each stage, while condition embeddings are progressively updated by emerging visual evidence. This design yields semantically grounded mask representations and visually aligned language conditions, enabling more reliable matching. We further incorporate a lightweight boundary-aware refinement to selectively enhance uncertain regions without perturbing confident interiors. Extensive experiments on referring expression segmentation and reasoning segmentation tasks demonstrate that FlowSeg consistently improves language-mask alignment and achieves state-of-the-art performance. Project page: https://zkzhang98.github.io/FlowSeg_page",
+      "authors": [
+        "Zekang Zhang",
+        "Guangyu Gao",
+        "Youyun Tang",
+        "ChengJing Wu",
+        "Xiaochao Qu",
+        "Chi Harold Liu",
+        "Jianbo Jiao",
+        "Yunchao Wei",
+        "Luoqi Liu",
+        "Ting Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-28T06:55:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.29461v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "LLM-conditioned semantic segmentation with dynamic guidance",
+      "llm_evidence_cn": "大语言模型条件语义分割的动态语义引导",
+      "llm_evidence": "大语言模型条件语义分割的动态语义引导",
+      "canonical_evidence": "大语言模型条件语义分割的动态语义引导",
+      "llm_tldr_en": "FlowSeg introduces bidirectional semantic guidance to iteratively refine mask generation for LLM-conditioned segmentation, resolving semantic misalignment.",
+      "llm_tldr_cn": "该论文针对大语言模型条件分割中语义对齐失败的问题，提出FlowSeg框架。通过双向语义引导机制，在迭代掩码生成过程中动态注入语言语义，确保最终预测与描述一致。实验表明该方法有效解决了语义错配问题，在不额外增加模型复杂度的情况下提升了条件分割的准确性。",
+      "llm_tldr": "该论文针对大语言模型条件分割中语义对齐失败的问题，提出FlowSeg框架。通过双向语义引导机制，在迭代掩码生成过程中动态注入语言语义，确保最终预测与描述一致。实验表明该方法有效解决了语义错配问题，在不额外增加模型复杂度的情况下提升了条件分割的准确性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.29773v1",
+      "source": "arxiv",
+      "title": "Energy-Aware NECO for Single-Pass Pixel-wise Out-of-Distribution Detection in Semantic Segmentation",
+      "abstract": "Reliable semantic segmentation for mobile robots requires both accurate dense prediction and robust uncertainty estimation under distribution shift. Strong uncertainty baselines such as Monte Carlo Dropout often require repeated stochastic forward passes and are difficult to deploy on edge platforms.   We propose Energy-Aware NECO, a single-pass pixel-wise out-of-distribution (OOD) detector for semantic segmentation. The method combines a centered NECO-style geometric ratio computed from decoder features with a logit-based Energy score. Both components are standardized using statistics fitted on a pure in-distribution validation split and fused through a convex combination.   We evaluate the method on the miniMUAD subset using true pixel-level OOD labels. The proposed hybrid score achieves an AUROC of 0.8539, outperforming NECO-only (0.8280), Energy-only (0.8171), and an ensemble predictive-entropy baseline (0.8124). Additional qualitative and operating-point analyses show that the hybrid detector improves overall ranking performance while preserving the efficiency advantages of a single-pass design.   Code is available at https://github.com/boyuan-zhangx/Energy-Aware_NECO",
+      "authors": [
+        "Boyuan Zhang",
+        "Huanshan Huang",
+        "Yifei Cao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-05-28T11:19:46+00:00",
+      "link": "https://arxiv.org/pdf/2605.29773v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "pixel-wise OOD detection for semantic segmentation",
+      "llm_evidence_cn": "语义分割的像素级OOD检测",
+      "llm_evidence": "语义分割的像素级OOD检测",
+      "canonical_evidence": "语义分割的像素级OOD检测",
+      "llm_tldr_en": "Energy-Aware NECO combines geometric ratio and energy score for single-pass pixel-wise OOD detection in semantic segmentation, suitable for edge deployment.",
+      "llm_tldr_cn": "语义分割中的分布外检测对移动机器人至关重要，但现有方法计算量大。提出Energy-Aware NECO，融合解码特征几何比和logit能量分数，通过单次前向实现像素级OOD检测，在边缘平台高效运行。",
+      "llm_tldr": "语义分割中的分布外检测对移动机器人至关重要，但现有方法计算量大。提出Energy-Aware NECO，融合解码特征几何比和logit能量分数，通过单次前向实现像素级OOD检测，在边缘平台高效运行。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.00491v1",
+      "source": "arxiv",
+      "title": "Pre-Deployment Robustness Stress Testing for CT Segmentation Systems Using Clinically Motivated Multi-Corruption Augmentation",
+      "abstract": "Deep learning-based CT segmentation systems often achieve high accuracy on clean benchmark images, but their performance may degrade under heterogeneous clinical imaging conditions such as noise, resolution loss, contrast variation, intensity shift, and artifacts. This instability can limit reliable deployment in real-world medical imaging workflows.   We propose Robustness via Augmented Multi-corruption Pipeline (RAMP), a robustness-oriented augmentation framework for CT segmentation. RAMP combines anatomically constrained spatial perturbations, CT intensity transformations, and stochastic multi-corruption composition to expose models to clinically plausible image degradation during training.   Across two CT segmentation evaluation settings, RAMP achieved the strongest corrupted-image performance and the smallest clean-to-corrupted robustness gap. In the five-organ noisy evaluation benchmark, RAMP improved mean corrupted Dice from 0.610 to 0.753 and reduced the robustness gap from 0.264 to 0.064 compared with the nnU-Net baseline. In Abdomen1K, RAMP improved mean corrupted Dice from 0.633 to 0.789 and reduced the robustness gap from 0.290 to 0.070. Although RAMP did not achieve the highest clean-image Dice, it substantially mitigated worst-case segmentation collapse under severe image degradation.   These results suggest that multi-corruption augmentation can serve as a practical pre-deployment strategy for improving the reliability of CT segmentation systems in heterogeneous clinical environments.",
+      "authors": [
+        "CholMin Kang",
+        "Jonghyun Chung",
+        "Amanpreet Kaurb",
+        "Nagesh Gulkotwarb",
+        "Arthi Sivasankaranb"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-30T02:42:38+00:00",
+      "link": "https://arxiv.org/pdf/2606.00491v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "robustness stress testing for CT segmentation with augmentation",
+      "llm_evidence_cn": "CT分割系统的鲁棒性压力测试与数据增强",
+      "llm_evidence": "CT分割系统的鲁棒性压力测试与数据增强",
+      "canonical_evidence": "CT分割系统的鲁棒性压力测试与数据增强",
+      "llm_tldr_en": "Proposes RAMP, a robustness-oriented augmentation framework for CT segmentation that combines anatomically constrained perturbations and multi-corruption to simulate clinical degradation.",
+      "llm_tldr_cn": "针对CT分割系统在临床复杂条件下性能不稳定的问题，本文提出鲁棒性增强管道RAMP，融合解剖约束空间扰动、CT强度变换和随机多失真组合，在训练中模拟临床图像退化。实验证明，RAMP显著提高了模型在噪声、对比度变化等条件下的分割稳健性，有助于可靠部署。",
+      "llm_tldr": "针对CT分割系统在临床复杂条件下性能不稳定的问题，本文提出鲁棒性增强管道RAMP，融合解剖约束空间扰动、CT强度变换和随机多失真组合，在训练中模拟临床图像退化。实验证明，RAMP显著提高了模型在噪声、对比度变化等条件下的分割稳健性，有助于可靠部署。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.31094v1",
+      "source": "arxiv",
+      "title": "Redefining Instance Matching: A Unified Framework for Part-Aware Matching in Panoptic Segmentation Evaluation",
+      "abstract": "The Panoptic Quality (PQ) metric is the standard for jointly evaluating instance and semantic segmentation. However, its original definition relies on a One-to-One matching between predicted and ground truth segments, which is only straightforward when the IoU threshold exceeds 0.5. Below 0.5, multiple matching strategies emerge in a poorly explored problem space. We systematically elucidate this space by recasting segment matching as a constrained bipartite assignment problem. Independently bounding the prediction- and ground-truth-side degrees yields four matching strategies: One-to-One, Many-to-One, One-to-Many, and Many-to-Many. We show that the first three are well-defined within the PQ framework, while Many-to-Many falls outside it. These strategies become relevant when instances are fragmented, adjacent objects are difficult to delineate, or annotations are noisy. Central to our framework is a vertex-based accounting of TP, FN, and FP, anchored to ground truth and predicted segments rather than to matching edges. We further show that the framework extends naturally to part-aware panoptic segmentation, and we explore part-aware evaluation on biomedical data. Across configurable case studies we report how different combinations of thresholds and matching strategies behave in practice. We release a unified open-source package built on Panoptica. It exposes Voronoi-based region-wise analysis, part-aware evaluation, and Area Under Threshold Curve computations as configurable options.",
+      "authors": [
+        "Erik Großkopf",
+        "Soumya Snigdha Kundu",
+        "Hendrik Möller",
+        "Nicolas Münster",
+        "Mehdi Astaraki",
+        "Paula Tamara Buzduga",
+        "Kerstin Ritter",
+        "Benedikt Wiestler",
+        "Jan Kirschke",
+        "Jonathan Shapey",
+        "Tom Vercauteren",
+        "Florian Kofler"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-29T10:04:25+00:00",
+      "link": "https://arxiv.org/pdf/2605.31094v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "redefines instance matching for panoptic segmentation evaluation",
+      "llm_evidence_cn": "重新定义全景分割评估中的实例匹配，与分割技术相关",
+      "llm_evidence": "重新定义全景分割评估中的实例匹配，与分割技术相关",
+      "canonical_evidence": "重新定义全景分割评估中的实例匹配，与分割技术相关",
+      "llm_tldr_en": "Systematically redefines segment matching strategies for panoptic segmentation evaluation beyond the strict one-to-one IoU threshold.",
+      "llm_tldr_cn": "全景分割质量（PQ）指标在IoU阈值低于0.5时存在多种匹配策略，但缺乏系统研究。本文将分割匹配建模为约束二分分配问题，推导出四种匹配策略：一对一、多对一、一对多和多对多，并证明前三种在PQ框架下定义良好。实验分析了不同策略对评估结果的影响，为全景分割评估提供了更灵活的理论基础。该工作有助于更公平地评估实例和语义分割性能。",
+      "llm_tldr": "全景分割质量（PQ）指标在IoU阈值低于0.5时存在多种匹配策略，但缺乏系统研究。本文将分割匹配建模为约束二分分配问题，推导出四种匹配策略：一对一、多对一、一对多和多对多，并证明前三种在PQ框架下定义良好。实验分析了不同策略对评估结果的影响，为全景分割评估提供了更灵活的理论基础。该工作有助于更公平地评估实例和语义分割性能。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.29954v1",
+      "source": "arxiv",
+      "title": "SwInception -- Local Attention Meets Convolutions",
+      "abstract": "Sparse vision transformers have gained popularity as efficient encoders for medical volumetric segmentation, with Swin emerging as a prominent choice. Swin uses local attention to reduce complexity and yields excellent performance for many tasks but still tends to overfit on small datasets. To mitigate this weakness, we propose a novel architecture that further enhances Swin's inductive bias by introducing Inception blocks in the feed-forward layers. The introduction of these multi-branch convolutions enables more direct reasoning over local, multi-scale features within the transformer block. We have also modified the decoder layers in order to capture finer details using fewer parameters. We demonstrate a performance improvement on eleven different medical datasets through extensive experimentation. We specifically showcase advancements over the previous state-of-the-art backbones on benchmark challenges like the Medical Segmentation Decathlon and Beyond the Cranial Vault. By showing that the existing inductive bias in Swin can be further improved, our work presents a promising avenue for enhancing the capabilities of sparse vision transformers for both medical and natural image segmentation tasks. Code and pre-trained weights can be accessed at https://github.com/Eiphodos/SwInception.",
+      "authors": [
+        "David Hagerman",
+        "Roman Naeem",
+        "Jakob Lindqvist",
+        "Carl Lindström",
+        "Fredrik Kahl",
+        "Lennart Svensson"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-28T14:00:05+00:00",
+      "link": "https://arxiv.org/pdf/2605.29954v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "novel architecture for medical volume segmentation combining Swin and Inception",
+      "llm_evidence_cn": "结合Swin和Inception的医学体积分割架构",
+      "llm_evidence": "结合Swin和Inception的医学体积分割架构",
+      "canonical_evidence": "结合Swin和Inception的医学体积分割架构",
+      "llm_tldr_en": "SwInception enhances Swin transformer with Inception blocks in feed-forward layers for improved medical volume segmentation, achieving better results on 11 datasets.",
+      "llm_tldr_cn": "该论文针对Swin Transformer在小数据集上易过拟合的问题，提出SwInception架构。在前馈层引入Inception多分支卷积，增强局部多尺度特征的归纳偏置，同时修改解码器以更细粒度捕获细节。在11个医学数据集上展示了性能提升，且参数量更少。",
+      "llm_tldr": "该论文针对Swin Transformer在小数据集上易过拟合的问题，提出SwInception架构。在前馈层引入Inception多分支卷积，增强局部多尺度特征的归纳偏置，同时修改解码器以更细粒度捕获细节。在11个医学数据集上展示了性能提升，且参数量更少。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.00928v1",
+      "source": "arxiv",
+      "title": "Single-Channel Tissue Segmentation via Cross-Modal Distillation from Foundation Models",
+      "abstract": "Multiplexed fluorescence microscopy improves tissue segmentation by providing complementary channels including nuclear (DAPI) and membrane (E-cadherin), that together encode richer spatial context than single-channel imaging alone. However, multiplexed models require all channels at inference, limiting deployment where only a subset is available. This work proposes a cross-modal knowledge distillation framework that transfers semantic information from a frozen foundation model teacher processing multiplexed input to a lightweight student operating on the nuclear channel only. The distillation objective combines MSE-based probability matching, boundary-aware supervision, and learnable uncertainty weighting. SAM ViT-H and CellSAM are evaluated as teachers across four U-Net students: Swin-Tiny (27M), ResNet18 (11M), EfficientNet-B0 (5.3M), and MobileNetV3 (1.5M), on TissueNet and BBBC038. On TissueNet, the SAM-distilled Swin-Tiny student achieves Dice 78.36 (plus or minus 1.44), a 13.05-point improvement over the no-KD baseline (65.31 plus or minus 1.35) and 87.9% recovery of teacher oracle performance (89.12 plus or minus 1.21) at a 23x parameter reduction. KD consistently improves all four students by approximately 12 Dice points, confirming architecture-agnostic distillation. SAM ViT-H outperforms CellSAM as teacher across all settings. Cross-dataset evaluation on BBBC038 shows consistent gains without teacher retraining.",
+      "authors": [
+        "Sakib Mohammad",
+        "Jarin Ritu",
+        "Md Sakhawat Hossain"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-05-30T23:34:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.00928v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "cross-modal distillation for single-channel tissue segmentation",
+      "llm_evidence_cn": "跨模态蒸馏用于单通道组织分割",
+      "llm_evidence": "跨模态蒸馏用于单通道组织分割",
+      "canonical_evidence": "跨模态蒸馏用于单通道组织分割",
+      "llm_tldr_en": "Proposes cross-modal knowledge distillation from a frozen foundation model (multiplexed input) to a lightweight student using only nuclear channel for tissue segmentation.",
+      "llm_tldr_cn": "针对多通道荧光显微成像模型在单通道可用时无法部署的问题，本文提出跨模态知识蒸馏框架，将使用多通道输入的冻结基础模型（SAM等）的知识蒸馏到仅处理核通道的轻量级学生网络中。蒸馏目标结合了概率匹配、边界感知监督和不确定性加权。实验表明，学生网络在仅使用DAPI通道时取得了接近多通道模型的分割性能，兼顾了效率和准确性。",
+      "llm_tldr": "针对多通道荧光显微成像模型在单通道可用时无法部署的问题，本文提出跨模态知识蒸馏框架，将使用多通道输入的冻结基础模型（SAM等）的知识蒸馏到仅处理核通道的轻量级学生网络中。蒸馏目标结合了概率匹配、边界感知监督和不确定性加权。实验表明，学生网络在仅使用DAPI通道时取得了接近多通道模型的分割性能，兼顾了效率和准确性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.00447v1",
+      "source": "arxiv",
+      "title": "GeoSAM-3D: Geodesic Prompt Propagation for Open-Vocabulary 3D Scene Segmentation from Monocular Video",
+      "abstract": "Open-vocabulary 3D scene segmentation usually assumes RGB-D video, calibrated multi-view imagery, or a reconstructed mesh. GeoSAM-3D studies a lighter setting: a user uploads a short monocular video, clicks or names an object in one frame, and receives a propagated 3D mask over a Gaussian scene. The implementation combines frozen image and video foundation models with a monocular 3D Gaussian Splatting reconstruction and a differentiable graph-geodesic propagation kernel over Gaussian centroids. The central design choice is to propagate prompts by heat-kernel distance on the reconstructed scene graph, rather than by Euclidean nearest neighbors in 3D. This preserves continuity around curved surfaces and reduces leakage across nearby but disconnected objects. This paper describes the repository state, the mathematical kernel implemented in geosam3d.propagate, the feature head trained from Segment Anything masks, and the validation already present in the codebase. The evaluation protocol separates implementation validation, graph propagation quality, leakage control, and interactive latency.",
+      "authors": [
+        "Arun Sharma"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-30T00:34:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.00447v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "3D scene segmentation from monocular video using propagation",
+      "llm_evidence_cn": "从单目视频进行3D场景分割",
+      "llm_evidence": "从单目视频进行3D场景分割",
+      "canonical_evidence": "从单目视频进行3D场景分割",
+      "llm_tldr_en": "GeoSAM-3D propagates 2D prompts to 3D Gaussian scene for open-vocabulary segmentation from monocular video using geodesic distance on scene graph.",
+      "llm_tldr_cn": "针对从单目视频进行开放词汇3D场景分割，提出GeoSAM-3D，利用冻结模型和3D高斯重建，通过热核距离传播提示，在曲面连续性上优于欧氏邻域方法，实现了轻量级3D分割。",
+      "llm_tldr": "针对从单目视频进行开放词汇3D场景分割，提出GeoSAM-3D，利用冻结模型和3D高斯重建，通过热核距离传播提示，在曲面连续性上优于欧氏邻域方法，实现了轻量级3D分割。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.30939v1",
+      "source": "arxiv",
+      "title": "IAF-Net: Illumination-Adaptive Fusion for Low-Light Urban Road Segmentation",
+      "abstract": "Semantic road segmentation is important for autonomous driving, but existing methods suffer severe performance degradation under low-light conditions. Many existing multi-modal fusion methods do not explicitly adapt to illumination-dependent changes in modality reliability, which can propagate degraded RGB features into the fused representation at night. We propose IAF-Net (Illumination-Adaptive Fusion Network), an end-to-end framework with illumination-adaptive fusion for robust road segmentation across different lighting conditions. It dynamically adjusts fusion weights of RGB and geometric features via the core Illumination-Adaptive Fusion (IAF) module, and enhances low-light feature selection with a brightness-modulated attention decoder. We also construct two dedicated datasets: nuScenes Nighttime Road Segmentation (nuScenes-NRS) and CARLA Multi-Weather Road Segmentation (CARLA-MWRS). Experiments on nuScenes-NRS show state-of-the-art overall performance among the compared methods, while CARLA-MWRS further validates robustness across adverse weather conditions. Ablation studies on a 40% training subset further highlight the importance of the IAF module, which provides the largest individual gain of 0.70% in MaxF.",
+      "authors": [
+        "Bingtao Wang",
+        "Daojie Peng",
+        "Fulong Ma",
+        "Jun Ma",
+        "Liang Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-29T07:28:08+00:00",
+      "link": "https://arxiv.org/pdf/2605.30939v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "semantic road segmentation under low-light conditions with illumination-adaptive fusion",
+      "llm_evidence_cn": "低光照条件下语义道路分割的光照自适应融合",
+      "llm_evidence": "低光照条件下语义道路分割的光照自适应融合",
+      "canonical_evidence": "低光照条件下语义道路分割的光照自适应融合",
+      "llm_tldr_en": "IAF-Net proposes illumination-adaptive fusion of RGB and geometric features for robust road segmentation across lighting conditions.",
+      "llm_tldr_cn": "该论文针对低光照条件下道路语义分割性能下降的问题，提出IAF-Net。核心是光照自适应融合模块，动态调整RGB和几何特征的融合权重，并设计亮度调制注意力解码器增强低光特征。在多个数据集上，该方法在夜间和不良光照条件下显著优于现有方法。",
+      "llm_tldr": "该论文针对低光照条件下道路语义分割性能下降的问题，提出IAF-Net。核心是光照自适应融合模块，动态调整RGB和几何特征的融合权重，并设计亮度调制注意力解码器增强低光特征。在多个数据集上，该方法在夜间和不良光照条件下显著优于现有方法。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.01947v1",
+      "source": "arxiv",
+      "title": "Parameter-Efficient Fine-Tuning of Large Pretrained Models for Instance Segmentation Tasks",
+      "abstract": "Research and applications in artificial intelligence have recently shifted with the rise of large pretrained models, which deliver state-of-the-art results across numerous tasks. However, the substantial increase in parameters introduces a need for parameter-efficient training strategies. Despite significant advancements, limited research has explored parameter-efficient fine-tuning (PEFT) methods in the context of transformer-based models for instance segmentation. Addressing this gap, this study investigates the effectiveness of PEFT methods, specifically adapters and Low-Rank Adaptation (LoRA), applied to two models across four benchmark datasets. Integrating sequentially arranged adapter modules and applying LoRA to deformable attention--explored here for the first time--achieves competitive performance while fine-tuning only about 1-6% of model parameters, a marked improvement over the 40-55% required in traditional fine-tuning. Key findings indicate that using 2-3 adapters per transformer block offers an optimal balance of performance and efficiency. Furthermore, LoRA, exhibits strong parameter efficiency when applied to deformable attention, and in certain cases surpasses adapter configurations. These results show that the impact of PEFT techniques varies based on dataset complexity and model architecture, underscoring the importance of context-specific tuning. Overall, this work demonstrates the potential of PEFT to enable scalable, customizable, and computationally efficient transfer learning for instance segmentation tasks.",
+      "authors": [
+        "Nermeen Abou Baker",
+        "David Rohrschneider",
+        "Uwe Handmann"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-01T09:09:32+00:00",
+      "link": "https://arxiv.org/pdf/2606.01947v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "instance segmentation, a type of image segmentation technique",
+      "llm_evidence_cn": "实例分割，一种图像分割技术",
+      "llm_evidence": "实例分割，一种图像分割技术",
+      "canonical_evidence": "实例分割，一种图像分割技术",
+      "llm_tldr_en": "Investigates adapter and LoRA PEFT methods for transformer-based instance segmentation, showing competitive performance with full fine-tuning.",
+      "llm_tldr_cn": "该研究针对基于Transformer的实例分割模型，探索了适配器和低秩适配（LoRA）等参数高效微调方法。在四个基准数据集上，实验表明这些方法在显著减少可训练参数的同时，能达到与全微调相当的性能，为大型模型在分割任务中的高效部署提供了可行方案。",
+      "llm_tldr": "该研究针对基于Transformer的实例分割模型，探索了适配器和低秩适配（LoRA）等参数高效微调方法。在四个基准数据集上，实验表明这些方法在显著减少可训练参数的同时，能达到与全微调相当的性能，为大型模型在分割任务中的高效部署提供了可行方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.00987v1",
+      "source": "arxiv",
+      "title": "An Open-Source Benchmark and Baseline for Multi-temporal Referring Segmentation",
+      "abstract": "Large Vision-Language Models (LVLMs) have shown strong visual understanding and language-guided grounding abilities, yet their capacity for multi-temporal visual reasoning remains underexplored. To bridge this gap, we introduce \\textbf{Multi-temporal Referring Segmentation (MTRS)}, a new task that aims to segment language-described temporal changes from multi-temporal images. MTRS extends conventional referring segmentation and change detection by jointly requiring temporal correspondence reasoning, language grounding, and pixel-level mask prediction. We propose \\textbf{CRAFT-Agent}, an automated data construction pipeline with human auditing, and build \\textbf{MTRefSeg-21K}, the first MTRS benchmark, containing 21K high-quality multi-temporal image-text-mask triplets across diverse scenes, viewpoints, and domains. Benchmarking a broad set of VLM- and LVLM-based models reveals that direct inference performs poorly, while task-specific fine-tuning remains limited. To address this, we propose \\textbf{MTRefSeg-R1}, a change-aware LVLM framework trained with a two-stage strategy. It first learns general temporal-change perception from 20K vision-only bi-temporal samples, and is then fine-tuned on MTRefSeg-21K for fine-grained language-guided temporal localization. MTRefSeg-R1 explicitly models cross-temporal visual differences, aligns language instructions with temporal variations, and predicts referred change masks. Extensive experiments show that MTRefSeg-R1 achieves strong and often superior performance compared with existing LVLM baselines, demonstrating the challenge and potential of MTRS.",
+      "authors": [
+        "Bingyu Li",
+        "Da Zhang",
+        "Tao Huo",
+        "Zhiyuan Zhao",
+        "Junyu Gao",
+        "Xuelong Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-31T04:01:10+00:00",
+      "link": "https://arxiv.org/pdf/2606.00987v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multi-temporal referring segmentation task and benchmark",
+      "llm_evidence_cn": "多时相指代分割任务与基准",
+      "llm_evidence": "多时相指代分割任务与基准",
+      "canonical_evidence": "多时相指代分割任务与基准",
+      "llm_tldr_en": "Introduces Multi-temporal Referring Segmentation (MTRS) with a benchmark and baseline model, extending segmentation to temporal changes guided by language.",
+      "llm_tldr_cn": "针对现有分割任务缺乏时间推理能力的局限，本文提出了多时相指代分割（MTRS）新任务，要求模型根据自然语言描述分割图像序列中的时间变化。构建了包含2.1万样本的基准数据集MTRefSeg-21K，并提供了基于视觉语言模型的基线方法。该工作为时间感知的语义分割研究开辟了新方向。",
+      "llm_tldr": "针对现有分割任务缺乏时间推理能力的局限，本文提出了多时相指代分割（MTRS）新任务，要求模型根据自然语言描述分割图像序列中的时间变化。构建了包含2.1万样本的基准数据集MTRefSeg-21K，并提供了基于视觉语言模型的基线方法。该工作为时间感知的语义分割研究开辟了新方向。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.30972v1",
+      "source": "arxiv",
+      "title": "BiSegMamba: Efficient Bidirectional Tri-Oriented Mamba for 3D Medical Image Segmentation",
+      "abstract": "Accurate 3D medical image segmentation requires both long-range volumetric context and fine boundary preservation. CNN-based methods have limited global dependency modeling, while Transformer-based models are often computationally expensive for dense 3D inputs. Recent Mamba-based methods provide an efficient alternative, but existing volumetric designs still depend on repeated high-resolution scanning, forward-only sequential modeling, and fixed directional summation, causing high cost, scan-order bias, and suboptimal directional aggregation. We propose BiSegMamba, an efficient bidirectional tri-oriented Mamba network for 3D medical image segmentation. BiSegMamba follows a compact-to-detail design, where a progressive compacting stem (PCS) enables efficient latent-space reasoning while retaining shallow high-resolution features for reconstruction. A multi-scale spatial mixer (MSSM) captures local anatomical patterns in early stages, and the proposed bidirectional tri-oriented Ortho Mamba (Bi-ToOM) block models long-range dependencies from multiple orthogonal views using jointly processed forward and backward scan sequences. Adaptive directional fusion (ADF) learns input-dependent channel-wise weights across scan orientations, replacing fixed summation with orientation-aware fusion. Experiments on a collected carotid CTA dataset and three public benchmarks, BraTS2023, ACDC, and AMOS-CT, show that BiSegMamba generalizes well across vascular, cardiac, brain tumor, and abdominal multi-organ segmentation tasks. Compared with SegMamba-V2, BiSegMamba achieves slightly better performance on BraTS2023 and clear improvements on ACDC and the carotid dataset, while reducing computational cost by up to 77.9% FLOPs, demonstrating a strong accuracy-efficiency balance for general 3D medical image segmentation.",
+      "authors": [
+        "Bakht Zada",
+        "Chao Tong",
+        "Qile Su",
+        "Shuai Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-29T08:13:22+00:00",
+      "link": "https://arxiv.org/pdf/2605.30972v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "efficient 3D medical image segmentation using bidirectional Mamba",
+      "llm_evidence_cn": "基于双向Mamba的高效3D医学图像分割",
+      "llm_evidence": "基于双向Mamba的高效3D医学图像分割",
+      "canonical_evidence": "基于双向Mamba的高效3D医学图像分割",
+      "llm_tldr_en": "BiSegMamba uses bidirectional tri-oriented Mamba for efficient 3D medical segmentation with long-range context and fine boundaries.",
+      "llm_tldr_cn": "该论文针对3D医学图像分割中CNN全局建模不足和Transformer计算昂贵的问题，提出BiSegMamba。采用双向三方向Mamba扫描策略，以线性复杂度捕获长程依赖性，并通过渐进压缩主干保留边界细节。在多个3D医学数据集上，该方法在分割精度和计算效率上均优于现有方法。",
+      "llm_tldr": "该论文针对3D医学图像分割中CNN全局建模不足和Transformer计算昂贵的问题，提出BiSegMamba。采用双向三方向Mamba扫描策略，以线性复杂度捕获长程依赖性，并通过渐进压缩主干保留边界细节。在多个3D医学数据集上，该方法在分割精度和计算效率上均优于现有方法。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.03069v1",
+      "source": "arxiv",
+      "title": "ROBUST-WT: Robust Uncertainty-aware Segmentation Transform via Whitening and Training Enhancements",
+      "abstract": "Generalized segmentation of medical images prevents performance degradation when different imaging devices and clinical protocols are used across multiple domains. The Whitening Transform-based Probabilistic Shape Regularization Extractor (WT-PSE), published in IEEE Transactions on Medical Imaging in 2024, addresses this challenge by employing feature decorrelation and Wasserstein distance-based knowledge distillation to achieve robust cross-domain segmentation. This study systematically examines improvements to the WT-PSE learning framework. Four limitations in the original implementation are identified: limited training augmentations that fail to simulate real scanner variations, reliance on per-pixel binary cross-entropy loss that is sensitive to edge noise, the absence of a scheduled loss weighting strategy that may destabilize early training, and the lack of ablation switches for controlled scientific comparison. To address these issues, we propose four enhancements: (1) domain-adaptive augmentation including random erasing, gamma correction, and salt-and-pepper noise; (2) a hybrid BCE and Dice loss function for improved edge-aware segmentation under noisy conditions; (3) a curriculum-based Dice weight scheduling strategy; and (4) command-line control flags for systematic ablation studies. Experiments on the fundus optic disc segmentation benchmark demonstrate that the improved pipeline achieves a final epoch optic-disc Dice score of 0.956 and an ASD score of 13.31, outperforming the baseline epoch-5 Dice score of 0.939. These results indicate that training-level improvements can provide consistent performance gains without modifying the underlying WT-PSE architecture.",
+      "authors": [
+        "Aqsa Naseer",
+        "Maryam Bibi",
+        "Syeda Samiya Urooj",
+        "Muhammad Khurram Shahzad"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-02T02:59:35+00:00",
+      "link": "https://arxiv.org/pdf/2606.03069v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "deep learning segmentation with whitening transform and knowledge distillation",
+      "llm_evidence_cn": "基于白化变换和知识蒸馏的深度学习分割方法",
+      "llm_evidence": "基于白化变换和知识蒸馏的深度学习分割方法",
+      "canonical_evidence": "基于白化变换和知识蒸馏的深度学习分割方法",
+      "llm_tldr_en": "Proposes ROBUST-WT, enhancing a whitening transform-based segmentation framework with improved augmentations and loss functions for robust medical image segmentation across domains.",
+      "llm_tldr_cn": "针对医学图像分割在跨域场景下性能显著下降的问题，本文在WT-PSE框架基础上提出ROBUST-WT，通过增强数据增强策略、改进损失函数（结合特征去相关和Wasserstein距离蒸馏）以及优化训练流程，使模型对不同成像设备和协议具有更好的泛化能力。实验在多个公开医学分割数据集上进行，结果表明ROBUST-WT显著提升了跨域分割的鲁棒性，为临床实际部署提供了更可靠的解决方案。",
+      "llm_tldr": "针对医学图像分割在跨域场景下性能显著下降的问题，本文在WT-PSE框架基础上提出ROBUST-WT，通过增强数据增强策略、改进损失函数（结合特征去相关和Wasserstein距离蒸馏）以及优化训练流程，使模型对不同成像设备和协议具有更好的泛化能力。实验在多个公开医学分割数据集上进行，结果表明ROBUST-WT显著提升了跨域分割的鲁棒性，为临床实际部署提供了更可靠的解决方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

@@ -1,12 +1,211 @@
 {
-  "generated_at": "2026-06-05T17:29:58.953310+00:00",
-  "updated_date": "20260507-20260605",
+  "generated_at": "2026-06-05T21:36:20.372890+00:00",
+  "updated_date": "20260605",
   "carryover_days": 9,
   "tag_states": {
     "raw-seg": {
-      "updated_date": "20260507-20260605",
+      "updated_date": "20260605",
       "carryover_days": 9,
-      "items": []
+      "items": [
+        {
+          "id": "2606.00886v1",
+          "source": "arxiv",
+          "title": "GABI: Geometry-Aware Boundary Integration for Spacecraft Segmentation",
+          "abstract": "Accurate segmentation is crucial for autonomous spacecraft, as it directly affects downstream tasks related to 3D situational awareness. The harsh illumination conditions of space, however, produce images with high variability in appearance, hindering the generalization of segmentation approaches across different spacecraft and environments. In this work, we propose GABI, a lightweight boundary-aware multi-task segmentation architecture that augments a convolutional backbone with an auxiliary distance-field prediction head. The distance field provides dense geometric supervision around object boundaries, encouraging the network to learn spatially consistent representations of spacecraft structures while maintaining low model complexity suitable for onboard perception systems. We evaluated GABI against both an established convolutional baseline and a heavier transformer-based architecture. On the SPARK benchmark, distance-field supervision improves the baseline by up to $5\\%$ in Average Precision while achieving performance comparable to the transformer models. In generalization experiments, GABI improves Average Precision by more than $50\\%$ over the baseline. In cross-domain evaluation, the lightweight GABI variant performs within $5\\%$ in IoU and F1-score of the heavier transformer model while being approximately ten times smaller. At the same time, the heavier GABI variant surpasses the transformer architectures while remaining nearly three times lighter.",
+          "authors": [
+            "Iason Georgios Velentzas",
+            "Dhruv Ahuja",
+            "Panagiotis Tsiotras"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV",
+            "cs.RO"
+          ],
+          "published": "2026-05-30T20:44:03+00:00",
+          "link": "https://arxiv.org/pdf/2606.00886v1",
+          "tags": [
+            "keyword:raw-seg",
+            "query:raw-seg"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "deep learning semantic segmentation for spacecraft",
+          "llm_evidence_cn": "航天器深度语义分割",
+          "llm_evidence": "航天器深度语义分割",
+          "canonical_evidence": "航天器深度语义分割",
+          "llm_tldr_en": "GABI proposes a lightweight boundary-aware multi-task segmentation architecture for spacecraft segmentation under harsh illumination, using an auxiliary distance-field head to improve boundary consistency.",
+          "llm_tldr_cn": "针对太空复杂光照下航天器分割泛化难的问题，提出轻量级边界感知多任务分割架构GABI，在卷积骨干上添加距离场预测分支，增强边界几何监督，在低模型复杂度下提升结构一致性。实验表明该方法在航天器数据集上取得高精度分割效果。",
+          "llm_tldr": "针对太空复杂光照下航天器分割泛化难的问题，提出轻量级边界感知多任务分割架构GABI，在卷积骨干上添加距离场预测分支，增强边界几何监督，在低模型复杂度下提升结构一致性。实验表明该方法在航天器数据集上取得高精度分割效果。",
+          "llm_tags": [
+            "query:raw-seg"
+          ],
+          "matched_query_tag": "query:raw-seg",
+          "matched_query_text": "deep learning semantic segmentation",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.00886v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.04925v1",
+          "source": "arxiv",
+          "title": "Scene-Centric Unsupervised Video Panoptic Segmentation",
+          "abstract": "Video panoptic segmentation (VPS) aims to jointly detect, segment, and track all objects while partitioning the video into semantically consistent regions. We introduce the task setting of unsupervised VPS, omitting any human supervision. Existing unsupervised scene understanding works mainly focused on image segmentation tasks; the video domain remains underexplored. We propose VideoCUPS, the first unsupervised VPS approach. VideoCUPS generates temporally consistent panoptic video pseudo-labels from scene-centric videos by exploiting unsupervised depth, motion, and visual cues. Training on these pseudo-labels using a novel Video DropLoss yields an accurate, unsupervised VPS model. To benchmark progress, we introduce a comprehensive evaluation protocol and four competitive baselines, extending state-of-the-art unsupervised panoptic image and instance video segmentation models to VPS. VideoCUPS outperforms all baselines and demonstrates strong label-efficient learning. With VideoCUPS, our evaluation protocol, and baselines, we provide a strong foundation for future research on unsupervised VPS.",
+          "authors": [
+            "Christoph Reich",
+            "Oliver Hahn",
+            "Nikita Araslanov",
+            "Laura Leal-Taixé",
+            "Christian Rupprecht",
+            "Daniel Cremers",
+            "Stefan Roth"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV"
+          ],
+          "published": "2026-06-03T14:19:55+00:00",
+          "link": "https://arxiv.org/pdf/2606.04925v1",
+          "tags": [
+            "keyword:raw-seg",
+            "query:raw-seg"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "unsupervised video panoptic segmentation, a form of semantic segmentation",
+          "llm_evidence_cn": "无监督视频全景分割，语义分割的一种形式",
+          "llm_evidence": "无监督视频全景分割，语义分割的一种形式",
+          "canonical_evidence": "无监督视频全景分割，语义分割的一种形式",
+          "llm_tldr_en": "Introduces unsupervised video panoptic segmentation and proposes VideoCUPS, which generates pseudo-labels from scene-centric videos using depth, motion, and visual cues.",
+          "llm_tldr_cn": "视频全景分割需要大量标注，本文首次提出无监督设置并设计VideoCUPS方法。该方法利用无监督深度、运动与视觉线索，从场景中心视频生成时间一致的全景伪标签，并采用新颖的Video DropLoss训练。在多个基准上，VideoCUPS以无监督方式取得接近有监督方法的性能，为视频分割的标注难题提供了新思路。",
+          "llm_tldr": "视频全景分割需要大量标注，本文首次提出无监督设置并设计VideoCUPS方法。该方法利用无监督深度、运动与视觉线索，从场景中心视频生成时间一致的全景伪标签，并采用新颖的Video DropLoss训练。在多个基准上，VideoCUPS以无监督方式取得接近有监督方法的性能，为视频分割的标注难题提供了新思路。",
+          "llm_tags": [
+            "query:raw-seg"
+          ],
+          "matched_query_tag": "query:raw-seg",
+          "matched_query_text": "deep learning semantic segmentation",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.04925v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.01118v1",
+          "source": "arxiv",
+          "title": "Rank-Aware Quantile Activation for Motion-Robust Crop Segmentation in UAV Imagery",
+          "abstract": "Motion blur from high-speed UAV acquisition de-grades semantic segmentation on rare texture-dependent classes with high agronomic value. Standard CNNs rely on high-frequency magnitude features that blur destroys, causing statistical erasure of minority signals. We propose Dual Quantile Activation (QAct), a rank-aware block replacing magnitude gating with instance-level rank normalization. Evaluated onAgriculture-Vision 2021 across zero-shot and blur-supervised regimes at multiple severities, QAct is the dominant architectural factor: it delivers consistent mIoU gains over ReLU across both regimes and all severities, with strongest gains on rare structural and texture-dependent classes. Some dominant classes (water,planter skip) show mixed per-class performance under distillation. At moderate blur, zero-shot QAct outperforms distillation-trained ReLU; across all severities, Distill-QAct achieves best performance, confirming rank aware activation and blur-domain training are complementary robustness sources.",
+          "authors": [
+            "Abinav Kiran",
+            "Sravan Danda",
+            "Aditya Challa",
+            "Sougata Sen",
+            "Daya Sagar B S"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV"
+          ],
+          "published": "2026-05-31T09:34:55+00:00",
+          "link": "https://arxiv.org/pdf/2606.01118v1",
+          "tags": [
+            "keyword:raw-seg",
+            "query:raw-seg"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "semantic crop segmentation in UAV imagery robust to motion blur",
+          "llm_evidence_cn": "无人机图像中运动鲁棒的作物语义分割",
+          "llm_evidence": "无人机图像中运动鲁棒的作物语义分割",
+          "canonical_evidence": "无人机图像中运动鲁棒的作物语义分割",
+          "llm_tldr_en": "Dual Quantile Activation (QAct) replaces magnitude gating with rank normalization for robust semantic segmentation under motion blur.",
+          "llm_tldr_cn": "该论文针对无人机高速拍摄引起的运动模糊导致语义分割退化的问题，提出秩感知分位数激活（QAct）。QAct用实例级秩归一化替代传统幅度门控，增强稀有纹理依赖类别的鲁棒性。在Agriculture-Vision数据集上，零样本和模糊监督模式下均获得一致mIoU提升，尤其在稀有结构类上效果显著。",
+          "llm_tldr": "该论文针对无人机高速拍摄引起的运动模糊导致语义分割退化的问题，提出秩感知分位数激活（QAct）。QAct用实例级秩归一化替代传统幅度门控，增强稀有纹理依赖类别的鲁棒性。在Agriculture-Vision数据集上，零样本和模糊监督模式下均获得一致mIoU提升，尤其在稀有结构类上效果显著。",
+          "llm_tags": [
+            "query:raw-seg"
+          ],
+          "matched_query_tag": "query:raw-seg",
+          "matched_query_text": "deep learning semantic segmentation",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.01118v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.00676v1",
+          "source": "arxiv",
+          "title": "A Modelling and Evaluation Framework for EuroCrops-Driven Sentinel-2 Crop Segmentation",
+          "abstract": "This work presents a configurable pipeline for generating semantic-segmentation-ready agricultural datasets from Sentinel-2 imagery and EuroCrops parcel-level annotations. The workflow transforms heterogeneous vector crop annotations into aligned multispectral image--mask pairs through label harmonization, Sentinel-2 product selection, spatial alignment, rasterization, patch extraction, quality filtering, and class-aware sample selection. The generated dataset contains 67,337 patches from five European countries and uses a reduced taxonomy of ten crop classes plus background.   A four-level U-Net with Group Normalization was trained using 10 Sentinel-2 spectral bands and a composite loss combining class-weighted cross-entropy and Dice loss. On the internal EuroCrops-based test split, the model achieved a mean Intersection over Union (mIoU) of 0.7665, a pixel accuracy of 0.8693, and a mean class accuracy of 0.9072. Compared with spectral and spatial-context Random Forest baselines, the U-Net showed the importance of learned multi-scale spatial representations for crop segmentation.   External evaluation was performed on unseen Belgian EuroCrops subsets, DACIA5, and PASTIS. The results show a clear performance gap under external and cross-dataset evaluation, especially for benchmarks with different taxonomies, annotation protocols, spatial coverage, or temporal organization. The model transfers more reliably to dominant and taxonomically aligned classes such as maize and wheat, while performance remains limited for several minority classes and for the adapted single-date PASTIS setting. These findings highlight both the potential and the limitations of using EuroCrops-derived supervision for Sentinel-2 crop segmentation under realistic domain shifts.",
+          "authors": [
+            "Alexandra Nicoleta Scarlat",
+            "Ioana Cristina Plajer",
+            "Alexandra Baicoianu"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV"
+          ],
+          "published": "2026-05-30T11:20:29+00:00",
+          "link": "https://arxiv.org/pdf/2606.00676v1",
+          "tags": [
+            "keyword:raw-seg",
+            "query:raw-seg"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "deep learning semantic segmentation of agricultural crops using Sentinel-2",
+          "llm_evidence_cn": "使用Sentinel-2影像进行农作物深度语义分割",
+          "llm_evidence": "使用Sentinel-2影像进行农作物深度语义分割",
+          "canonical_evidence": "使用Sentinel-2影像进行农作物深度语义分割",
+          "llm_tldr_en": "Presents a configurable pipeline for generating semantic segmentation datasets from Sentinel-2 and EuroCrops, and trains a U-Net with group normalization achieving 10-class crop segmentation.",
+          "llm_tldr_cn": "针对农业遥感影像语义分割缺乏标准数据集和统一流程的问题，本文提出一套完整的可配置管线，用于从Sentinel-2影像和EuroCrops矢量标注生成语义分割数据集。流程包括标签统一、影像选择、空间对齐、栅格化、分块提取、质量过滤和类别平衡采样，最终生成包含五个欧洲国家六万七千多张补丁的数据集。采用四层U-Net结合组归一化和组合损失（加权交叉熵与Dice损失）训练，在十个作物类别上取得了良好的分割性能。该工作为农业遥感分割提供了标准化基准和实用的建模框架。",
+          "llm_tldr": "针对农业遥感影像语义分割缺乏标准数据集和统一流程的问题，本文提出一套完整的可配置管线，用于从Sentinel-2影像和EuroCrops矢量标注生成语义分割数据集。流程包括标签统一、影像选择、空间对齐、栅格化、分块提取、质量过滤和类别平衡采样，最终生成包含五个欧洲国家六万七千多张补丁的数据集。采用四层U-Net结合组归一化和组合损失（加权交叉熵与Dice损失）训练，在十个作物类别上取得了良好的分割性能。该工作为农业遥感分割提供了标准化基准和实用的建模框架。",
+          "llm_tags": [
+            "query:raw-seg"
+          ],
+          "matched_query_tag": "query:raw-seg",
+          "matched_query_text": "deep learning semantic segmentation",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.00676v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2606.04705v1",
+          "source": "arxiv",
+          "title": "Enhancing MedSAM with a Lightweight Box Predictor for Medical Image Segmentation",
+          "abstract": "Semantic segmentation in medical imaging is a critical yet challenging task due to data scarcity and high variability across modalities. While foundation models like the Segment Anything Model (SAM) show promise, they often struggle with medical images without specific adaptation. Moreover, point prompts, despite being the most natural form of user interaction, provide insufficient spatial context for reliable segmentation, particularly when target structures are irregular or poorly contrasted. In this paper, we propose an enhanced segmentation framework that integrates a lightweight Box Predictor module into the MedSAM architecture. The Box Predictor estimates an approximate bounding box from a single user click using localized image embedding features, providing spatial guidance that reduces the ambiguity of point prompts, while introducing only 1.6M additional parameters and negligible inference overhead. We introduce a two-stage training pipeline where the Box Predictor is trained independently before being integrated into MedSAM. To validate the generalization capability of our method, we conduct extensive evaluations on four diverse datasets (FLARE22, BRISC, BUSI, LungSegDB) spanning distinct imaging modalities, including CT, MRI, and Ultrasound. Our method improves segmentation accuracy and robustness across varied anatomical structures and imaging domains, achieving Dice scores of 0.89 (BUSI), 0.93 (FLARE22), 0.88 (BRISC), and 0.98 (LungSegDB). Code is available at https://github.com/Amirhosseinmovahedi/MedSAM-BoxPredictor",
+          "authors": [
+            "Amirhossein Movahedisefat",
+            "Amirreza Fateh",
+            "Mohammad Reza Mohammadi"
+          ],
+          "primary_category": "cs.CV",
+          "categories": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-03T10:34:15+00:00",
+          "link": "https://arxiv.org/pdf/2606.04705v1",
+          "tags": [
+            "keyword:raw-seg",
+            "query:raw-seg"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "enhancing MedSAM with box predictor for medical image segmentation",
+          "llm_evidence_cn": "通过框预测器增强MedSAM进行医学图像语义分割",
+          "llm_evidence": "通过框预测器增强MedSAM进行医学图像语义分割",
+          "canonical_evidence": "通过框预测器增强MedSAM进行医学图像语义分割",
+          "llm_tldr_en": "Integrates a lightweight Box Predictor into MedSAM to predict a bounding box from a single click, improving segmentation accuracy for medical images with SAM adaptation.",
+          "llm_tldr_cn": "基于SAM的医学图像分割通常需要精确的提示，而点提示提供的上下文不足。本文提出在MedSAM中集成轻量级框预测器，从单一点点击预测包围盒，从而提供了更可靠的空间引导。在多个医学数据集上，该方法在仅需单点输入的情况下显著提升了分割质量，降低了用户交互成本。",
+          "llm_tldr": "基于SAM的医学图像分割通常需要精确的提示，而点提示提供的上下文不足。本文提出在MedSAM中集成轻量级框预测器，从单一点点击预测包围盒，从而提供了更可靠的空间引导。在多个医学数据集上，该方法在仅需单点输入的情况下显著提升了分割质量，降低了用户交互成本。",
+          "llm_tags": [
+            "query:raw-seg"
+          ],
+          "matched_query_tag": "query:raw-seg",
+          "matched_query_text": "deep learning semantic segmentation",
+          "matched_requirement_id": "req-2",
+          "selection_source": "carryover_cache",
+          "paper_id": "2606.04705v1",
+          "carry_days": 1
+        }
+      ]
     }
   }
 }

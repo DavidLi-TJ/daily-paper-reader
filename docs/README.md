@@ -6,87 +6,71 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-07 ~ 2026-06-05
-- 运行时间：2026-06-05 17:41:04 UTC
+- 最新运行日期：2026-06-05
+- 运行时间：2026-06-05 21:45:07 UTC
 - 运行状态：成功
-- 本次总论文数：22
-- 精读区：0
-- 速读区：22
+- 本次总论文数：17
+- 精读区：6
+- 速读区：11
 
 ### 今日简报（AI）
-今日推荐22篇论文，速读3篇，以无标注图像边界检测和高性能语义分割为亮点。最值得关注的是《Rate-optimal neural boundary detection from unlabeled noisy images》（9.0分）和两篇语义分割方法《Prompt-Free and Efficient SAM2 Adaptation》与《UniD-Shift》。建议优先精读边界检测论文，掌握无监督学习前沿，再对比两种分割策略的适用场景。
-- 详情：[/20260507-20260605/README](/20260507-20260605/README)
+今日精读6篇论文，重点关注越野环境语义分割分布偏移缓解与无监督语义分割模型理解。 最值得关注的方向：如何应对野外环境语义分割中的分布偏移，以及无标签语义分割如何提升模型可解释性。 建议后续关注低光照条件下语义分割的适应性融合方法，如IAF-Net的思路。
+- 详情：[/202606/05/README](/202606/05/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [How to Relieve Distribution Shifts in Semantic Segmentation for Off-Road Environments](/202606/05/2605.29599v1-how-to-relieve-distribution-shifts-in-semantic-segmentation-for-off-road-environments)  
+   标签：评分：9.0/10、query:raw-seg
+   evidence：越野环境语义分割处理分布偏移
+2. [Unsupervised Semantic Segmentation Facilitates Model Understanding](/202606/05/2605.29691v1-unsupervised-semantic-segmentation-facilitates-model-understanding)  
+   标签：评分：9.0/10、query:raw-seg
+   evidence：无监督语义分割方法，直接对应深度学习语义分割
+3. [Rethinking Efficient Crack Segmentation with Task-Aligned Structural-Directional Modeling](/202606/05/2605.31048v1-rethinking-efficient-crack-segmentation-with-task-aligned-structural-directional-modeling)  
+   标签：评分：9.0/10、query:raw-seg
+   evidence：裂缝分割的深度学习方法
+4. [SWARD: Stochastic Window-Attention-Based Relational Distillation for Cross-Architectural Semantic Segmentation](/202606/05/2606.00999v1-sward-stochastic-window-attention-based-relational-distillation-for-cross-architectural-semantic-segmentation)  
+   标签：评分：9.0/10、query:raw-seg
+   evidence：语义分割的知识蒸馏；跨架构模型压缩
+5. [Weakly Supervised Incremental Segmentation via Semantic Anchors and Spatial Arbitration](/202606/05/2606.04060v1-weakly-supervised-incremental-segmentation-via-semantic-anchors-and-spatial-arbitration)  
+   标签：评分：9.0/10、query:raw-seg
+   evidence：弱监督增量语义分割，对应语义分割任务
+6. [FlowSeg: Dynamic Semantic Guidance for LLM-Conditioned Segmentation](/202606/05/2605.29461v1-flowseg-dynamic-semantic-guidance-for-llm-conditioned-segmentation)  
+   标签：评分：8.0/10、query:raw-seg
+   evidence：大语言模型条件语义分割的动态语义引导
 
 ### 速读区论文标签
-1. [Rate-optimal neural boundary detection from unlabeled noisy images](/20260507-20260605/2606.00715v1-rate-optimal-neural-boundary-detection-from-unlabeled-noisy-images)  
-   标签：评分：9.0/10、query:raw-seg
-   evidence：原始图像语义分割通过边界检测
-2. [Prompt-Free and Efficient SAM2 Adaptation for Biomedical Semantic Segmentation via Dual Adapters](/20260507-20260605/2605.05979v1-prompt-free-and-efficient-sam2-adaptation-for-biomedical-semantic-segmentation-via-dual-adapters)  
+1. [Energy-Aware NECO for Single-Pass Pixel-wise Out-of-Distribution Detection in Semantic Segmentation](/202606/05/2605.29773v1-energy-aware-neco-for-single-pass-pixel-wise-out-of-distribution-detection-in-semantic-segmentation)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：深度学生物医学语义分割与SAM2适配
-3. [UniD-Shift: Towards Unified Semantic Segmentation via Interpretable Share-Private Multimodal Decomposition](/20260507-20260605/2605.07356v1-unid-shift-towards-unified-semantic-segmentation-via-interpretable-share-private-multimodal-decomposition)  
+   evidence：语义分割的像素级OOD检测
+2. [SwInception -- Local Attention Meets Convolutions](/202606/05/2605.29954v1-swinception----local-attention-meets-convolutions)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习2D-3D语义分割
-4. [USEMA: a Scalable Efficient Mamba Like Attention for Medical Image Segmentation](/20260507-20260605/2605.11131v1-usema-a-scalable-efficient-mamba-like-attention-for-medical-image-segmentation)  
+   evidence：结合Swin和Inception的医学体积分割架构
+3. [IAF-Net: Illumination-Adaptive Fusion for Low-Light Urban Road Segmentation](/202606/05/2605.30939v1-iaf-net-illumination-adaptive-fusion-for-low-light-urban-road-segmentation)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习医学图像分割
-5. [Weakly Supervised Segmentation as Semantic-Based Regularization](/20260507-20260605/2605.13674v1-weakly-supervised-segmentation-as-semantic-based-regularization)  
+   evidence：低光照条件下语义道路分割的光照自适应融合
+4. [BiSegMamba: Efficient Bidirectional Tri-Oriented Mamba for 3D Medical Image Segmentation](/202606/05/2605.30972v1-bisegmamba-efficient-bidirectional-tri-oriented-mamba-for-3d-medical-image-segmentation)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：弱监督语义分割的神经符号正则化
-6. [Med-DisSeg: Dispersion-Driven Representation Learning for Fine-Grained Medical Image Segmentation](/20260507-20260605/2605.14579v1-med-disseg-dispersion-driven-representation-learning-for-fine-grained-medical-image-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：色散驱动的医学图像分割表示学习
-7. [Deep Image Segmentation via Discriminant Feature Learning](/20260507-20260605/2605.14609v1-deep-image-segmentation-via-discriminant-feature-learning)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：用于分割的判别特征学习的架构无关损失函数
-8. [UniTriGen: Unified Triplet Generation of Aligned Visible-Infrared-Label for Few-Shot RGB-T Semantic Segmentation](/20260507-20260605/2605.14626v1-unitrigen-unified-triplet-generation-of-aligned-visible-infrared-label-for-few-shot-rgb-t-semantic-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习用于RGB-T语义分割
-9. [Vision Transformer-Conditioned UNet for Domain-Adaptive Semantic Segmentation](/20260507-20260605/2605.16393v1-vision-transformer-conditioned-unet-for-domain-adaptive-semantic-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：使用ViT和UNet的域自适应语义分割
-10. [WOW-Seg: A Word-free Open World Segmentation Model](/20260507-20260605/2605.16903v1-wow-seg-a-word-free-open-world-segmentation-model)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习开放世界图像分割
-11. [Patch-MoE Mamba: A Patch-Ordered Mixture-of-Experts State Space Architecture for Medical Image Segmentation](/20260507-20260605/2605.17719v1-patch-moe-mamba-a-patch-ordered-mixture-of-experts-state-space-architecture-for-medical-image-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学生医学图像分割结合Mamba和MoE
-12. [Token-Space Mask Prediction for Efficient Vision Transformer Segmentation](/20260507-20260605/2605.18177v1-token-space-mask-prediction-for-efficient-vision-transformer-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习视觉Transformer分割
-13. [Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](/20260507-20260605/2605.19340v1-selective-regularized-and-calibrated-harnessing-vision-foundation-models-for-cross-domain-few-shot-semantic-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：利用基础模型进行跨域少样本语义分割
-14. [ConvNeXt-FD: A Fractal-Based Deep Model for Robust Biomedical Image Segmentation](/20260507-20260605/2605.22002v1-convnext-fd-a-fractal-based-deep-model-for-robust-biomedical-image-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：用于生物医学图像分割的深度学习架构
-15. [SkySeg: Collaborative Onboard Semantic Segmentation with Heterogeneous UAVs in the Wild](/20260507-20260605/2605.24014v1-skyseg-collaborative-onboard-semantic-segmentation-with-heterogeneous-uavs-in-the-wild)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：无人机上的深度学习语义分割
-16. [CLIP-Guided SAM: Parameter-Efficient Semantic Conditioning for Promptable Segmentation](/20260507-20260605/2605.24807v1-clip-guided-sam-parameter-efficient-semantic-conditioning-for-promptable-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习可提示分割与CLIP
-17. [D3S2: Diffusion-Guided Dataset Distillation for Semantic Segmentation](/20260507-20260605/2605.25022v1-d3s2-diffusion-guided-dataset-distillation-for-semantic-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：语义分割的数据集蒸馏
-18. [ATV-Net: Adaptive Triple-View Network with Dynamic Feature Fusion](/20260507-20260605/2605.25803v1-atv-net-adaptive-triple-view-network-with-dynamic-feature-fusion)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习CNN语义分割头
-19. [PinPoint: Prompting with Informative Interior Points](/20260507-20260605/2605.26689v1-pinpoint-prompting-with-informative-interior-points)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习指代分割与SAM
-20. [Quality-Guided Semi-Supervised Learning for Medical Image Segmentation](/20260507-20260605/2606.01753v1-quality-guided-semi-supervised-learning-for-medical-image-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习半监督医学图像分割
-21. [LALE: Lightweight-Transformer Architecture for Land-Cover Estimation](/20260507-20260605/2606.02092v1-lale-lightweight-transformer-architecture-for-land-cover-estimation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：用于遥感语义分割的轻量级Transformer架构
-22. [Implicit Fuzzification via Bounded Noise Injection for Robust Medical Image Segmentation](/20260507-20260605/2606.04427v1-implicit-fuzzification-via-bounded-noise-injection-for-robust-medical-image-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：深度学习医学图像分割与噪声注入
+   evidence：基于双向Mamba的高效3D医学图像分割
+5. [Pre-Deployment Robustness Stress Testing for CT Segmentation Systems Using Clinically Motivated Multi-Corruption Augmentation](/202606/05/2606.00491v1-pre-deployment-robustness-stress-testing-for-ct-segmentation-systems-using-clinically-motivated-multi-corruption-augmentation)  
+   标签：评分：7.0/10、query:raw-seg
+   evidence：CT分割系统的鲁棒性压力测试与数据增强
+6. [Single-Channel Tissue Segmentation via Cross-Modal Distillation from Foundation Models](/202606/05/2606.00928v1-single-channel-tissue-segmentation-via-cross-modal-distillation-from-foundation-models)  
+   标签：评分：7.0/10、query:raw-seg
+   evidence：跨模态蒸馏用于单通道组织分割
+7. [Parameter-Efficient Fine-Tuning of Large Pretrained Models for Instance Segmentation Tasks](/202606/05/2606.01947v1-parameter-efficient-fine-tuning-of-large-pretrained-models-for-instance-segmentation-tasks)  
+   标签：评分：7.0/10、query:raw-seg
+   evidence：实例分割，一种图像分割技术
+8. [ROBUST-WT: Robust Uncertainty-aware Segmentation Transform via Whitening and Training Enhancements](/202606/05/2606.03069v1-robust-wt-robust-uncertainty-aware-segmentation-transform-via-whitening-and-training-enhancements)  
+   标签：评分：7.0/10、query:raw-seg
+   evidence：基于白化变换和知识蒸馏的深度学习分割方法
+9. [Redefining Instance Matching: A Unified Framework for Part-Aware Matching in Panoptic Segmentation Evaluation](/202606/05/2605.31094v1-redefining-instance-matching-a-unified-framework-for-part-aware-matching-in-panoptic-segmentation-evaluation)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：重新定义全景分割评估中的实例匹配，与分割技术相关
+10. [GeoSAM-3D: Geodesic Prompt Propagation for Open-Vocabulary 3D Scene Segmentation from Monocular Video](/202606/05/2606.00447v1-geosam-3d-geodesic-prompt-propagation-for-open-vocabulary-3d-scene-segmentation-from-monocular-video)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：从单目视频进行3D场景分割
+11. [An Open-Source Benchmark and Baseline for Multi-temporal Referring Segmentation](/202606/05/2606.00987v1-an-open-source-benchmark-and-baseline-for-multi-temporal-referring-segmentation)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：多时相指代分割任务与基准
 
 
 <div class="dpr-home-promo-card">
