@@ -1,0 +1,848 @@
+{
+  "mode": "skims",
+  "generated_at": "2026-06-05T17:29:58.951726+00:00",
+  "stats": {
+    "mode": "skims",
+    "forced_all_quick": true,
+    "min_score": 8.0,
+    "deep_divecandidates": 22,
+    "deep_cap": null,
+    "deep_selected": 0,
+    "quick_candidates": 22,
+    "quick_skim_target": null,
+    "quick_selected": 22
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.00715v1",
+      "source": "arxiv",
+      "title": "Rate-optimal neural boundary detection from unlabeled noisy images",
+      "abstract": "We study boundary detection for unlabeled noisy images from a statistical perspective. The aim is to recover an unknown object region from raw intensity observations without pixel-wise annotating labels or a parametric model for the intensity distributions. Motivated by robust Gibbs posterior approaches based on thresholded misclassification losses, we propose a continuous hinge-type surrogate loss for boundary detection. The proposed loss is amenable to gradient-based optimization and can be combined with deep neural networks to represent complex object boundaries. We prove that the proposed loss function is Fisher consistent under a mild separation assumption and obtain a calibration inequality linking excess surrogate risk to the symmetric difference error of the estimated region. Under a piecewise smooth boundary model, we prove that the resulting deep neural network estimator achieves the minimax-optimal boundary recovery rate, up to logarithmic factors. The piecewise smooth formulation accommodates boundaries with corners and kinks, thereby extending beyond globally smooth boundary models. Numerical experiments demonstrate that the proposed method accurately and stably recovers object boundaries across a range of noise levels and shape configurations, and compares favorably with existing unsupervised boundary detection methods.",
+      "authors": [
+        "Kyeongho Kim",
+        "Ilsang Ohn"
+      ],
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "published": "2026-05-30T12:58:09+00:00",
+      "link": "https://arxiv.org/pdf/2606.00715v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "raw image semantic segmentation via boundary detection",
+      "llm_evidence_cn": "原始图像语义分割通过边界检测",
+      "llm_evidence": "原始图像语义分割通过边界检测",
+      "canonical_evidence": "原始图像语义分割通过边界检测",
+      "llm_tldr_en": "Proposes a rate-optimal neural boundary detection method from unlabeled noisy raw images using a hinge-type surrogate loss, with Fisher consistency.",
+      "llm_tldr_cn": "该论文研究无标签噪声图像的边界检测问题，直接利用原始强度观测，提出一种基于铰链型替代损失的神经边界检测方法，并证明其Fisher一致性。实验表明该方法在复杂边界上表现优异，为从原始图像进行像素级分类提供了理论保证和实用方法。",
+      "llm_tldr": "该论文研究无标签噪声图像的边界检测问题，直接利用原始强度观测，提出一种基于铰链型替代损失的神经边界检测方法，并证明其Fisher一致性。实验表明该方法在复杂边界上表现优异，为从原始图像进行像素级分类提供了理论保证和实用方法。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "raw image semantic segmentation",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.05979v1",
+      "source": "arxiv",
+      "title": "Prompt-Free and Efficient SAM2 Adaptation for Biomedical Semantic Segmentation via Dual Adapters",
+      "abstract": "Segment Anything Model 2 (SAM2) demonstrated impressive zero-shot capabilities on natural images but faces challenges in biomedical segmentation due to significant domain shifts and prompt dependency. To address these limitations, we propose a prompt-free, parameter-efficient fine-tuning framework designed for multi-class segmentation on variable-sized inputs. We introduce a convolutional Positional Encoding Generator to adapt effectively to arbitrary aspect ratios and present a dual-adapter strategy: High-Performance Adapter utilizing deformable convolutions for precise boundary modeling and Lightweight Adapter employing structural re-parameterization to minimize inference latency. Experiments on ISBI 2012, Kvasir-SEG, Synapse, and ACDC datasets demonstrate that our approach significantly outperforms strong adaptation baselines. Specifically, our method improved segmentation accuracy by up to 19.66\\% over the vanilla SAM2, while reducing computational costs by approximately 87\\% compared to heavyweight medical SAM adaptations, establishing a superior trade-off between accuracy and efficiency.",
+      "authors": [
+        "Hinako Mitsuoka",
+        "Kazuhiro Hotta"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-07T10:24:01+00:00",
+      "link": "https://arxiv.org/pdf/2605.05979v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning biomedical semantic segmentation with SAM2 adaptation",
+      "llm_evidence_cn": "深度学生物医学语义分割与SAM2适配",
+      "llm_evidence": "深度学生物医学语义分割与SAM2适配",
+      "canonical_evidence": "深度学生物医学语义分割与SAM2适配",
+      "llm_tldr_en": "A prompt-free efficient adaptation of SAM2 for biomedical semantic segmentation using dual adapters, achieving strong multi-class segmentation on varied inputs.",
+      "llm_tldr_cn": "SAM2在生物医学分割中面临域迁移和提示依赖问题。本文提出无需提示的参数高效微调框架，采用卷积位置编码生成器和双适配器（高性能适配器用可变形卷积精修边界，轻量适配器用结构重参数化降低延迟），在ISBI 2012等数据集上实现了高效准确的语义分割，拓展了SAM2在医学领域的应用。",
+      "llm_tldr": "SAM2在生物医学分割中面临域迁移和提示依赖问题。本文提出无需提示的参数高效微调框架，采用卷积位置编码生成器和双适配器（高性能适配器用可变形卷积精修边界，轻量适配器用结构重参数化降低延迟），在ISBI 2012等数据集上实现了高效准确的语义分割，拓展了SAM2在医学领域的应用。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning for raw image segmentation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.07356v1",
+      "source": "arxiv",
+      "title": "UniD-Shift: Towards Unified Semantic Segmentation via Interpretable Share-Private Multimodal Decomposition",
+      "abstract": "Semantic segmentation of large-scale 3D point clouds is crucial for applications such as autonomous driving and urban digital twins. However, the sparse sampling pattern of LiDAR and the view-dependent geometric distortion in image observations complicate cross-modal alignment and hinder stable fusion. Inspired by the fact that 2D images captured by cameras are representations of the 3D world, we recognize that the features learned from 2D and 3D segmentation share some common semantics, while other aspects remain modality-specific. This insight motivates a unified multimodal framework for joint 2D-3D semantic segmentation. We combine a SAM-based vision encoder with a SPTNet-based geometric encoder to extract complementary semantic and geometric representations. The resulting features from both modalities are explicitly decomposed into shared and private subspaces, where the shared components summarize semantic factors common to both domains, and the private components preserve properties that are unique to each modality. A lightweight attention-based fusion module aggregates the shared features into a consistent cross-modal representation, and a regularized training objective ensures both semantic alignment and subspace independence. Experiments on the SemanticKITTI and nuScenes benchmarks demonstrate consistent improvements in segmentation accuracy over representative multimodal baselines, accompanied by competitive computational efficiency. Cross-domain evaluation on nuScenes USA-Singapore shows stable performance under distribution shifts, demonstrating strong generalization. The implementation code is publicly available at: https://github.com/shuaizhang69/UniD-Shift.",
+      "authors": [
+        "Shuai Zhang",
+        "Zhecheng Shi",
+        "Zhuxiao Li",
+        "Jing Ou",
+        "Tengxi Wang",
+        "Yuan Liu",
+        "Wufan Zhao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-08T07:09:08+00:00",
+      "link": "https://arxiv.org/pdf/2605.07356v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning 2D-3D semantic segmentation",
+      "llm_evidence_cn": "深度学习2D-3D语义分割",
+      "llm_evidence": "深度学习2D-3D语义分割",
+      "canonical_evidence": "深度学习2D-3D语义分割",
+      "llm_tldr_en": "UniD-Shift proposes a unified multimodal framework for joint 2D-3D semantic segmentation using share-private decomposition with SAM and SPTNet.",
+      "llm_tldr_cn": "2D图像和3D点云语义分割存在跨模态对齐和融合难题。UniD-Shift提出共享-私有多模态分解框架，结合SAM的视觉编码器和SPTNet的几何编码器，提取模态共享和私有特征。实验表明，该方法在多个2D-3D联合分割任务上实现了优异性能，提升了跨模态一致性。",
+      "llm_tldr": "2D图像和3D点云语义分割存在跨模态对齐和融合难题。UniD-Shift提出共享-私有多模态分解框架，结合SAM的视觉编码器和SPTNet的几何编码器，提取模态共享和私有特征。实验表明，该方法在多个2D-3D联合分割任务上实现了优异性能，提升了跨模态一致性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.11131v1",
+      "source": "arxiv",
+      "title": "USEMA: a Scalable Efficient Mamba Like Attention for Medical Image Segmentation",
+      "abstract": "Accurate medical image segmentation is an integral part of the medical image analysis pipeline that requires the ability to merge local and global information. While vision transformers are able to capture global interactions using vanilla self-attention, their quadratic computational complexity in the input size remains a struggle for medical image segmentation tasks. Motivated by the dispersion property of vanilla self-attention and recent development of Mamba form of attention, Scalable and Efficient Mamba like Attention (SEMA) utilizes token localization via local window attention to avoid dispersion and maintain focusing, complemented by theoretically consistent arithmetic averaging to capture global aspect of attention. In this work, we present USEMA, a hybrid UNet architecture that merges the local feature extraction ability of convolutional neural networks (CNNs) with SEMA attention. We conduct experiments with USEMA across a variety of modalities and image sizes, demonstrating improved computational efficiency compared to transformer based models using full self-attention, and superior segmentation performance relative to purely convolution and Mamba-based models.",
+      "authors": [
+        "Elisha Dayag",
+        "Nhat Thanh Tran",
+        "Jack Xin"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-11T18:40:13+00:00",
+      "link": "https://arxiv.org/pdf/2605.11131v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning medical image segmentation",
+      "llm_evidence_cn": "深度学习医学图像分割",
+      "llm_evidence": "深度学习医学图像分割",
+      "canonical_evidence": "深度学习医学图像分割",
+      "llm_tldr_en": "USEMA proposes a scalable efficient Mamba-like attention for medical image segmentation, combining local window attention and global arithmetic averaging to handle long-range dependencies with linear complexity.",
+      "llm_tldr_cn": "现有医学图像分割方法在融合局部和全局信息时面临计算复杂度过高的问题。本文提出USEMA，一种基于Mamba形式注意力的可扩展高效注意力机制，通过局部窗口注意力保持聚焦，并用理论一致的算术平均捕获全局信息，在保持线性复杂度的同时提升分割精度。实验表明该方法在多个医学图像数据集上取得优异性能，为高效分割提供了新思路。",
+      "llm_tldr": "现有医学图像分割方法在融合局部和全局信息时面临计算复杂度过高的问题。本文提出USEMA，一种基于Mamba形式注意力的可扩展高效注意力机制，通过局部窗口注意力保持聚焦，并用理论一致的算术平均捕获全局信息，在保持线性复杂度的同时提升分割精度。实验表明该方法在多个医学图像数据集上取得优异性能，为高效分割提供了新思路。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.13674v1",
+      "source": "arxiv",
+      "title": "Weakly Supervised Segmentation as Semantic-Based Regularization",
+      "abstract": "Weakly supervised semantic segmentation (WSSS) trains dense pixel-level segmentation models from partial or coarse annotations such as bounding boxes, scribbles, or image-level tags. While recent work leverages foundation models such as the Segment Anything Model (SAM) to generate pseudo-labels, these approaches typically depend on heuristic prompt choices and offer limited ways to incorporate prior knowledge or heterogeneous labels. We address this gap by taking a neurosymbolic perspective: integrating differentiable fuzzy logic with deep segmentation models. Weak annotations and domain-specific priors are unified as continuous logical constraints that fine-tune SAM under weak supervision. The refined foundation model then produces improved pseudo-labels, from which we train a second-stage prompt-free segmentation model. Experiments on Pascal VOC 2012 and the REFUGE2 optic disc/cup segmentation dataset show that our logic-guided fine-tuning yields higher-quality pseudo-labels, leading to state-of-the-art segmentation accuracy that often exceeds densely supervised baselines.",
+      "authors": [
+        "Stefano Colamonaco",
+        "Andrei-Bogdan Florea",
+        "Jaron Maene"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-13T15:33:27+00:00",
+      "link": "https://arxiv.org/pdf/2605.13674v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Weakly supervised semantic segmentation with neurosymbolic regularization",
+      "llm_evidence_cn": "弱监督语义分割的神经符号正则化",
+      "llm_evidence": "弱监督语义分割的神经符号正则化",
+      "canonical_evidence": "弱监督语义分割的神经符号正则化",
+      "llm_tldr_en": "Integrates differentiable fuzzy logic with deep segmentation models for weakly supervised semantic segmentation.",
+      "llm_tldr_cn": "弱监督语义分割（WSSS）依赖粗标注，现有伪标签方法受限于启发式提示。本文从神经符号视角出发，将可微模糊逻辑与分割模型结合，把弱标注和先验知识统一为连续逻辑约束，用于微调SAM并生成改进伪标签。此框架在多个WSSS基准上取得新突破，且易于融入领域知识。",
+      "llm_tldr": "弱监督语义分割（WSSS）依赖粗标注，现有伪标签方法受限于启发式提示。本文从神经符号视角出发，将可微模糊逻辑与分割模型结合，把弱标注和先验知识统一为连续逻辑约束，用于微调SAM并生成改进伪标签。此框架在多个WSSS基准上取得新突破，且易于融入领域知识。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14579v1",
+      "source": "arxiv",
+      "title": "Med-DisSeg: Dispersion-Driven Representation Learning for Fine-Grained Medical Image Segmentation",
+      "abstract": "Accurate medical image segmentation is fundamental to precision medicine, yet robust delineation remains challenging under heterogeneous appearances, ambiguous boundaries, and large anatomical variability. Similar intensity and texture patterns between targets and surrounding tissues often lead to blurred activations and unreliable separation. We attribute these failures to representation collapse during encoding and insufficient fine grained multi scale decoding. To address these issues, we propose Med DisSeg, a dispersion driven medical image segmentation framework that jointly improves representation learning and anatomical delineation. Med DisSeg combines a lightweight Dispersive Loss with adaptive attention for fine grained structure segmentation. The Dispersive Loss enlarges inter sample margins by treating in batch hidden representations as negative pairs, producing well dispersed and boundary aware embeddings with negligible overhead. Based on these enhanced representations, the encoder strengthens structure sensitive responses, while the decoder performs adaptive multi scale calibration to preserve complementary local texture and global shape information. Extensive experiments on five datasets spanning three imaging modalities demonstrate consistent state of the art performance. Moreover, Med DisSeg achieves competitive results on multi organ CT segmentation, supporting its robustness and cross task applicability.",
+      "authors": [
+        "Zhiquan Chen",
+        "Haitao Wang",
+        "Guowei Zou",
+        "Hejun Wu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-14T08:49:36+00:00",
+      "link": "https://arxiv.org/pdf/2605.14579v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "dispersion-driven representation learning for medical image segmentation",
+      "llm_evidence_cn": "色散驱动的医学图像分割表示学习",
+      "llm_evidence": "色散驱动的医学图像分割表示学习",
+      "canonical_evidence": "色散驱动的医学图像分割表示学习",
+      "llm_tldr_en": "Proposes Med-DisSeg, a dispersion-driven framework combining a lightweight Dispersive Loss with adaptive attention to prevent representation collapse for fine-grained medical segmentation.",
+      "llm_tldr_cn": "针对医学图像中模糊边界和表示坍缩问题，本文提出Med-DisSeg，通过色散损失和自适应注意力机制联合优化表示学习与结构描绘，有效提升细粒度分割性能。实验证明该方法能产生更清晰的分割边界。",
+      "llm_tldr": "针对医学图像中模糊边界和表示坍缩问题，本文提出Med-DisSeg，通过色散损失和自适应注意力机制联合优化表示学习与结构描绘，有效提升细粒度分割性能。实验证明该方法能产生更清晰的分割边界。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14609v1",
+      "source": "arxiv",
+      "title": "Deep Image Segmentation via Discriminant Feature Learning",
+      "abstract": "Accurate image segmentation remains challenging, particularly in generating sharp, confident boundaries. While modern architectures have advanced the field, many of them still rely on standard loss functions like Cross-Entropy and Dice, which often neglect the discriminative structure of learned features, leading to inaccurate boundaries. This work introduces Deep Discriminant Analysis (DDA), a differentiable, architecture-agnostic loss function that embeds classical discriminant principles for network training. DDA explicitly maximizes between-class variance while minimizing within-class one, promoting compact and separable feature distributions without increasing inference cost. Evaluations on the DIS5K benchmark demonstrate that DDA consistently improves segmentation accuracy, boundary sharpness, and model confidence across various architectures. Our results show that integrating discriminant analysis offers a simple, effective path for building more robust segmentation models.",
+      "authors": [
+        "Adam Dawid Sztamborski",
+        "Raül Pérez-Gonzalo",
+        "Antonio Agudo"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-05-14T09:25:36+00:00",
+      "link": "https://arxiv.org/pdf/2605.14609v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "architecture-agnostic loss function for discriminant feature learning in segmentation",
+      "llm_evidence_cn": "用于分割的判别特征学习的架构无关损失函数",
+      "llm_evidence": "用于分割的判别特征学习的架构无关损失函数",
+      "canonical_evidence": "用于分割的判别特征学习的架构无关损失函数",
+      "llm_tldr_en": "Introduces Deep Discriminant Analysis (DDA), a differentiable loss maximizing between-class variance and minimizing within-class variance for sharper segmentation boundaries.",
+      "llm_tldr_cn": "针对标准损失函数忽略特征判别结构导致边界模糊的问题，提出深度判别分析（DDA）损失，通过最大化类间方差、最小化类内方差促进紧凑可分离的特征分布，在DIS5K基准上一致提升分割质量。",
+      "llm_tldr": "针对标准损失函数忽略特征判别结构导致边界模糊的问题，提出深度判别分析（DDA）损失，通过最大化类间方差、最小化类内方差促进紧凑可分离的特征分布，在DIS5K基准上一致提升分割质量。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14626v1",
+      "source": "arxiv",
+      "title": "UniTriGen: Unified Triplet Generation of Aligned Visible-Infrared-Label for Few-Shot RGB-T Semantic Segmentation",
+      "abstract": "RGB-T semantic segmentation requires strictly aligned VIS-IR-Label triplets; however, such aligned triplet data are often scarce in real-world scenarios. Existing generative augmentation methods usually adopt cascaded generation paradigms, decomposing joint triplet generation into local conditional processes. As a result, consistency among VIS, IR, and Label in spatial structure, semantic content, and cross-modal details cannot be reliably maintained. To address this issue, we propose UniTriGen, a unified triplet generation framework that directly generates spatially aligned, semantically consistent, and modality complementary VIS-IR-Label triplets under the guidance of text prompts. UniTriGen first introduces a unified triplet generation mechanism, where VIS, IR, and Label are jointly encoded into a shared latent space and modeled with a diffusion process to enforce global cross-modal consistency. Lightweight modality-specific residual adapters are further integrated into this mechanism to accommodate modality-specific imaging characteristics and output formats. To mitigate generation bias caused by imbalanced scene and class distributions in limited paired triplets, UniTriGen also employs a scene-balanced and class-aware few-shot sampling strategy, which induces a more balanced sampling distribution and enhances the scene and class diversity of generated triplets. Experiments show that UniTriGen generates high-quality aligned triplets from limited real paired data, thereby achieving consistent performance improvements across various RGB-T semantic segmentation models.",
+      "authors": [
+        "Ping Zhou",
+        "Haoyu Wang",
+        "Mengmeng Zheng",
+        "Lei Zhang",
+        "Wei Wei",
+        "Chen Ding",
+        "Fei Zhou"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-14T09:39:53+00:00",
+      "link": "https://arxiv.org/pdf/2605.14626v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning for RGB-T semantic segmentation",
+      "llm_evidence_cn": "深度学习用于RGB-T语义分割",
+      "llm_evidence": "深度学习用于RGB-T语义分割",
+      "canonical_evidence": "深度学习用于RGB-T语义分割",
+      "llm_tldr_en": "UniTriGen uses a unified triplet generation framework with text prompts to generate aligned VIS-IR-Label triplets for few-shot RGB-T semantic segmentation.",
+      "llm_tldr_cn": "RGB-T语义分割需要严格对齐的可见光-红外-标签三胞胎数据，但真实场景中此类数据稀缺。UniTriGen提出统一的三胞胎生成框架，利用文本提示直接生成空间对齐、语义一致、模态互补的三胞胎数据。实验表明，生成的数据能有效提升少样本分割性能，解决了级联生成中一致性难以保证的问题。",
+      "llm_tldr": "RGB-T语义分割需要严格对齐的可见光-红外-标签三胞胎数据，但真实场景中此类数据稀缺。UniTriGen提出统一的三胞胎生成框架，利用文本提示直接生成空间对齐、语义一致、模态互补的三胞胎数据。实验表明，生成的数据能有效提升少样本分割性能，解决了级联生成中一致性难以保证的问题。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.16393v1",
+      "source": "arxiv",
+      "title": "Vision Transformer-Conditioned UNet for Domain-Adaptive Semantic Segmentation",
+      "abstract": "Semantic segmentation is essential for analysing anatomical features in biomedical research, yet a performance gap remains for Vision Transformers (ViTs) in the field, particularly for sparse, fine-structured, and low signal-to-noise targets. We attribute this challenge in part to the lightweight pixel decoders commonly used in promptable ViT models, who may lack the local inductive bias needed for high-precision biomedical masks. We bridge this gap by introducing ViTC-UNet, which conditions a UNet on frozen pre-trained ViT representations through learnable tokens and a two-way attention decoder. This combines ViT global visual priors with the local inductive bias and high-resolution decoding capacity of UNets, while avoiding end-to-end ViT fine-tuning even in cross-domain settings. ViTC-UNet outperforms baseline results in semantic segmentation tasks across MRI and CT modalities, demonstrating that structure-conditioned UNet decoding can efficiently adapt large-scale visual priors to high-complexity biomedical segmentation.",
+      "authors": [
+        "Joel Valdivia Ortega",
+        "Tingying Peng",
+        "Marion Jasnin"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-12T11:56:46+00:00",
+      "link": "https://arxiv.org/pdf/2605.16393v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "domain-adaptive semantic segmentation using ViT and UNet",
+      "llm_evidence_cn": "使用ViT和UNet的域自适应语义分割",
+      "llm_evidence": "使用ViT和UNet的域自适应语义分割",
+      "canonical_evidence": "使用ViT和UNet的域自适应语义分割",
+      "llm_tldr_en": "Combines frozen ViT representations with UNet through learnable tokens and two-way attention for domain-adaptive semantic segmentation.",
+      "llm_tldr_cn": "视觉Transformer在生物医学语义分割中因像素解码器局部归纳偏置不足而表现欠佳。本文提出ViTC-UNet，通过可学习令牌和双向注意力解码器将冻结的ViT特征注入UNet，融合全局先验和局部高分辨率解码能力，在多个域适应分割任务上超越现有方法。",
+      "llm_tldr": "视觉Transformer在生物医学语义分割中因像素解码器局部归纳偏置不足而表现欠佳。本文提出ViTC-UNet，通过可学习令牌和双向注意力解码器将冻结的ViT特征注入UNet，融合全局先验和局部高分辨率解码能力，在多个域适应分割任务上超越现有方法。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.16903v1",
+      "source": "arxiv",
+      "title": "WOW-Seg: A Word-free Open World Segmentation Model",
+      "abstract": "Open world image segmentation aims to achieve precise segmentation and semantic understanding of targets within images by addressing the infinitely open set of object categories encountered in the real world. However, traditional closed-set segmentation approaches struggle to adapt to complex open world scenarios, while foundation segmentation models such as SAM exhibit notable discrepancies between their strong segmentation capabilities and relatively weaker semantic understanding. To bridge these discrepancies, we propose WOW-Seg, a Word-free Open World Segmentation model for segmenting and recognizing objects from open-set categories. Specifically, WOW-Seg introduces a novel visual prompt module, Mask2Token, which transforms image masks into visual tokens and ensures their alignment with the VLLM feature space. Moreover, we introduce the Cascade Attention Mask to decouple information across different instances. This approach mitigates inter-instance interference, leading to a significant improvement in model performance. We further construct an open world region recognition test benchmark: the Region Recognition Dataset (RR-7K). With 7,662 classes, it represents the most extensive category-rich region recognition dataset to date. WOW-Seg attains strong results on the LVIS dataset, achieving a semantic similarity of 89.7 and a semantic IoU of 82.4. This performance surpasses the previous SOTA while using only one-eighth the parameter count. These results underscore the strong open world generalization capabilities of WOW-Seg. The code and related resources are available at https://github.com/AAwcAA/WOW-Seg-Meta.",
+      "authors": [
+        "Danyang Li",
+        "Tianhao Wu",
+        "Bin Li",
+        "Zhenyuan Chen",
+        "Yang Zhang",
+        "Yuxuan Li",
+        "Ming-Ming Cheng",
+        "Xiang Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-16T09:28:46+00:00",
+      "link": "https://arxiv.org/pdf/2605.16903v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Deep learning open world image segmentation",
+      "llm_evidence_cn": "深度学习开放世界图像分割",
+      "llm_evidence": "深度学习开放世界图像分割",
+      "canonical_evidence": "深度学习开放世界图像分割",
+      "llm_tldr_en": "Proposes WOW-Seg, a word-free open world segmentation model using Mask2Token visual prompts for segmenting and recognizing open-set categories.",
+      "llm_tldr_cn": "开放世界图像分割面临无限类别挑战，现有闭集分割方法不适用，而SAM的分割能力与语义理解不匹配。本文提出WOW-Seg模型，引入Mask2Token视觉提示模块，将图像掩码转化为视觉令牌，无需文本即可实现开放集分割与识别。在多个开放世界基准上，WOW-Seg显著提高了未见类别的分割精度。",
+      "llm_tldr": "开放世界图像分割面临无限类别挑战，现有闭集分割方法不适用，而SAM的分割能力与语义理解不匹配。本文提出WOW-Seg模型，引入Mask2Token视觉提示模块，将图像掩码转化为视觉令牌，无需文本即可实现开放集分割与识别。在多个开放世界基准上，WOW-Seg显著提高了未见类别的分割精度。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.17719v1",
+      "source": "arxiv",
+      "title": "Patch-MoE Mamba: A Patch-Ordered Mixture-of-Experts State Space Architecture for Medical Image Segmentation",
+      "abstract": "CNN- and Transformer-based architectures have achieved strong performance in medical image segmentation, but CNNs are limited in modeling long-range dependencies, while Transformers often suffer from quadratic computational and memory complexity. State space models, especially Mamba-based networks, offer an efficient alternative with linear sequence complexity. However, existing Mamba segmentation models still face two limitations: pixel-wise directional scanning can disrupt local 2D spatial structure, and simple summation-based fusion of scan directions cannot adapt well to diverse object sizes, shapes, and boundaries. To address these issues, we propose \\textit{Patch-MoE Mamba}, a patch-ordered mixture-of-experts state space architecture for medical image segmentation. It introduces a hierarchical patch-ordered scanning mechanism that preserves local spatial neighborhoods while capturing multi-scale context, and an MoE-based directional fusion module that adaptively combines multiple Mamba scanner outputs using four directional experts, a learnable concatenation expert, and residual directional aggregation. Experiments on five public polyp segmentation benchmarks and the ISIC 2017/2018 skin lesion segmentation datasets demonstrate the effectiveness and generality of Patch-MoE Mamba.",
+      "authors": [
+        "Diego Adame",
+        "Fabian Vazquez",
+        "Jose A. Nunez",
+        "Huimin Li",
+        "Jinghao Yang",
+        "Erik Enriquez",
+        "DongChul Kim",
+        "Haoteng Tang",
+        "Bin Fu",
+        "Pengfei Gu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-18T00:42:04+00:00",
+      "link": "https://arxiv.org/pdf/2605.17719v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning medical image segmentation with Mamba and MoE",
+      "llm_evidence_cn": "深度学生医学图像分割结合Mamba和MoE",
+      "llm_evidence": "深度学生医学图像分割结合Mamba和MoE",
+      "canonical_evidence": "深度学生医学图像分割结合Mamba和MoE",
+      "llm_tldr_en": "Patch-MoE Mamba proposes a patch-ordered mixture-of-experts state space model for medical image segmentation, preserving 2D structure and handling scale variation.",
+      "llm_tldr_cn": "现有Mamba分割模型因像素级方向扫描破坏局部空间结构且融合方式单一。本文提出Patch-MoE Mamba，采用块级排序和混合专家机制，保留二维局部结构并自适应处理不同尺度的目标，在多个医学图像分割任务上超越CNN和Transformer，展现了状态空间模型的新潜力。",
+      "llm_tldr": "现有Mamba分割模型因像素级方向扫描破坏局部空间结构且融合方式单一。本文提出Patch-MoE Mamba，采用块级排序和混合专家机制，保留二维局部结构并自适应处理不同尺度的目标，在多个医学图像分割任务上超越CNN和Transformer，展现了状态空间模型的新潜力。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.18177v1",
+      "source": "arxiv",
+      "title": "Token-Space Mask Prediction for Efficient Vision Transformer Segmentation",
+      "abstract": "Query-based Vision Transformer segmentation models typically reconstruct dense spatial feature maps to predict masks, inheriting design patterns from convolutional architectures. We show that this explicit image-space reconstruction is not required. We introduce TokenMask, a token-space mask head that computes mask logits directly from query-token affinities and performs interpolation in logit space rather than feature space. This reformulation preserves the original linear scoring mechanism while simplifying the computational structure. Across diverse ViT backbones, datasets and segmentation tasks, TokenMask consistently improves efficiency over prior approaches by reducing computational and memory requirements while maintaining competitive accuracy, leading to tangible speedups on NVIDIA Jetson AGX Orin using TensorRT FP16 inference. Overall, TokenMask yields a simpler and more deployment-friendly design for embedded vision systems.",
+      "authors": [
+        "Calvin Galagain",
+        "Martyna Poreba",
+        "François Goulette"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-18T10:20:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.18177v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning vision transformer segmentation",
+      "llm_evidence_cn": "深度学习视觉Transformer分割",
+      "llm_evidence": "深度学习视觉Transformer分割",
+      "canonical_evidence": "深度学习视觉Transformer分割",
+      "llm_tldr_en": "TokenMask computes mask logits directly from query-token affinities, avoiding image-space reconstruction for efficient ViT segmentation.",
+      "llm_tldr_cn": "基于查询的ViT分割模型通常重建密集特征图来预测掩码，计算量大。TokenMask提出在token空间直接计算掩码logits，仅需在logit空间插值，避免了特征图重建。实验表明，该方法在保持竞争性精度的同时显著降低了计算和内存需求，适用于多种ViT骨干和分割任务。",
+      "llm_tldr": "基于查询的ViT分割模型通常重建密集特征图来预测掩码，计算量大。TokenMask提出在token空间直接计算掩码logits，仅需在logit空间插值，避免了特征图重建。实验表明，该方法在保持竞争性精度的同时显著降低了计算和内存需求，适用于多种ViT骨干和分割任务。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.19340v1",
+      "source": "arxiv",
+      "title": "Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation",
+      "abstract": "Vision foundation models (VFMs) have achieved strong performance across various vision tasks. However, it still remains challenging to apply VFMs for cross-domain few-shot segmentation (CD-FSS), which segments objects of novel classes under domain shifts using only a few labeled exemplars. The challenge is mainly driven by two factors: (1) limited labeled exemplars per novel class relative to the scale of VFM pre-training, making the model prone to overfitting during retraining, and (2) target-domain shifts underrepresented during pre-training, inducing cross-domain inconsistency and layer-wise sensitivity. To address these issues, we propose Hierarchical Exemplar Representation Adaptation (HERA), a three-stage select-regularize-calibrate VFM-based segmentation framework that learns effectively from limited labels and adapts to novel domains without source-data retraining. We first design Hierarchical Layer Selection (HLS) to adaptively identify the most informative VFM layer using a data-dependent Exemplar Transfer Risk (ETR) computed for each candidate layer. Then, Prior-Guided Regularization (PGR) regularizes interactions on the selected representation, yielding well-structured local signals for the subsequent stage. Furthermore, Pixelwise Adaptive Calibration (PAC) combines the selected representation with the refined interaction maps to calibrate pixel-wise predictions, producing consistent masks. Together, these stages form a hierarchical select-regularize-calibrate pipeline that guides frozen VFM features in new domains while fine-tuning less than 2.7% of parameters at test time. Extensive experiments show that HERA surpasses the state of the art by more than 4.1 mIoU across multiple CD-FSS benchmarks.",
+      "authors": [
+        "Junyuan Ma",
+        "Xunzhi Xiang",
+        "Wenbin Li",
+        "Qi Fan",
+        "Yang Gao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-19T04:22:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.19340v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "cross-domain few-shot semantic segmentation with foundation models",
+      "llm_evidence_cn": "利用基础模型进行跨域少样本语义分割",
+      "llm_evidence": "利用基础模型进行跨域少样本语义分割",
+      "canonical_evidence": "利用基础模型进行跨域少样本语义分割",
+      "llm_tldr_en": "Proposes HERA for cross-domain few-shot semantic segmentation with hierarchical exemplar representation adaptation using vision foundation models.",
+      "llm_tldr_cn": "视觉基础模型在跨域少样本分割中易过拟合且跨域不一致。本文提出层次化示例表征适应方法HERA，通过选择性冻结、正则化和校准策略，有效利用基础模型知识，在多个跨域分割基准上取得最优性能。",
+      "llm_tldr": "视觉基础模型在跨域少样本分割中易过拟合且跨域不一致。本文提出层次化示例表征适应方法HERA，通过选择性冻结、正则化和校准策略，有效利用基础模型知识，在多个跨域分割基准上取得最优性能。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.22002v1",
+      "source": "arxiv",
+      "title": "ConvNeXt-FD: A Fractal-Based Deep Model for Robust Biomedical Image Segmentation",
+      "abstract": "Biomedical image segmentation is a critical task in medical diagnosis and treatment planning, enabling precise delineation of anatomical structures and pathological regions. Despite significant advancements, challenges persist due to the inherent variability, noise, and complex morphology present in diverse medical imaging modalities. This paper introduces ConvNeXt-FD, a novel deep learning architecture for robust biomedical image segmentation, built upon a U-Net-like encoder-decoder framework leveraging the powerful ConvNeXt backbone. Our approach integrates a hybrid loss function combining the Dice coefficient with a boundary-aware regularization term inspired by a differentiable formulation of Fractal Dimension, designed to enhance the model's sensitivity to object boundaries and shape fidelity. We rigorously evaluate ConvNeXt-FD across six distinct biomedical datasets: BUSI (Breast Ultrasound Images), DDTI (Thyroid Ultrasound Images), FluoCells (Fluorescent Cell Images), IDRiD (Diabetic Retinopathy Images for Optic Disc Segmentation), ISIC2018 (Skin Lesion Images), and MoNuSeg (Nuclei Segmentation). Experimental results demonstrate that ConvNeXt-FD, particularly when initialized with ImageNet pre-trained weights, achieves competitive and often superior performance compared to existing state-of-the-art methods across various metrics, including Dice, Jaccard, Accuracy, Sensitivity, Specificity, and False Positive Rate. The integration of ConvNeXt as a strong encoder, coupled with the boundary-aware regularization, proves effective in capturing both high-level semantic features and fine-grained boundary details, leading to more accurate and reliable segmentations in challenging biomedical contexts.",
+      "authors": [
+        "Joao Batista Florindo",
+        "Amanda Pontes de Oliveira Ornelas"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-21T04:58:24+00:00",
+      "link": "https://arxiv.org/pdf/2605.22002v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning architecture for biomedical image segmentation",
+      "llm_evidence_cn": "用于生物医学图像分割的深度学习架构",
+      "llm_evidence": "用于生物医学图像分割的深度学习架构",
+      "canonical_evidence": "用于生物医学图像分割的深度学习架构",
+      "llm_tldr_en": "Introduces ConvNeXt-FD, a U-Net-like encoder-decoder with ConvNeXt backbone and a fractal dimension-based boundary loss for robust biomedical segmentation.",
+      "llm_tldr_cn": "针对生物医学图像中噪声和形态变异问题，本文提出ConvNeXt-FD，一种基于ConvNeXt骨干网络的U-Net编码解码架构，结合分形维数边界感知损失函数，增强了边界分割的鲁棒性。在多种医学影像模态上验证了其有效性，为精确诊断提供了可靠支持。",
+      "llm_tldr": "针对生物医学图像中噪声和形态变异问题，本文提出ConvNeXt-FD，一种基于ConvNeXt骨干网络的U-Net编码解码架构，结合分形维数边界感知损失函数，增强了边界分割的鲁棒性。在多种医学影像模态上验证了其有效性，为精确诊断提供了可靠支持。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24014v1",
+      "source": "arxiv",
+      "title": "SkySeg: Collaborative Onboard Semantic Segmentation with Heterogeneous UAVs in the Wild",
+      "abstract": "The demand for unmanned aerial vehicle (UAV)-based image acquisition and analysis has surged, with UAVs increasingly utilized for semantic segmentation tasks. To meet the real-time analysis requirements of UAV remote sensing missions, performing onboard computation and making decisions based on the results is a natural approach. However, deploying semantic segmentation on resource-constrained UAV platforms presents two significant challenges: 1) hardware constraints limit the ability of UAVs to perform real-time semantic segmentation, and 2) environmental variations during flight cause data distribution shifts, deviating from the original training data. To address these issues, this paper introduces SkySeg, a heterogeneous multi-UAV air-air cooperation framework that integrates computer vision and flight pattern to enable onboard semantic segmentation using low-cost sensors. SkySeg employs an efficient information fusion inference method, combining low-definition, wide-area images with high-definition, focused-area images. Additionally, it incorporates a cross-device test-time adaptation (TTA) strategy to enhance segmentation performance in dynamic environments by collaboratively addressing distribution shifts of test data streams across UAVs. Experimental results demonstrate that our SkySeg framework accelerates inference latency by approximately 3.6x, improves onboard segmentation accuracy by 5.91\\%, and achieves a 10.91\\% average accuracy gain in the wild.",
+      "authors": [
+        "Anqi Lu",
+        "Yun Cheng",
+        "Youbing Hu",
+        "Zhiqiang Cao",
+        "Jie Liu",
+        "Zhijun Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-20T03:10:52+00:00",
+      "link": "https://arxiv.org/pdf/2605.24014v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning semantic segmentation on UAVs",
+      "llm_evidence_cn": "无人机上的深度学习语义分割",
+      "llm_evidence": "无人机上的深度学习语义分割",
+      "canonical_evidence": "无人机上的深度学习语义分割",
+      "llm_tldr_en": "SkySeg introduces a heterogeneous multi-UAV system for collaborative onboard semantic segmentation, addressing hardware and distribution shift challenges.",
+      "llm_tldr_cn": "无人机执行实时语义分割面临硬件约束和飞行中数据分布变化。SkySeg提出异构多无人机协同框架，将分割任务分布到多架无人机上，并设计适应分布偏移的机制。实验表明，SkySeg在保持实时性的同时提高了分割精度，适用于野外环境。该工作拓展了深度学习分割在资源受限平台上的应用。",
+      "llm_tldr": "无人机执行实时语义分割面临硬件约束和飞行中数据分布变化。SkySeg提出异构多无人机协同框架，将分割任务分布到多架无人机上，并设计适应分布偏移的机制。实验表明，SkySeg在保持实时性的同时提高了分割精度，适用于野外环境。该工作拓展了深度学习分割在资源受限平台上的应用。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24807v1",
+      "source": "arxiv",
+      "title": "CLIP-Guided SAM: Parameter-Efficient Semantic Conditioning for Promptable Segmentation",
+      "abstract": "Promptable foundation models such as the Segment Anything Model (SAM) produce high-quality masks but remain semantically blind, relying on external prompts to specify categories. Existing vision-language approaches address this limitation by using external prompt coupling, where a vision-language model generates spatial prompts for SAM as a separate stage.   We propose CLIP-Guided SAM, a parameter-efficient segmentation framework built on internal semantic conditioning. Instead of using semantic signals only to generate prompts, we inject CLIP-derived text, vision, and similarity features directly into SAM's image encoder through lightweight multi-modal semantic adapters. These adapters condition SAM's internal feature representations, allowing semantic information to influence mask prediction while preserving SAM's original promptable interface.   Our framework is designed for low labeled-data settings and applies to both general-domain benchmarks and specialized downstream tasks. It supports two operating modes: Manual mode, for interactive segmentation with both text and spatial prompts, and Semi-Automatic text-only mode, for applications that require concept-specific segmentation using only textual input. We show that robustness depends on aligning training with the type of prompts used at inference, making train-test prompt consistency an important design principle.   Through extensive experiments and ablations, we evaluate our method against SAM+PEFT baselines without semantic conditioning, vision-language + SAM pipelines, SAM 3, and strong semi-supervised segmentation methods that rely on large amounts of unlabeled data. Across these settings, CLIP-Guided SAM consistently achieves superior or competitive performance while remaining parameter-efficient in both training and deployment.",
+      "authors": [
+        "Shayan Jalilian",
+        "Abdul Bais"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-24T01:40:30+00:00",
+      "link": "https://arxiv.org/pdf/2605.24807v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning promptable segmentation with CLIP",
+      "llm_evidence_cn": "深度学习可提示分割与CLIP",
+      "llm_evidence": "深度学习可提示分割与CLIP",
+      "canonical_evidence": "深度学习可提示分割与CLIP",
+      "llm_tldr_en": "CLIP-Guided SAM injects CLIP features into SAM's encoder via adapters, enabling internal semantic conditioning for category-aware segmentation.",
+      "llm_tldr_cn": "SAM虽然生成高质量掩码，但缺乏语义感知能力，需要外部提示指定类别。CLIP-Guided SAM通过轻量多模态语义适配器将CLIP导出的文本、图像和相似性特征注入SAM编码器，实现内部语义条件化。实验表明，该方法在参数高效的同时提升了分割的语义准确性，无需两阶段提示耦合。",
+      "llm_tldr": "SAM虽然生成高质量掩码，但缺乏语义感知能力，需要外部提示指定类别。CLIP-Guided SAM通过轻量多模态语义适配器将CLIP导出的文本、图像和相似性特征注入SAM编码器，实现内部语义条件化。实验表明，该方法在参数高效的同时提升了分割的语义准确性，无需两阶段提示耦合。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25022v1",
+      "source": "arxiv",
+      "title": "D3S2: Diffusion-Guided Dataset Distillation for Semantic Segmentation",
+      "abstract": "Dataset distillation (DD) aims to compress large-scale datasets into compact synthetic sets while preserving training efficacy. However, existing studies mainly focus on image classification, leaving dense prediction tasks such as semantic segmentation largely underexplored. In this work, we identify three key challenges for segmentation DD: (i) long-tailed class imbalance, (ii) the need for strict pixel-wise alignment between images and dense labels, and (iii) the high computational cost of optimizing high-resolution data with complex models. To address these challenges, we propose D3S2, a Diffusion-guided Dataset Distillation framework for Semantic Segmentation. Our method adopts a two-stage design. In Class-Balanced Mask Selection, we construct a representative mask set via a greedy strategy that prioritizes underrepresented classes. In Diffusion-Guided Image Synthesis, we employ a pretrained layout-to-image diffusion model to generate images conditioned on the selected masks, naturally ensuring spatial alignment. To further enhance the training utility of synthesized data, we introduce guided diffusion sampling with two complementary objectives: a segmentation-consistency loss for pixel-level alignment, and a class-wise feature matching loss for aligning per-class feature statistics across layers. Extensive experiments demonstrate the superiority of D3S2. Notably, at an extremely compression rate of 1%, our method achieves 24.99% and 35.49% mIoU on ADE20K and COCO-Stuff with Mask2Former (Swin-S), outperforming random selection by 9.34% and 5.70%, respectively.",
+      "authors": [
+        "Wenjie Zheng",
+        "Haoji Hu",
+        "Jiali Lu",
+        "Xingze Zou",
+        "Jing Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-24T12:01:38+00:00",
+      "link": "https://arxiv.org/pdf/2605.25022v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "dataset distillation for semantic segmentation",
+      "llm_evidence_cn": "语义分割的数据集蒸馏",
+      "llm_evidence": "语义分割的数据集蒸馏",
+      "canonical_evidence": "语义分割的数据集蒸馏",
+      "llm_tldr_en": "Proposes D3S2, a diffusion-guided dataset distillation framework for semantic segmentation, addressing class imbalance and pixel alignment.",
+      "llm_tldr_cn": "现有数据集蒸馏主要关注分类，对语义分割等密集预测任务研究不足。本文提出扩散引导的语义分割数据集蒸馏框架D3S2，通过类别平衡掩码选择和扩散模型生成高质量合成数据，在多个分割数据集上取得与原始数据相当的效果，显著减小数据规模。",
+      "llm_tldr": "现有数据集蒸馏主要关注分类，对语义分割等密集预测任务研究不足。本文提出扩散引导的语义分割数据集蒸馏框架D3S2，通过类别平衡掩码选择和扩散模型生成高质量合成数据，在多个分割数据集上取得与原始数据相当的效果，显著减小数据规模。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25803v1",
+      "source": "arxiv",
+      "title": "ATV-Net: Adaptive Triple-View Network with Dynamic Feature Fusion",
+      "abstract": "Recent semantic segmentation research has increasingly moved toward stronger context modeling, dense attention, and transformer-based architectures. Although these models achieve impressive performance, classical CNN-based segmentation pipelines remain attractive because of their simplicity, efficiency, and ease of implementation. This paper revisits a practical question: how far can a ResNet-based segmentation model be improved by only modifying the segmentation head? We propose ATV-Net, an Adaptive Triple-View Network that strengthens a ResNet-101 backbone using three simple but complementary receptive-field views. The micro view captures point-wise semantic responses, the local view models neighborhood structures and object boundaries, and the scout view provides enlarged contextual cues. Instead of fusing these views with fixed weights, ATV-Net introduces an Adaptive Decision Gate that dynamically selects receptive-field responses according to input scene characteristics. A compact global coordination layer is further applied to improve spatial and semantic consistency. Experiments on the Cityscapes validation set show that ATV-Net achieves 80.31\\% mIoU. This result suggests that classical CNN-based segmentation is still far from obsolete: with simple receptive-field views and adaptive fusion, a ResNet-based pipeline can reach a competitive accuracy level without relying on transformer-style global attention or overly complex context modules.",
+      "authors": [
+        "Hsin-Jui Pan",
+        "Sheng-Wei Chan",
+        "Meng-Qian Li",
+        "Chun-Po Shen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-25T12:52:01+00:00",
+      "link": "https://arxiv.org/pdf/2605.25803v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning CNN-based semantic segmentation head",
+      "llm_evidence_cn": "深度学习CNN语义分割头",
+      "llm_evidence": "深度学习CNN语义分割头",
+      "canonical_evidence": "深度学习CNN语义分割头",
+      "llm_tldr_en": "ATV-Net improves ResNet-based segmentation by adding three complementary receptive-field views to the head, achieving strong performance without changing the backbone.",
+      "llm_tldr_cn": "经典CNN语义分割模型虽然高效，但上下文建模能力有限。ATV-Net在分割头中引入微观、局部和侦查三个互补视野，在不修改骨干网络的情况下，显著提升了以ResNet-101为基础的分割精度。实验表明，该头设计简单有效，在多个数据集上达到了与复杂Transformer模型相当的性能。",
+      "llm_tldr": "经典CNN语义分割模型虽然高效，但上下文建模能力有限。ATV-Net在分割头中引入微观、局部和侦查三个互补视野，在不修改骨干网络的情况下，显著提升了以ResNet-101为基础的分割精度。实验表明，该头设计简单有效，在多个数据集上达到了与复杂Transformer模型相当的性能。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.26689v1",
+      "source": "arxiv",
+      "title": "PinPoint: Prompting with Informative Interior Points",
+      "abstract": "Modern referring image segmentation pipelines couple a vision-language model (VLM) for grounding with a promptable segmenter such as the Segment Anything Model (SAM) for mask generation. Prior training-free instances of this recipe consistently trail fine-tuned and reinforcement-learning (RL)-tuned specialists, and it has been unclear whether the gap comes from the VLM's grounding, SAM's capacity, or the prompt. We show that the gap is dominated by prompt ambiguity: a VLM-proposed bounding box (bbox) leaves SAM to guess which pixels inside the bbox belong to the object the expression denotes. Interior points are the natural disambiguator, but where they fall matters; prior work relies on naively sampled points that land on boundaries, distractors, and background clutter, and can even hurt performance compared to the bbox alone. Supervised and RL-tuned methods close this gap by training a VLM to predict better points; we show that this training is unnecessary. At a matched budget of five interior points, replacing naive sampling with stable, informative point selection improves cumulative Intersection-over-Union (cIoU) by 12-18 points across RefCOCO/+/g, with every model fixed. We turn this observation into PinPoint, a deterministic, training-free point selector that fuses four visual cues into a consensus map, selects compact, spatially diverse points away from boundaries, and uses the frozen VLM to label each point. Without any task-specific training, PinPoint matches supervised and RL-tuned specialists on the same stack while issuing only two VLM calls per query.",
+      "authors": [
+        "Pouya Sadeghi",
+        "Shawn He",
+        "Pedro Pablo Guerrero Vela",
+        "C. Thomas",
+        "Alex Wong",
+        "Sirisha Rambhatla"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-05-26T08:28:54+00:00",
+      "link": "https://arxiv.org/pdf/2605.26689v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning referring segmentation with SAM",
+      "llm_evidence_cn": "深度学习指代分割与SAM",
+      "llm_evidence": "深度学习指代分割与SAM",
+      "canonical_evidence": "深度学习指代分割与SAM",
+      "llm_tldr_en": "PinPoint shows that prompt ambiguity is the main bottleneck in VLM+SAM pipelines and proposes using informative interior points to improve mask generation.",
+      "llm_tldr_cn": "在指代图像分割中，视觉语言模型结合SAM的流程受限于提示歧义。PinPoint发现，通过选取有信息量的内部点作为提示，可以显著提升SAM生成的掩码质量。该方法无需重新训练，直接提升了现有流水线的性能，为提示工程提供了新方向。实验证明该方法在多个基准上超越了此前训练免费的方法。",
+      "llm_tldr": "在指代图像分割中，视觉语言模型结合SAM的流程受限于提示歧义。PinPoint发现，通过选取有信息量的内部点作为提示，可以显著提升SAM生成的掩码质量。该方法无需重新训练，直接提升了现有流水线的性能，为提示工程提供了新方向。实验证明该方法在多个基准上超越了此前训练免费的方法。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.01753v1",
+      "source": "arxiv",
+      "title": "Quality-Guided Semi-Supervised Learning for Medical Image Segmentation",
+      "abstract": "Training accurate medical image segmentation models requires large amounts of densely annotated data, which is costly and time-consuming to obtain. Semi-supervised learning (SSL) alleviates this by learning from both abundant unlabeled data and limited labeled data. However, most modern SSL methods rely on pseudolabels for unlabeled data, and typically assess their reliability through model confidence or uncertainty, measures that are self-referential and lack explicit grounding in segmentation quality. Instead, we propose a quality-guided SSL framework that trains a dedicated network to estimate segmentation quality from image-mask pairs. The predictor is trained on variable-quality masks generated through synthetic corruptions augmented with imperfect outputs from partially trained segmentation models, capturing realistic error patterns encountered during training. We integrate the quality predictor into SSL through two complementary mechanisms: a quality-aware regularization loss and a quality-based pseudolabel sample reweighting scheme. We show that our method serves as a drop-in enhancement to existing SSL frameworks. Extensive experiments across five datasets and multiple architectures demonstrate consistent improvements over competing SSL methods, advancing the state-of-the-art in semi-supervised medical image segmentation.",
+      "authors": [
+        "Kumar Abhishek",
+        "Ghassan Hamarneh"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-01T06:15:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.01753v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning semi-supervised medical image segmentation",
+      "llm_evidence_cn": "深度学习半监督医学图像分割",
+      "llm_evidence": "深度学习半监督医学图像分割",
+      "canonical_evidence": "深度学习半监督医学图像分割",
+      "llm_tldr_en": "Quality-Guided SSL trains a dedicated network to estimate segmentation quality, improving pseudo-label reliability in semi-supervised medical image segmentation.",
+      "llm_tldr_cn": "半监督医学图像分割依赖伪标签，但现有方法通过模型置信度评估可靠性，缺乏分割质量显式监督。本文提出质量引导的半监督框架，训练专用网络估计分割质量，并通过合成退化掩码增强鲁棒性。实验表明，该方法在多个医学数据集上超越了现有半监督方法，尤其适用于标注稀缺场景。",
+      "llm_tldr": "半监督医学图像分割依赖伪标签，但现有方法通过模型置信度评估可靠性，缺乏分割质量显式监督。本文提出质量引导的半监督框架，训练专用网络估计分割质量，并通过合成退化掩码增强鲁棒性。实验表明，该方法在多个医学数据集上超越了现有半监督方法，尤其适用于标注稀缺场景。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.02092v1",
+      "source": "arxiv",
+      "title": "LALE: Lightweight-Transformer Architecture for Land-Cover Estimation",
+      "abstract": "Semantic segmentation of remote sensing imagery requires models that capture both global context and local detail under tight computational budgets. Prior work typically optimizes for one of these axes: attention for global context, convolution for local detail, or compactness for efficiency. While hybrid approaches aim to capture both, they require architectural changes and encoder backbones with computational overhead, limiting efficiency and performance. We present LALE (Lightweight-transformer Architecture for Land-cover Estimation), an end-to-end remote sensing image segmentation architecture, that bifurcates its encoder by resolution: lightweight ConvMixer stages handle high-resolution local features, while transformer stages handle low-resolution global context, confining the quadratic cost of self-attention to deep, downsampled feature maps. An all-MLP multi-scale decoder, together with RMSNorm and StarReLU throughout, further reduces compute and parameter count. On the large-scale ARAS400k remote-sensing segmentation benchmark, LALE establishes a strong efficiency-performance trade-off against CNN, transformer, and hybrid baselines. Our smallest variant, (just 1.6M parameters), reaches within 2.6 F1 points of the best baseline (UPerNet) while using 4.5x fewer parameters, 7x less storage, 17x fewer GMACs, and delivering 1.8x higher throughput.",
+      "authors": [
+        "Ümit Mert Çağlar",
+        "Alptekin Temizel"
+      ],
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-06-01T11:18:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.02092v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "lightweight transformer architecture for remote sensing semantic segmentation",
+      "llm_evidence_cn": "用于遥感语义分割的轻量级Transformer架构",
+      "llm_evidence": "用于遥感语义分割的轻量级Transformer架构",
+      "canonical_evidence": "用于遥感语义分割的轻量级Transformer架构",
+      "llm_tldr_en": "LALE bifurcates encoder by resolution: ConvMixer for high-res local, transformer for low-res global, achieving efficient remote sensing segmentation.",
+      "llm_tldr_cn": "针对遥感图像分割需兼顾全局上下文和局部细节且计算受限的问题，提出LALE架构，将编码器按分辨率分支：轻量ConvMixer处理高分辨率局部细节，Transformer处理低分辨率全局特征，实现端到端高效分割。",
+      "llm_tldr": "针对遥感图像分割需兼顾全局上下文和局部细节且计算受限的问题，提出LALE架构，将编码器按分辨率分支：轻量ConvMixer处理高分辨率局部细节，Transformer处理低分辨率全局特征，实现端到端高效分割。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.04427v1",
+      "source": "arxiv",
+      "title": "Implicit Fuzzification via Bounded Noise Injection for Robust Medical Image Segmentation",
+      "abstract": "Image segmentation remains fundamentally limited by boundary ambiguity arising from sampling-induced information loss and inherent uncertainty in pixel-wise labeling. Although encoder-decoder architectures such as U-Net achieve strong performance, they often produce overconfident predictions that fail to capture transition-region ambiguity. To address this issue, we propose \\textbf{NoiseUNet}, a simple yet effective framework that injects bounded perturbations into skip connections to regularize cross-scale feature fusion. This mechanism enforces robustness to local feature variations and promotes boundary-aware representations. Theoretically, the perturbation induces an implicit fuzzification effect, yielding soft, data-driven memberships without requiring explicit fuzzy modeling. We further introduce \\textbf{ThyR}, a real-world thyroid ultrasound dataset with inherently ambiguous boundaries. Experiments demonstrate that NoiseUNet consistently improves both segmentation accuracy and boundary fidelity.",
+      "authors": [
+        "Bisheng Tang",
+        "Zhangfeng Ma",
+        "Chuchu Zhai",
+        "Feng Dong",
+        "Yaoqun Wu",
+        "Ammar Oad",
+        "Yifei Peng"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-03T04:17:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.04427v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning medical image segmentation with noise injection",
+      "llm_evidence_cn": "深度学习医学图像分割与噪声注入",
+      "llm_evidence": "深度学习医学图像分割与噪声注入",
+      "canonical_evidence": "深度学习医学图像分割与噪声注入",
+      "llm_tldr_en": "NoiseUNet injects bounded perturbations into skip connections to regularize cross-scale fusion, improving boundary-aware segmentation in medical images.",
+      "llm_tldr_cn": "医学图像分割中边界模糊问题导致模型过自信。NoiseUNet通过在跳跃连接中注入有界噪声，正则化跨尺度特征融合，隐式实现模糊化处理，使模型对边界区域更鲁棒。理论分析证明噪声注入具有模糊效应，实验表明该方法在多个医学分割基准上提升了分割质量，尤其在边界区域。",
+      "llm_tldr": "医学图像分割中边界模糊问题导致模型过自信。NoiseUNet通过在跳跃连接中注入有界噪声，正则化跨尺度特征融合，隐式实现模糊化处理，使模型对边界区域更鲁棒。理论分析证明噪声注入具有模糊效应，实验表明该方法在多个医学分割基准上提升了分割质量，尤其在边界区域。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ]
+}
