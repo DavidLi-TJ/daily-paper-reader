@@ -25,3 +25,54 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: raw-seg
+      description: 帮我搜索raw图像语义分割相关论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: raw image
+          keyword_cn: 原始图像
+          query: raw image semantic segmentation
+        - keyword: semantic segmentation
+          keyword_cn: 语义分割
+          query: deep learning semantic segmentation
+        - keyword: image segmentation
+          keyword_cn: 图像分割
+          query: image segmentation techniques
+        - keyword: pixel level classification
+          keyword_cn: 像素级分类
+          query: pixel level classification raw images
+      intent_queries:
+        - query: semantic segmentation of raw images
+          query_cn: 原始图像的语义分割
+          enabled: true
+          source: manual
+          note: ''
+        - query: raw image semantic segmentation methods
+          query_cn: 原始图像语义分割方法
+          enabled: true
+          source: manual
+          note: ''
+        - query: deep learning for raw image segmentation
+          query_cn: 用于原始图像分割的深度学习
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-05T17:21:34.205Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
