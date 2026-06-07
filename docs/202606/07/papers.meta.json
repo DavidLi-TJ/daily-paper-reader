@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-07",
+  "date": "2026-06-07",
+  "generated_at": "2026-06-07T21:08:00",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/07/2606.01939v1-savmap-structure-aided-visual-mapping-of-large-scale-25d-manhattan-wireframes-from-panoramic-video",
+      "section": "deep",
+      "title_en": "SAVMap: Structure-Aided Visual Mapping of Large-Scale 2.5D Manhattan Wireframes from Panoramic Video",
+      "authors": "Howard Huang, Bharath Surianarayanan, Keifer Lee, Chenyu Wang, Chen Feng",
+      "date": "2026-06-01",
+      "pdf": "https://arxiv.org/pdf/2606.01939v1",
+      "score": "8.0",
+      "evidence": "使用语义分割网络处理原始全景图像，提取结构特征点",
+      "tldr": "针对工业仓库环境的三维重建需求，提出SAVMap方法，仅用全景视频生成货架与灯光的语义线框地图。通过从视频中提取矫正图像序列，利用语义分割网络检测结构特征点，并借助曼哈顿网格几何约束实现运动恢复，构建稀疏三维线框。在大型仓库实验中，一小时视频成功重建超5000个货架元素，平均误差仅4.8厘米，验证了方法的可扩展性与精度。",
+      "tags": "query:raw-seg",
+      "abstract_en": "Precise 3D representations of industrial environments enable tasks such as robot localization and digital twin generation. We propose SAVMap, a method for generating a semantic wireframe map of warehouse shelf and light structures using only a panoramic video camera as the sensor input. Sequences of rectified images with shelf and ceiling-facing views are extracted from a panoramic video captured along the warehouse aisles. Using a semantic segmentation network front end, a set of sparse, semantic structure feature points (e.g., corners of shelf structures, centers of lights) are extracted from each image and tracked across the sequences. By accounting for real-world geometric relationships among the points such as Manhattan grids, a constrained structure-from-motion algorithm yields the 3D points that form a wireframe map. We demonstrate the scalability and accuracy of our proposal in a warehouse with 46 shelving rows, each with faces spanning 55\\,m by 7\\,m. From an hour of panoramic video content, we create wireframe maps for over 5000 shelf elements across the rows, achieving an aggregate mean absolute error of 4.8\\,cm with respect to ground-truth.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/07/2606.04820v1-oa-cutmix-correcting-the-label-bias-of-cutmix",
+      "section": "quick",
+      "title_en": "OA-CutMix: Correcting the Label Bias of CutMix",
+      "authors": "Tobias Christian Nauen, Stanislav Frolov, Federico Raue, Brian B. Moser, Andreas Dengel",
+      "date": "2026-06-03",
+      "pdf": "https://arxiv.org/pdf/2606.04820v1",
+      "score": "6.0",
+      "evidence": "利用分割掩码校正CutMix标签偏差",
+      "tldr": "CutMix的标签分配基于面积假设，但粘贴块常落在背景区域，导致标签偏差（平均偏差21.5%）。提出OA-CutMix，利用预计算的分割掩码代替面积权重，根据每个图像贡献的可见物体区域比例分配标签，不改变混合过程。在4种架构、6个数据集上对比10+种方法，OA-CutMix一致达到最高精度，且训练开销低。小物体场景提升最大，证明仅纠正标签即可匹配或超越修改图像混合的方法。",
+      "tags": "query:raw-seg",
+      "abstract_en": "CutMix has become the de facto standard mixing augmentation, yet its label assignment rests on a flawed assumption: The area of the pasted patch faithfully reflects its semantic contribution to the mixed image. In practice, however, patches frequently land on background regions, assigning label credit to classes whose objects are not visible. The mean discrepancy of the CutMix label and the semantic object area is $21.5\\%$. In $17\\%$ of samples an image contributes zero visible object pixels yet receives nonzero label weight. We propose Object-Aware CutMix (OA-CutMix), which corrects this bias by replacing the area-based CutMix weight with one derived from precomputed segmentation masks, assigning labels in proportion to the visible object area each image contributes to the mix. The image mixing procedure is left entirely unchanged. We evaluate OA-CutMix against 10+ static and dynamic mixing methods across 4 architectures and 6 datasets. OA-CutMix consistently achieves the highest accuracy over all tasks, outperforming even dynamic mixing methods, but at a fraction of the training-time cost. Improvements are largest for small objects, where the label bias from CutMix is greatest. Thus, correcting the label is sufficient to match or exceed the performance of methods modifying the image mixing algorithm.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

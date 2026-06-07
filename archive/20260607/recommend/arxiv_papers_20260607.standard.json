@@ -1,0 +1,97 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-07T21:06:08.161474+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.01939v1",
+      "source": "arxiv",
+      "title": "SAVMap: Structure-Aided Visual Mapping of Large-Scale 2.5D Manhattan Wireframes from Panoramic Video",
+      "abstract": "Precise 3D representations of industrial environments enable tasks such as robot localization and digital twin generation. We propose SAVMap, a method for generating a semantic wireframe map of warehouse shelf and light structures using only a panoramic video camera as the sensor input. Sequences of rectified images with shelf and ceiling-facing views are extracted from a panoramic video captured along the warehouse aisles. Using a semantic segmentation network front end, a set of sparse, semantic structure feature points (e.g., corners of shelf structures, centers of lights) are extracted from each image and tracked across the sequences. By accounting for real-world geometric relationships among the points such as Manhattan grids, a constrained structure-from-motion algorithm yields the 3D points that form a wireframe map. We demonstrate the scalability and accuracy of our proposal in a warehouse with 46 shelving rows, each with faces spanning 55\\,m by 7\\,m. From an hour of panoramic video content, we create wireframe maps for over 5000 shelf elements across the rows, achieving an aggregate mean absolute error of 4.8\\,cm with respect to ground-truth.",
+      "authors": [
+        "Howard Huang",
+        "Bharath Surianarayanan",
+        "Keifer Lee",
+        "Chenyu Wang",
+        "Chen Feng"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-01T09:04:29+00:00",
+      "link": "https://arxiv.org/pdf/2606.01939v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Uses semantic segmentation network on raw panoramic images to extract structure feature points",
+      "llm_evidence_cn": "使用语义分割网络处理原始全景图像，提取结构特征点",
+      "llm_evidence": "使用语义分割网络处理原始全景图像，提取结构特征点",
+      "canonical_evidence": "使用语义分割网络处理原始全景图像，提取结构特征点",
+      "llm_tldr_en": "SAVMap generates semantic wireframe maps from panoramic video using a semantic segmentation front-end to extract structure points, enabling 2.5D mapping of warehouse environments.",
+      "llm_tldr_cn": "SAVMap提出了一种仅利用全景视频生成仓库货架和灯管结构语义线框地图的方法。该方法使用语义分割网络从原始全景图像中提取稀疏的结构特征点，并通过跟踪和几何约束构建2.5D曼哈顿线框地图。实验表明，该方法能够准确重建工业环境中的结构，为机器人定位和数字孪生提供支持。",
+      "llm_tldr": "SAVMap提出了一种仅利用全景视频生成仓库货架和灯管结构语义线框地图的方法。该方法使用语义分割网络从原始全景图像中提取稀疏的结构特征点，并通过跟踪和几何约束构建2.5D曼哈顿线框地图。实验表明，该方法能够准确重建工业环境中的结构，为机器人定位和数字孪生提供支持。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "raw image semantic segmentation",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.04820v1",
+      "source": "arxiv",
+      "title": "OA-CutMix: Correcting the Label Bias of CutMix",
+      "abstract": "CutMix has become the de facto standard mixing augmentation, yet its label assignment rests on a flawed assumption: The area of the pasted patch faithfully reflects its semantic contribution to the mixed image. In practice, however, patches frequently land on background regions, assigning label credit to classes whose objects are not visible. The mean discrepancy of the CutMix label and the semantic object area is $21.5\\%$. In $17\\%$ of samples an image contributes zero visible object pixels yet receives nonzero label weight. We propose Object-Aware CutMix (OA-CutMix), which corrects this bias by replacing the area-based CutMix weight with one derived from precomputed segmentation masks, assigning labels in proportion to the visible object area each image contributes to the mix. The image mixing procedure is left entirely unchanged. We evaluate OA-CutMix against 10+ static and dynamic mixing methods across 4 architectures and 6 datasets. OA-CutMix consistently achieves the highest accuracy over all tasks, outperforming even dynamic mixing methods, but at a fraction of the training-time cost. Improvements are largest for small objects, where the label bias from CutMix is greatest. Thus, correcting the label is sufficient to match or exceed the performance of methods modifying the image mixing algorithm.",
+      "authors": [
+        "Tobias Christian Nauen",
+        "Stanislav Frolov",
+        "Federico Raue",
+        "Brian B. Moser",
+        "Andreas Dengel"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-03T12:42:59+00:00",
+      "link": "https://arxiv.org/pdf/2606.04820v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "use of segmentation masks to correct label bias in CutMix",
+      "llm_evidence_cn": "利用分割掩码校正CutMix标签偏差",
+      "llm_evidence": "利用分割掩码校正CutMix标签偏差",
+      "canonical_evidence": "利用分割掩码校正CutMix标签偏差",
+      "llm_tldr_en": "Proposes Object-Aware CutMix that uses precomputed segmentation masks to assign correct labels in mixing augmentation.",
+      "llm_tldr_cn": "论文指出CutMix的标签分配假设存在偏见：粘贴区域的面积不代表语义贡献。提出OA-CutMix，利用预计算的分割掩码按可见目标面积分配标签权重，从而校正偏差，提升混合增强的语义准确性。",
+      "llm_tldr": "论文指出CutMix的标签分配假设存在偏见：粘贴区域的面积不代表语义贡献。提出OA-CutMix，利用预计算的分割掩码按可见目标面积分配标签权重，从而校正偏差，提升混合增强的语义准确性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
