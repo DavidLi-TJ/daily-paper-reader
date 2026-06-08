@@ -1,0 +1,96 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-08T21:16:29.708147+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.06537v1",
+      "source": "arxiv",
+      "title": "DSU-Net: An Attention-Enhanced Dense Skip U-Net for Breast Lesion Segmentation in Mammographic Images",
+      "abstract": "Breast cancer remains one of the leading causes of cancer-related mortality among women worldwide, making early detection essential for effective treatment. Mammography is the primary screening modality; however, accurate delineation of suspicious lesions remains challenging and subject to inter-observer variability. Automated segmentation methods can assist radiologists by providing consistent and efficient lesion localization.   This study presents DSU-Net, an attention-enhanced Dense Skip U-Net architecture for automated breast lesion segmentation in mammographic images. The proposed framework integrates dense skip connections and attention mechanisms to improve feature propagation, preserve spatial information, and enhance lesion boundary delineation. Experiments were conducted using the Curated Breast Imaging Subset of the Digital Database for Screening Mammography (CBIS-DDSM). To address severe foreground-background imbalance, a composite loss function combining Dice loss, focal loss, and binary cross-entropy loss was employed during training.   The proposed model achieved a Dice Similarity Coefficient of 0.9421, an Intersection over Union of 0.8905, an accuracy of 0.9711, and an AUC-ROC of 0.9878 on the validation dataset. Qualitative evaluation demonstrated accurate delineation of lesions with varying sizes and morphologies, while quantitative results confirmed robust discrimination between lesion and background regions.   These findings demonstrate that DSU-Net provides accurate and reliable breast lesion segmentation in mammographic images and highlights the potential of attention-guided deep learning for computer-aided breast cancer screening and diagnosis.",
+      "authors": [
+        "Reza Bozorgpour",
+        "Mohammadreza Soltany Sadrabadi"
+      ],
+      "primary_category": "q-bio.QM",
+      "categories": [
+        "q-bio.QM",
+        "cs.CV",
+        "eess.IV"
+      ],
+      "published": "2026-06-03T23:09:03+00:00",
+      "link": "https://arxiv.org/pdf/2606.06537v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "medical image segmentation with U-Net",
+      "llm_evidence_cn": "医学图像分割U-Net",
+      "llm_evidence": "医学图像分割U-Net",
+      "canonical_evidence": "医学图像分割U-Net",
+      "llm_tldr_en": "Presents DSU-Net, an attention-enhanced dense skip U-Net for breast lesion segmentation in mammograms.",
+      "llm_tldr_cn": "针对乳腺钼靶图像中病变分割准确率低和观察者变异大的问题，提出DSU-Net，集成密集跳跃连接和注意力机制增强特征传播，在乳腺病变分割任务中取得高精度。",
+      "llm_tldr": "针对乳腺钼靶图像中病变分割准确率低和观察者变异大的问题，提出DSU-Net，集成密集跳跃连接和注意力机制增强特征传播，在乳腺病变分割任务中取得高精度。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.06819v1",
+      "source": "arxiv",
+      "title": "VideoSEG-O3: A Multi-turn Reinforcement Learning Framework for Reasoning Video Object Segmentation",
+      "abstract": "Reasoning Video Object Segmentation (RVOS) demands a sophisticated integration of temporal dynamics, spatial details, and linguistic reasoning to achieve precise pixel-level localization. Existing methods are limited to reasoning over fixed initial inputs and lack the capacity to actively acquire further visual evidence, which is often essential for resolving complex references in long or intricate videos. To address this, we propose \\textbf{VideoSEG-O3}, the first multi-turn reinforcement learning framework for RVOS that emulates the human \\textit{``coarse-to-fine''} cognitive process. It employs a \\textit{multi-turn temporal-spatial chain-of-thought} to capture fine-grained details by iteratively pinpointing critical intervals and keyframes. Additionally, to enable the policy to perceive segmentation quality beyond mere text probability of \\texttt{[SEG]} during the RL stage, we introduce \\textit{SEG-aware logit calibration}, which integrates pixel-wise segmentation feedback directly into the token-level logits. Furthermore, we design a \\textit{decoupled thinking trace} to hierarchically decompose the reasoning process into temporal, spatial, and linguistic dimensions, and construct \\textbf{VTS-CoT}, a specialized cold-start dataset featuring comprehensive reasoning trajectories. The code and models will be released at https://github.com/Dmmm1997/VideoSEG-O3.",
+      "authors": [
+        "Ming Dai",
+        "Sen Yang",
+        "Boqiang Duan",
+        "Boyuan Tong",
+        "Jiedong Zhuang",
+        "Wankou Yang",
+        "Jingdong Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-05T01:44:38+00:00",
+      "link": "https://arxiv.org/pdf/2606.06819v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multi-turn reinforcement learning for pixel-level video object segmentation",
+      "llm_evidence_cn": "多轮强化学习用于像素级视频对象分割",
+      "llm_evidence": "多轮强化学习用于像素级视频对象分割",
+      "canonical_evidence": "多轮强化学习用于像素级视频对象分割",
+      "llm_tldr_en": "Proposes VideoSEG-O3, a multi-turn RL framework for reasoning video object segmentation that iteratively refines segmentation via temporal-spatial chain-of-thought.",
+      "llm_tldr_cn": "针对复杂视频推理中需要逐步获取视觉证据的问题，提出VideoSEG-O3框架，模仿人类由粗到细的认知过程，通过多轮时空思维链迭代优化分割。在RVOS基准上，该方法显著提升了复杂参考下的分割精度，展示了强化学习在视觉推理中的潜力。",
+      "llm_tldr": "针对复杂视频推理中需要逐步获取视觉证据的问题，提出VideoSEG-O3框架，模仿人类由粗到细的认知过程，通过多轮时空思维链迭代优化分割。在RVOS基准上，该方法显著提升了复杂参考下的分割精度，展示了强化学习在视觉推理中的潜力。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
