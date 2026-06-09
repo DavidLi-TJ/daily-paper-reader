@@ -1,0 +1,400 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-09T20:46:54.042902+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 5,
+    "quick_skim_target": 11,
+    "quick_selected": 5
+  },
+  "deep_dive": [
+    {
+      "id": "2606.08001v1",
+      "source": "arxiv",
+      "title": "Learning a Semantic Calibration Network for Open-Vocabulary Semantic Segmentation",
+      "abstract": "Semantic image segmentation assigns a predefined category label to each pixel, has achieved significant progress lately. Open-Vocabulary Segmentation (OVS) extends the segmentation task from a fixed set to an open set, enabling the identification and segmentation of novel concepts based on arbitrary text inputs, such as category names or descriptions. In this paper, we propose a novel Semantic Calibration Network (SCN) for open-vocabulary semantic segmentation. Different from prior approaches that focus on feature aggregation or simple fine-tuning of pre-trained models, SCN refines the mask classification process by explicitly modeling the semantic correlations between classes, aiming to enhance the model's discriminative power while effectively preserving the generalization abilities of the pre-trained CLIP model. Specifically, SCN comprises two core components: Class Disambiguation (CD) and Logits Fusion (LF). First, a cross-attention mechanism is utilized to transform the text embeddings into visually aware pseudo-text embeddings, in order to derive an enhanced similarity score that complements the original mask-text similarity score. Subsequently, the Class Disambiguation module captures implicit inter-class dependencies through a residual architecture to effectively resolve semantic ambiguities. Finally, the Logits Fusion module dynamically integrates multifaceted semantic evidence to ensure that the model achieves a robust semantic consensus while maintaining CLIP's inherent generalization capability. Comprehensive experimental results on mainstream benchmarks demonstrate that the proposed method achieves significant performance improvements compared to state-of-the-art algorithms.",
+      "authors": [
+        "Yang Sun",
+        "Tao Wang",
+        "Anastasia Ioannou",
+        "Ge Xu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-06T06:42:03+00:00",
+      "link": "https://arxiv.org/pdf/2606.08001v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "deep learning semantic segmentation for open-vocabulary",
+      "llm_evidence_cn": "深度学习开放词汇语义分割",
+      "llm_evidence": "深度学习开放词汇语义分割",
+      "canonical_evidence": "深度学习开放词汇语义分割",
+      "llm_tldr_en": "SCN refines mask classification by explicitly modeling semantic correlations between classes for open-vocabulary semantic segmentation.",
+      "llm_tldr_cn": "开放词汇语义分割面临新类别识别挑战。本文提出语义校准网络（SCN），显式建模类别间语义相关性来优化掩码分类过程，增强模型判别力。在多个开放词汇分割基准上，SCN取得了领先性能，为语义分割扩展到开放场景提供了有效思路。",
+      "llm_tldr": "开放词汇语义分割面临新类别识别挑战。本文提出语义校准网络（SCN），显式建模类别间语义相关性来优化掩码分类过程，增强模型判别力。在多个开放词汇分割基准上，SCN取得了领先性能，为语义分割扩展到开放场景提供了有效思路。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.09474v1",
+      "source": "arxiv",
+      "title": "Training-Free Generalized Few-Shot Segmentation through Open-Vocabulary Semantic Arbitration",
+      "abstract": "Generalized Few-Shot Semantic Segmentation (GFSS) has traditionally been approached as a representation-learning problem, requiring task-specific adaptation to incorporate novel classes from limited support examples. Recent foundation models, however, already exhibit strong open-vocabulary recognition and segmentation capabilities, raising a different question: can GFSS be solved through inference-time coordination of frozen semantic priors rather than parameter adaptation? We answer this question with Open-V, a training-free GFSS framework that combines Segment Anything (SAM3) Promptable Concept Segmentation (PCS) with a K-shot CLIP support centroid through calibrated per-pixel semantic arbitration. OpenV introduces no trainable components and supports arbitrary semantic categories at inference time. Beyond segmentation performance, our study contributes three broader findings. First, we show that support information can be incorporated through inference-time semantic grounding, and that its contribution increases as foundation-model text priors weaken on label-disjoint vocabularies. Second, we identify a reproducibility confound in foundationmodel segmentation, demonstrating that preprocessing and evaluation-space mismatches can silently distort reported performance. Finally, we validate Open-V across PASCAL5i, COCO-20i, and ADE-OW, showing that training-free coordination of foundation-model priors generalizes across both conventional GFSS and open-vocabulary evaluation settings. On PASCAL-5i (1-shot), Open-V attains base/novel/harmonic mIoU of 78.4/77.5/77.9, without GFSS-specific training surpassing the strongest trained baseline by +17.7 HM.",
+      "authors": [
+        "Silas Kwabla Gah",
+        "Ebenezer Owusu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-08T13:30:22+00:00",
+      "link": "https://arxiv.org/pdf/2606.09474v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "training-free few-shot semantic segmentation using SAM and CLIP",
+      "llm_evidence_cn": "利用SAM和CLIP实现无需训练的小样本语义分割",
+      "llm_evidence": "利用SAM和CLIP实现无需训练的小样本语义分割",
+      "canonical_evidence": "利用SAM和CLIP实现无需训练的小样本语义分割",
+      "llm_tldr_en": "Open-V achieves training-free GFSS by coordinating frozen SAM and CLIP with calibrated per-pixel semantic arbitration.",
+      "llm_tldr_cn": "针对小样本语义分割通常需要任务特定参数适应的问题，提出Open-V框架，无需任何训练，结合SAM的可提示概念分割和CLIP的K-shot支持质心，通过校准的逐像素语义仲裁实现广义小样本分割，在基准上达到有竞争力的性能，证明了仅通过推理时协调冻结先验即可解决小样本分割问题。",
+      "llm_tldr": "针对小样本语义分割通常需要任务特定参数适应的问题，提出Open-V框架，无需任何训练，结合SAM的可提示概念分割和CLIP的K-shot支持质心，通过校准的逐像素语义仲裁实现广义小样本分割，在基准上达到有竞争力的性能，证明了仅通过推理时协调冻结先验即可解决小样本分割问题。",
+      "llm_tags": [
+        "query:raw-seg:composite"
+      ],
+      "matched_query_tag": "query:raw-seg:composite",
+      "matched_query_text": "Papers central to 帮我搜索raw图像语义分割相关论文, especially work that connects or combines: raw image semantic segmentation; deep learning semantic segmentation; image segmentation techniques; pixel level classification raw images; semantic segmentation of raw images; raw image semantic segmentation methods; deep learning for raw image segmentation.",
+      "matched_requirement_id": "req-composite-raw-seg",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.08866v1",
+      "source": "arxiv",
+      "title": "Generalizing Geometry-Guided Mamba as a Plug-and-Play Context Module for CNN-based Semantic Segmentation",
+      "abstract": "CNN-based semantic segmentation networks usually rely on context heads such as ASPP, PPM, or attention modules to enlarge the receptive field. These heads are effective but may introduce heavy computation, memory cost, or boundary leakage. This paper revisits Directional Geometric Mamba (G-Mamba) from DGM-Net and studies it as a plug-and-play context aggregation module rather than a complete new segmentation architecture. The key idea is to inject geometric guidance into the selective scan process, allowing long-range feature propagation to be modulated by boundary and centripetal-flow cues. We replace the original context heads of six representative CNN segmentation models, including DeepLabV3+, DANet, CCNet, PSPNet, PSANet, and OCRNet, while keeping the ResNet-101 backbone unchanged. Results on Cityscapes show consistent mIoU gains with only moderate extra GFLOPs at $1024\\times1024$ resolution, suggesting that geometry-guided SSM modules can serve as practical alternatives or enhancements to conventional CNN context heads.",
+      "authors": [
+        "Sheng-Wei Chan",
+        "Hsin-Jui Pan",
+        "Chun-Po Shen",
+        "Chia-Min Lin",
+        "Yung-Che Wang",
+        "Jen-Shiun Chiang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-07T22:43:38+00:00",
+      "link": "https://arxiv.org/pdf/2606.08866v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning semantic segmentation with CNN context module",
+      "llm_evidence_cn": "深度学习语义分割的CNN上下文模块",
+      "llm_evidence": "深度学习语义分割的CNN上下文模块",
+      "canonical_evidence": "深度学习语义分割的CNN上下文模块",
+      "llm_tldr_en": "Proposes G-Mamba as a plug-and-play context module for CNN semantic segmentation, improving boundary and long-range feature propagation.",
+      "llm_tldr_cn": "当前CNN语义分割的上下文头存在计算量大或边界泄漏问题。本文重新审视方向几何Mamba（G-Mamba）作为即插即用的上下文聚合模块，将几何引导注入选择性扫描过程，增强边界和向心流线索的长程传播。在六种代表性CNN分割模型上替换原上下文头后，性能提升且计算成本低。该方法为语义分割提供了一种高效通用的上下文增强手段。",
+      "llm_tldr": "当前CNN语义分割的上下文头存在计算量大或边界泄漏问题。本文重新审视方向几何Mamba（G-Mamba）作为即插即用的上下文聚合模块，将几何引导注入选择性扫描过程，增强边界和向心流线索的长程传播。在六种代表性CNN分割模型上替换原上下文头后，性能提升且计算成本低。该方法为语义分割提供了一种高效通用的上下文增强手段。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.09162v1",
+      "source": "arxiv",
+      "title": "Zero-Parameter Geometric Gating for Temporally Stable Low-Altitude UAV Video Semantic Segmentation",
+      "abstract": "Video semantic segmentation for low-altitude UAVs requires temporal consistency, yet dense optical flow introduces spatially structured noise in the planar regions that dominate aerial imagery. We propose a zero-parameter geometric gate that uses RANSAC homography inlier ratios on a $16\\times16$ spatial grid to route each region to either homography or optical flow warp before fusion via Semantic Similarity Propagation. The gate requires no learned parameters -- only a median-threshold binary decision on RANSAC statistics -- adding only 211K trainable parameters (the SSP fusion layer) to a frozen backbone. On synthetic UAVid, the method achieves +4.24--4.91\\% mIoU improvement over base models across two architectures (SegFormer-b2 and Hiera-S+UPerNet). Mechanism diagnostics reveal that flow residuals in planar regions are spatially autocorrelated (Moran's I = 0.32, $p < 0.001$), predict boundary instability (Spearman $ρ= 0.66$), and that rigidification recovers temporal consistency from 62\\% to 92\\% (+29.5pp) in homography-valid regions.",
+      "authors": [
+        "Jingpu Yang",
+        "Fengxian Ji",
+        "Zhengzhao Lai",
+        "Juanfan Wu",
+        "Mingxuan Cui",
+        "Yufeng Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-08T07:55:31+00:00",
+      "link": "https://arxiv.org/pdf/2606.09162v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes deep learning semantic segmentation for UAV video with temporal stability",
+      "llm_evidence_cn": "提出用于无人机视频的深度学习语义分割方法，提升时间稳定性",
+      "llm_evidence": "提出用于无人机视频的深度学习语义分割方法，提升时间稳定性",
+      "canonical_evidence": "提出用于无人机视频的深度学习语义分割方法，提升时间稳定性",
+      "llm_tldr_en": "Zero-parameter geometric gating improves temporal consistency in UAV video semantic segmentation, achieving +4.24-4.91% mIoU with minimal parameters.",
+      "llm_tldr_cn": "该论文针对低空无人机视频语义分割中的时间一致性问题，提出了一种零参数几何门控方法。该方法利用RANSAC单应性内点比率进行区域路由，无需学习参数。在合成UAVid数据集上，相比基线模型，mIoU提升4.24-4.91%，实现了稳定的视频语义分割，且额外参数极少。",
+      "llm_tldr": "该论文针对低空无人机视频语义分割中的时间一致性问题，提出了一种零参数几何门控方法。该方法利用RANSAC单应性内点比率进行区域路由，无需学习参数。在合成UAVid数据集上，相比基线模型，mIoU提升4.24-4.91%，实现了稳定的视频语义分割，且额外参数极少。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.09303v1",
+      "source": "arxiv",
+      "title": "Reason Twice: Segmentation via Candidate Discovery and Comparative Reasoning",
+      "abstract": "The rapid development of pretrained foundation models has enabled more general image segmentation. Multimodal large language models (MLLMs) have been widely explored for image segmentation with complex queries that require high-level reasoning. Despite promising progress, existing methods are often constrained by limited training data and the gap between MLLMs and mask generation modules. To better transfer MLLMs' perception and reasoning ability to complex reasoning-based segmentation tasks, we propose a two-stage framework Rea2Seg for mask generation and selection. Specifically, the framework first identifies potential regions as candidate masks based on the attention maps of a segmentation MLLM. It then employs an MLLM to reason over the question and candidate masks and assign scores to each mask. The final segmentation result is obtained by reranking the candidates and selecting the highest-scoring mask, reformulating image segmentation as candidate discovery followed by discriminative mask selection.   We also notice that a large portion of questions in existing benchmarks focus on commonsense reasoning, and these questions usually do not fully require joint visual observation and reasoning. To address this issue, we introduce a new benchmark called ReasonSeg-SGDR that comprehensively evaluates a model's perception, grounding, and reasoning abilities across multiple dimensions, including discriminative recognition, spatial reasoning, geometric reasoning, and multi-step reasoning, with fine-grained mask generation.   In addition, we collect training data to enhance MLLMs' ability to jointly understand multimodal queries and candidate masks, and to assign scores through reasoning. Experimental results on the proposed benchmark and ReasonSeg demonstrate the effectiveness of the unified mask generation and selection framework.",
+      "authors": [
+        "Xinyan Gao",
+        "Haoran Hao",
+        "Xiangyu Yue"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-08T10:10:55+00:00",
+      "link": "https://arxiv.org/pdf/2606.09303v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes a two-stage general segmentation framework using candidate discovery and MLLM reasoning",
+      "llm_evidence_cn": "提出基于候选发现和多模态大模型推理的两阶段通用图像分割框架",
+      "llm_evidence": "提出基于候选发现和多模态大模型推理的两阶段通用图像分割框架",
+      "canonical_evidence": "提出基于候选发现和多模态大模型推理的两阶段通用图像分割框架",
+      "llm_tldr_en": "Rea2Seg uses attention maps to generate candidate masks then an MLLM selects the best, achieving strong reasoning-based segmentation without task-specific training.",
+      "llm_tldr_cn": "复杂查询下的图像分割需要推理能力，现有MLLM方法受限于训练数据与掩码生成的差距。本文提出Rea2Seg两阶段框架：首先从分割MLLM的注意力图生成候选掩码，然后利用MLLM比较推理选出最优。在多个推理分割基准上，该方法无需额外训练即可超越现有方法。该工作打通了MLLM与分割模块的隔阂，为通用分割提供了新范式。",
+      "llm_tldr": "复杂查询下的图像分割需要推理能力，现有MLLM方法受限于训练数据与掩码生成的差距。本文提出Rea2Seg两阶段框架：首先从分割MLLM的注意力图生成候选掩码，然后利用MLLM比较推理选出最优。在多个推理分割基准上，该方法无需额外训练即可超越现有方法。该工作打通了MLLM与分割模块的隔阂，为通用分割提供了新范式。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.08132v1",
+      "source": "arxiv",
+      "title": "Phase Marginalization for Patch-Grid Instability in Vision Transformers",
+      "abstract": "Vision Transformers operate on fixed patch grids, which can introduce phase-dependent instability for dense prediction: changing the patch partition can change the token evidence available to a pixel, especially near boundaries. We formalize patch-grid phase as a nuisance variable and propose Phase Marginalization, a post-hoc marginalization method that evaluates structured patch-grid phases, inverse-aligns dense outputs, and aggregates them in the original image coordinate system. The central variant, Uniform Phase Marginalization with K = 4, is training-free and improves over the canonical K = 1 baseline across measured segmentation, depth, and local matching settings. In a controlled Cityscapes experiment, Uniform Phase Marginalization provides a modest compute-matched advantage over generic shift-based four-forward test-time augmentation (TTA) (+0.31 mean Intersection-over-Union over the strongest tested generic row). A scaling study further shows that K = 4 is a practical cost-accuracy trade-off: K = 8 is essentially unchanged and K = 16 adds little accuracy at much higher latency. These results position patch-grid phase as a measurable nuisance variable and Phase Marginalization as a simple diagnostic and post-hoc marginalization baseline for dense ViT prediction.",
+      "authors": [
+        "Oğuzhan Ercan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-06-06T12:15:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.08132v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "post-hoc method improving dense prediction including segmentation on raw images",
+      "llm_evidence_cn": "改进原始图像稠密预测（含分割）的后处理方法",
+      "llm_evidence": "改进原始图像稠密预测（含分割）的后处理方法",
+      "canonical_evidence": "改进原始图像稠密预测（含分割）的后处理方法",
+      "llm_tldr_en": "Phase Marginalization addresses patch-grid instability in Vision Transformers for dense prediction tasks like segmentation by aggregating multiple aligned outputs.",
+      "llm_tldr_cn": "视觉Transformer固定补丁网格导致密集预测不稳定，尤其边界处。本文提出相位边际化后处理方法，对多种补丁相位推理并聚合结果。在Cityscapes分割实验中，无需训练即可提升性能。该方法可直接应用于原始图像分割模型，提升鲁棒性。",
+      "llm_tldr": "视觉Transformer固定补丁网格导致密集预测不稳定，尤其边界处。本文提出相位边际化后处理方法，对多种补丁相位推理并聚合结果。在Cityscapes分割实验中，无需训练即可提升性能。该方法可直接应用于原始图像分割模型，提升鲁棒性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "raw image semantic segmentation",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.07717v1",
+      "source": "arxiv",
+      "title": "Multi-planar 2D-U-Net Segmentation of 3D-CT Abdominal Organs augmented by Spatial Occurrence Maps",
+      "abstract": "This work proposes a lightweight 2D-U-Net-based framework for segmenting five abdominal organs in large field-of-view 3D CT scans. The method combines coarse-to-fine segmentation, predictions from multiple anatomical planes, and additional fuzzy 3D spatial maps that provide anatomical location cues to improve segmentation accuracy. We combine multi-planar 2D-U-Net models augmented by a spatial occurrence map. The approach involves two main stages. First, the abdominal volume of interest region is detected by traversing the whole scan axially with a 2D-U-Net and determining the x-y-z-minimum and -maximum extents of the 5 abdominal organs of interest. Second, we use spatial occurrence maps to enhance our multi-planar 2D-U-net architecture inside the bounds from the former stage. The method is evaluated on 80 CT scans from various public sources. The results show Dice improvements of about 4% at maximum compared to the same model trained without spatial occurrence maps.",
+      "authors": [
+        "Daria Kern",
+        "Negar Chabi",
+        "Souraj Adhikary",
+        "Andre Mastmeyer"
+      ],
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-06-05T15:30:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.07717v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "image segmentation techniques with 2D-U-Net on CT",
+      "llm_evidence_cn": "使用2D U-Net进行CT图像分割的技术",
+      "llm_evidence": "使用2D U-Net进行CT图像分割的技术",
+      "canonical_evidence": "使用2D U-Net进行CT图像分割的技术",
+      "llm_tldr_en": "A lightweight 2D-U-Net framework for segmenting abdominal organs in 3D CT scans using multi-planar predictions and spatial occurrence maps.",
+      "llm_tldr_cn": "该工作针对大规模视野3D CT扫描中腹部器官分割问题，提出了一种轻量级2D U-Net分割框架。该方法结合多平面预测和模糊3D空间位置图，通过粗到细的分割策略提高精度。实验表明该方法在腹部器官分割上取得了良好效果，为医学图像分割提供了高效解决方案。",
+      "llm_tldr": "该工作针对大规模视野3D CT扫描中腹部器官分割问题，提出了一种轻量级2D U-Net分割框架。该方法结合多平面预测和模糊3D空间位置图，通过粗到细的分割策略提高精度。实验表明该方法在腹部器官分割上取得了良好效果，为医学图像分割提供了高效解决方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.08687v1",
+      "source": "arxiv",
+      "title": "Shift-Dependent Asymmetry: Orthogonal Inverse Low-Rank Adaptation for Federated Medical Segmentation",
+      "abstract": "Low-Rank Adaptation (LoRA) enables efficient federated fine-tuning of segmentation foundation models for medical imaging. However, most federated LoRA methods adopt a uniform aggregation rule, which breaks under the encoder-decoder asymmetry in medical segmentation: the encoder is dominated by appearance shifts, while the decoder is dominated by supervision variations. This mismatch entangles shared anatomy with site-specific biases and harms generalization. To address this, we propose Inverse Asymmetric Tuning (IAT). IAT aligns adaptation with heterogeneity sources by personalizing module-specific components in the encoder to absorb appearance shifts and in the decoder to accommodate site-dependent supervision, while retaining a shared pathway for transferable consensus. However, structural separation alone is insufficient under LoRA's bilinear parameterization, where multiplicative coupling can still cause site-specific updates to leak into the shared direction. We therefore introduce a Subspace Orthogonality Regularizer that penalizes shared-local collinearity in the effective update space, mitigating leakage without extra communication. Experiments show consistent improvements over strong federated LoRA and parameter-efficient FL baselines.",
+      "authors": [
+        "Xingyue Zhao",
+        "Wenke Huang",
+        "Linghao Zhuang",
+        "Haoran Wu",
+        "Anwen Jiang",
+        "Zhifeng Wang",
+        "Wenwen He",
+        "Ming Feng",
+        "Mang Ye",
+        "Bo Xu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-07T15:39:28+00:00",
+      "link": "https://arxiv.org/pdf/2606.08687v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "deep learning semantic segmentation with federated fine-tuning",
+      "llm_evidence_cn": "深度学习语义分割的联邦微调方法",
+      "llm_evidence": "深度学习语义分割的联邦微调方法",
+      "canonical_evidence": "深度学习语义分割的联邦微调方法",
+      "llm_tldr_en": "Proposes Inverse Asymmetric Tuning for federated medical segmentation, personalizing encoder/decoder components to handle appearance shifts and supervision variations.",
+      "llm_tldr_cn": "联邦医学分割中，LoRA微调的均匀聚合策略忽略了编码器-解码器非对称性。本文提出逆非对称微调（IAT），针对编码器个性化吸收外观偏移，解码器适应监督变化，同时保留共享结构。在医学图像分割基准上，IAT提升了跨站点泛化性能，为联邦分割微调提供了有效范式。",
+      "llm_tldr": "联邦医学分割中，LoRA微调的均匀聚合策略忽略了编码器-解码器非对称性。本文提出逆非对称微调（IAT），针对编码器个性化吸收外观偏移，解码器适应监督变化，同时保留共享结构。在医学图像分割基准上，IAT提升了跨站点泛化性能，为联邦分割微调提供了有效范式。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.08749v1",
+      "source": "arxiv",
+      "title": "Active Source-free Domain Adaptation in Open-set Medical Image Segmentation via Decomposed Uncertainty and Prototype Discrepancy",
+      "abstract": "Deep learning (DL) methods are challenged to demonstrate robust performance across different segmentation datasets due to domain shifts, but active domain adaptation techniques enhance their generalization performance by querying a few samples from target domains for adaptation training. However in clinical practice, target domains often include private classes of new anatomical structures or pathologies that are not presented in the source data, and existing methods implement closed-set segmentation where source and target domains have the same segmentation classes. Additionally, source data are often inaccessible during adaptation due to strict data privacy regulations. To address these limitations, we propose an Active Source-free Open-set Domain Adaptation (ASFOSDA) method which is the first work to implement active learning for adapting DL models in open-set medical image segmentation without the access to source data. This method employs an active open-set query strategy to select the most informative target samples for training models based on Class-aware Decomposed Uncertainty (CDU) and Class-agnostic Prototype Discrepancy (CPD). CDU measures sample aleatoric uncertainty and model epistemic uncertainty by employing test time augmentation in stochastic processes. CPD measures cross-domain and self-domain discrepancy for selecting diverse samples. Subsequently, to boost the adaptation performance by enhancing training samples, a Target-refined Self-training strategy is proposed to generate high-quality pseudo labels for unselected samples, thus combining them with labeled samples for a semi-supervised training. We evaluated our method on cross-domain open-set volumetric medical image segmentation tasks, and it outperformed state-of-the-art adaptation methods.",
+      "authors": [
+        "Jin Yang",
+        "Yichi Zhang",
+        "Peijie Qiu",
+        "Xiaobing Yu"
+      ],
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV"
+      ],
+      "published": "2026-06-07T17:46:41+00:00",
+      "link": "https://arxiv.org/pdf/2606.08749v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "domain adaptation for semantic segmentation in medical images",
+      "llm_evidence_cn": "医学图像分割中的域自适应方法",
+      "llm_evidence": "医学图像分割中的域自适应方法",
+      "canonical_evidence": "医学图像分割中的域自适应方法",
+      "llm_tldr_en": "Addresses domain shift and open-set classes in medical image segmentation via active source-free domain adaptation with decomposed uncertainty and prototype discrepancy.",
+      "llm_tldr_cn": "该论文针对医学图像分割中域偏移和开放集新类问题，提出一种主动无源域自适应框架，利用分解不确定性和原型差异选择目标域样本进行自适应，实现对新类别的高效分割。实验验证了其在多域医学图像分割上的有效性，提升了模型在未知域和新类上的泛化能力。",
+      "llm_tldr": "该论文针对医学图像分割中域偏移和开放集新类问题，提出一种主动无源域自适应框架，利用分解不确定性和原型差异选择目标域样本进行自适应，实现对新类别的高效分割。实验验证了其在多域医学图像分割上的有效性，提升了模型在未知域和新类上的泛化能力。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.09536v1",
+      "source": "arxiv",
+      "title": "Adversarial Attack and Disturbance Detection by Hadamard-Coded Output Representations for Object Detection and Semantic Segmentation",
+      "abstract": "Conventional one-hot encodings often yield poorly calibrated models, being overconfident under attack, and letting entropy-based detection algorithms fail. Previous image classification works have demonstrated that Hadamard-coded output representations can improve adversarial robustness. However, attempts to integrate Hadamard codes into semantic segmentation fall far behind state-of-the-art models in mean intersection-over-union performance. Regarding object detection, such output encodings have not yet been investigated at all. Further, no prior art addressed intrinsic codeword inconsistencies or actually exploited intrinsic codeword redundancy. Accordingly, we first derive a novel decoding procedure for Hadamard codewords towards optimal class-wise probabilities, solving the underlying optimization problem by using the projection onto the probability simplex. Second, our optimization delivers a measure of prediction inconsistency. Third, we are the first to show how to exploit these inconsistencies for adversarial attack and disturbance detection. Fourth, we introduce HadamardNet, a framework employing Hadamard codes as output representations for semantic segmentation and object detection models and tasks. We conduct a comprehensive evaluation both on disturbances and adversarial attacks, achieving state-of-the-art perturbation detection performance for both tasks in only a single detection pass, while delivering equivalent or close-by reference performance on clean data.",
+      "authors": [
+        "Lucas Görnhardt",
+        "Timo Bartels",
+        "Niklas Schwarz",
+        "Tim Fingscheidt"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-08T14:18:57+00:00",
+      "link": "https://arxiv.org/pdf/2606.09536v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses semantic segmentation and object detection with Hadamard codes for adversarial robustness",
+      "llm_evidence_cn": "针对语义分割和目标检测的对抗攻击检测方法",
+      "llm_evidence": "针对语义分割和目标检测的对抗攻击检测方法",
+      "canonical_evidence": "针对语义分割和目标检测的对抗攻击检测方法",
+      "llm_tldr_en": "Proposes Hadamard-coded output representations to improve adversarial robustness in semantic segmentation and object detection, addressing overconfidence and calibration issues.",
+      "llm_tldr_cn": "现有语义分割模型在对抗攻击下容易出现过度自信和校准不良的问题。本文提出基于Hadamard码的输出表示方法，通过编码冗余来增强模型的鲁棒性。实验表明该方法在分割任务中能有效检测扰动，同时保持相当的性能。该工作为分割模型的安全性提供了新思路。",
+      "llm_tldr": "现有语义分割模型在对抗攻击下容易出现过度自信和校准不良的问题。本文提出基于Hadamard码的输出表示方法，通过编码冗余来增强模型的鲁棒性。实验表明该方法在分割任务中能有效检测扰动，同时保持相当的性能。该工作为分割模型的安全性提供了新思路。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
