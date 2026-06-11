@@ -1,0 +1,134 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-11T22:20:14.524110+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2606.11837v1",
+      "source": "arxiv",
+      "title": "LASA: A Weak Supervision Method for Open-Vocabulary Scene Sketch Semantic Segmentation",
+      "abstract": "Open-vocabulary scene sketch semantic segmentation aims to assign dense semantic labels to sparse line drawings based on flexible category vocabularies specified at inference time, without relying on pixel-level annotations during training. Unlike natural images, sketches lack texture and color cues, making semantic understanding heavily dependent on stroke layout and spatial configuration, a challenge that renders single-layer vision-language features inherently unstable. Our key observation is that attention maps from different Vision Transformer layers encode complementary spatial cues: shallow layers capture global structural layouts, while deeper layers focus on local stroke intersections and object parts. This suggests that cross-layer aggregation provides a more robust structural prior than any individual layer alone. Leveraging this insight, we propose a structure-aware framework built upon \\textbf{L}ayer-wise \\textbf{A}ccumulated \\textbf{S}tructural \\textbf{A}ttention (\\textbf{LASA}), which aggregates multi-layer attention to guide hierarchical semantic alignment under weak supervision and refine predictions during inference. Experiments on FS-COCO, SFSD, and FrISS show that LASA improves mIoU by $+3.43$, $+8.01$, and $+15.74$ over the prior weakly supervised baselines, demonstrating consistent gains in both segmentation accuracy and spatial coherence. Our source code will be made publicly available.",
+      "authors": [
+        "Liwen Yi",
+        "Xianlin Zhang",
+        "Yue Zhang",
+        "Yue Ming",
+        "Xueming Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-10T09:17:36+00:00",
+      "link": "https://arxiv.org/pdf/2606.11837v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "open-vocabulary scene sketch semantic segmentation",
+      "llm_evidence_cn": "开放词汇场景草图语义分割",
+      "llm_evidence": "开放词汇场景草图语义分割",
+      "canonical_evidence": "开放词汇场景草图语义分割",
+      "llm_tldr_en": "Proposes LASA for open-vocabulary semantic segmentation of scene sketches using cross-layer ViT features, enabling dense labeling without pixel annotations.",
+      "llm_tldr_cn": "针对开放词汇场景草图语义分割任务，现有方法在稀疏线条图上因缺乏纹理色彩而性能不稳定。本文提出LASA方法，利用不同ViT层注意力图的互补空间信息——浅层捕获全局结构，深层聚焦局部细节——实现跨层特征融合，从而在无需像素级标注的情况下完成语义分割。在多个草图数据集上，LASA显著优于现有开放词汇分割方法，为无纹理图像分割提供了新思路。",
+      "llm_tldr": "针对开放词汇场景草图语义分割任务，现有方法在稀疏线条图上因缺乏纹理色彩而性能不稳定。本文提出LASA方法，利用不同ViT层注意力图的互补空间信息——浅层捕获全局结构，深层聚焦局部细节——实现跨层特征融合，从而在无需像素级标注的情况下完成语义分割。在多个草图数据集上，LASA显著优于现有开放词汇分割方法，为无纹理图像分割提供了新思路。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "semantic segmentation of raw images",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.08420v1",
+      "source": "arxiv",
+      "title": "CheXanatomy: Anatomy-Aware Vision-Language Modeling for Chest Radiographs",
+      "abstract": "Vision-language models (VLMs) pretrained on large-scale image-text pairs demonstrate strong image-level understanding, but are primarily optimized for global alignment and do not explicitly encode fine-grained anatomical structure, limiting their suitability for spatially precise tasks such as segmentation. We introduce CheXanatomy, a framework that integrates explicit anatomical knowledge into a pretrained VLM through autoregressive token-space supervision. Instead of adding task-specific decoder heads, the model is trained to generate anatomical segmentation masks via next-token prediction. To enable scalable supervision, we synthesize realistic chest radiographs from CT volumes and forward-project CT segmentation labels to obtain anatomically consistent 2D masks. We evaluate the approach on synthetic and real chest radiographs against a U-Net baseline, including ablations on model scale, input resolution, and vision encoder fine-tuning. Autoregressive anatomical supervision achieves performance comparable to specialized convolutional models in-distribution and demonstrates improved geometric robustness under domain shift to real CXR data. In addition, anatomy-pretrained models exhibit improved sample efficiency when adapting to novel localization tasks under limited supervision. Larger models and higher input image resolution improve performance, while vision encoder fine-tuning has limited effect. These results show that embedding anatomical structure directly into the generative objective promotes spatially grounded representations and supports anatomy-aware medical vision-language modeling.",
+      "authors": [
+        "Sergios Gatidis",
+        "Curtis Langlotz",
+        "Christian Bluethgen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-07T02:41:05+00:00",
+      "link": "https://arxiv.org/pdf/2606.08420v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "anatomy-aware VLM for chest radiograph segmentation",
+      "llm_evidence_cn": "解剖感知视觉语言模型用于胸部X光片分割",
+      "llm_evidence": "解剖感知视觉语言模型用于胸部X光片分割",
+      "canonical_evidence": "解剖感知视觉语言模型用于胸部X光片分割",
+      "llm_tldr_en": "Proposes CheXanatomy integrating anatomical knowledge into VLM to generate segmentation masks via next-token prediction.",
+      "llm_tldr_cn": "该论文提出CheXanatomy框架，将显式解剖知识融入预训练视觉语言模型，通过自回归令牌空间监督生成解剖分割掩码，避免了添加特定解码器头。利用CT数据合成胸部X光片及其标注，实现了可扩展的训练。在分割任务上表现出色，展示了视觉语言模型在精细语义分割中的应用潜力，与用户需求中的语义分割方法相关。",
+      "llm_tldr": "该论文提出CheXanatomy框架，将显式解剖知识融入预训练视觉语言模型，通过自回归令牌空间监督生成解剖分割掩码，避免了添加特定解码器头。利用CT数据合成胸部X光片及其标注，实现了可扩展的训练。在分割任务上表现出色，展示了视觉语言模型在精细语义分割中的应用潜力，与用户需求中的语义分割方法相关。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.12319v1",
+      "source": "arxiv",
+      "title": "Anatomically Conditioned Recurrent Refinement for Topology-Aware Circle of Willis Segmentation",
+      "abstract": "Segmenting the Circle of Willis (CoW) from Magnetic Resonance Angiography (MRA) is challenging due to complex topology and thin vascular structures that are prone to fragmentation. Standard Convolutional Neural Networks (CNNs) often fail to capture these topological constraints, resulting in \"broken vessel\" artifacts. To address this, we propose the Anatomically Conditioned Recurrent Refinement U-Net (AC2RUNet). Our architecture decouples segmentation into two streams: a Static Stream that extracts invariant anatomical features and a lightweight Dynamic Stream that iteratively refines topological errors over time. We further introduce a dynamic curriculum learning strategy that transitions from high-recall geometric supervision to topology-aware constraints. Validated on the TopCoW dataset, AC2RUNet substantially reduces Hausdorff Distance (4.72 mm vs 9.17 mm) and Betti number errors (0.19 vs 0.40), improving topological connectivity over the nnU-Net baseline while maintaining comparable volumetric Dice.",
+      "authors": [
+        "Juraj Perić",
+        "Marija Habijan",
+        "Dario Mužević",
+        "Irena Galić",
+        "Danilo Babin",
+        "Aleksandra Pižurica"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-10T16:53:13+00:00",
+      "link": "https://arxiv.org/pdf/2606.12319v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "deep learning segmentation of medical images with topology awareness",
+      "llm_evidence_cn": "深度学习用于医学图像分割并感知拓扑结构",
+      "llm_evidence": "深度学习用于医学图像分割并感知拓扑结构",
+      "canonical_evidence": "深度学习用于医学图像分割并感知拓扑结构",
+      "llm_tldr_en": "AC2RUNet decouples segmentation into static and dynamic streams to iteratively refine topological errors, achieving improved segmentation of thin vessels in Circle of Willis.",
+      "llm_tldr_cn": "本文针对Willis环分割中细小血管易断裂的问题，提出AC2RUNet网络。它将分割解耦为静态流（提取不变解剖特征）和动态流（迭代修正拓扑错误），并引入动态课程学习。在MRA图像上，该方法有效减少了血管断裂伪影，提升了拓扑完整性。虽然专注于医学领域，但其拓扑感知策略可推广到其他细长结构分割。",
+      "llm_tldr": "本文针对Willis环分割中细小血管易断裂的问题，提出AC2RUNet网络。它将分割解耦为静态流（提取不变解剖特征）和动态流（迭代修正拓扑错误），并引入动态课程学习。在MRA图像上，该方法有效减少了血管断裂伪影，提升了拓扑完整性。虽然专注于医学领域，但其拓扑感知策略可推广到其他细长结构分割。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

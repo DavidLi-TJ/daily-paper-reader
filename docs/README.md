@@ -6,38 +6,29 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-10
-- 运行时间：2026-06-10 22:24:33 UTC
+- 最新运行日期：2026-06-11
+- 运行时间：2026-06-11 22:22:20 UTC
 - 运行状态：成功
-- 本次总论文数：6
-- 精读区：4
+- 本次总论文数：3
+- 精读区：1
 - 速读区：2
 
 ### 今日简报（AI）
-今日共推荐6篇论文，精读4篇速读2篇，重点关注语义分割与零样本学习。最值得看的是iSAGE框架通过稀疏点监督实现遥感语义分割，以及工业场景零样本学习的新基准。建议读者优先了解iSAGE的人机交互范式，或探索零样本学习在工业中的应用挑战。
-- 详情：[/202606/10/README](/202606/10/README)
+今日精读1篇高分论文：开放词汇场景草图语义分割弱监督方法；速读2篇医学影像分析论文。最值得关注的是精读论文提出的LASA弱监督方案，有效解决草图语义分割标注难题。建议普通读者优先深入理解LASA方法在多模态场景下的迁移能力。
+- 详情：[/202606/11/README](/202606/11/README)
 
 ### 精读区论文标签
-1. [iSAGE: A Human-in-the-Loop Framework for Remote Sensing Semantic Segmentation via Sparse Point Supervision](/202606/10/2606.10136v1-isage-a-human-in-the-loop-framework-for-remote-sensing-semantic-segmentation-via-sparse-point-supervision)  
-   标签：评分：9.0/10、query:raw-seg
-   evidence：遥感语义分割，人机交互，稀疏点监督
-2. [Zero-Shot Learning in Industrial Scenarios: New Large-Scale Benchmark, Challenges and Baseline](/202606/10/2606.07965v1-zero-shot-learning-in-industrial-scenarios-new-large-scale-benchmark-challenges-and-baseline)  
+1. [LASA: A Weak Supervision Method for Open-Vocabulary Scene Sketch Semantic Segmentation](/202606/11/2606.11837v1-lasa-a-weak-supervision-method-for-open-vocabulary-scene-sketch-semantic-segmentation)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：使用LVLMs进行零样本工业缺陷检测涉及分割，深度学习分割
-3. [Training-Free Generalized Few-Shot Segmentation through Open-Vocabulary Semantic Arbitration](/202606/10/2606.09474v1-training-free-generalized-few-shot-segmentation-through-open-vocabulary-semantic-arbitration)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：基于基础模型（SAM、CLIP）的无训练小样本语义分割
-4. [Don't waste SAM](/202606/10/2606.10696v1-dont-waste-sam)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：微调SAM用于废物分割，图像分割技术
+   evidence：开放词汇场景草图语义分割
 
 ### 速读区论文标签
-1. [DeepMine-Mamba: Mitigating Information Dilution in Mamba-Based State Space Models for Document Image Binarization](/202606/10/2606.08781v1-deepmine-mamba-mitigating-information-dilution-in-mamba-based-state-space-models-for-document-image-binarization)  
-   标签：评分：7.0/10、query:raw-seg
-   evidence：文档图像二值化中的像素级分类，深度学习分割
-2. [Maximum Matching Accuracy: An Instance Segmentation Evaluation Metric Utilizing Globally Optimal Matching](/202606/10/2606.10107v1-maximum-matching-accuracy-an-instance-segmentation-evaluation-metric-utilizing-globally-optimal-matching)  
+1. [CheXanatomy: Anatomy-Aware Vision-Language Modeling for Chest Radiographs](/202606/11/2606.08420v1-chexanatomy-anatomy-aware-vision-language-modeling-for-chest-radiographs)  
    标签：评分：6.0/10、query:raw-seg
-   evidence：利用全局最优匹配的实例分割评估指标
+   evidence：解剖感知视觉语言模型用于胸部X光片分割
+2. [Anatomically Conditioned Recurrent Refinement for Topology-Aware Circle of Willis Segmentation](/202606/11/2606.12319v1-anatomically-conditioned-recurrent-refinement-for-topology-aware-circle-of-willis-segmentation)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：深度学习用于医学图像分割并感知拓扑结构
 
 
 <div class="dpr-home-promo-card">
