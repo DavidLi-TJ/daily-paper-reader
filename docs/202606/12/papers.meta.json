@@ -1,0 +1,54 @@
+{
+  "label": "2026-06-12",
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12T20:48:02",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202606/12/2606.08002v1-aqua-boundary-saliency-attention-module-for-lightweight-underwater-salient-instance-segmentation-detection-transformer",
+      "section": "quick",
+      "title_en": "Aqua Boundary-Saliency Attention Module for Lightweight Underwater Salient Instance Segmentation Detection Transformer",
+      "authors": "M. Fazri Nizar, Julian Supardi, Muhammad Naufal Rachmatullah",
+      "date": "2026-06-06",
+      "pdf": "https://arxiv.org/pdf/2606.08002v1",
+      "score": "7.0",
+      "evidence": "水下实例分割，像素级掩码预测",
+      "tldr": "水下实例分割面临模型部署效率低的问题。本文提出轻量级LUSIS-DETR框架，核心是AquaBSAM模块，将水下边界、对比度等先验嵌入多尺度特征，结合DINOv2初始化。在四个数据集上达到领先性能，TensorRT FP16推理延迟仅4.31-6.34ms。实现了实时、高精度的水下显著实例分割。",
+      "tags": "query:raw-seg",
+      "abstract_en": "Underwater instance segmentation integrates pixel-level mask prediction and instance-level discrimination for marine resource exploration, ecological monitoring, and underwater robotic perception. Recent prompt-based and auxiliary-modality methods improve mask quality, but their reliance on large foundation models, prompt generation, or extra modality estimation complicates efficient deployment. This work introduces Lightweight Underwater Salient Instance Segmentation Detection Transformer (LUSIS-DETR), a compact detection-transformer framework built around the Aqua Boundary-Saliency Attention Module (AquaBSAM). AquaBSAM embeds underwater boundary, contrast, attenuation, chroma, dark-channel, and center-prior cues into DINOv2-initialized multi-scale features through bounded residual modulation, while auxiliary mask supervision and small-object copy-paste are training-only. Extensive evaluation on four recent underwater instance segmentation datasets, UIIS, UIIS10K, USIS10K, and USIS16K, shows competitively leading performance against previous state-of-the-art works across category-aware and salient-instance protocols. TensorRT half-precision (FP16) benchmarking on an NVIDIA T4 graphics processing unit (GPU) achieves 4.31-6.34 milliseconds (ms) latency, supporting real-time inference under an accessible reproduction setting.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/12/2606.06760v1-medsight-towards-grounded-visual-comprehension-in-medical-large-vision-language-models",
+      "section": "quick",
+      "title_en": "MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models",
+      "authors": "Aofei Chang, Le Huang, Alex James Boyd, Parminder Bhatia, Taha Kass-Hout, Fenglong Ma, Cao Xiao",
+      "date": "2026-06-04",
+      "pdf": "https://arxiv.org/pdf/2606.06760v1",
+      "score": "6.0",
+      "evidence": "医学图像分割，具备像素级理解",
+      "tldr": "现有医疗大语言模型难以统一视觉理解与分割。MedSIGHT通过Region Perceiver模块将空间信息编码到语言表示空间，并提出医学区域码本，使模型生成离散区域码以解码分割掩码。仅用72K多模态指令对训练，在多种成像模态的理解和分割任务上达到最先进水平。该框架实现了结构化的像素级理解，为临床推理提供基础。",
+      "tags": "query:raw-seg",
+      "abstract_en": "Medical large vision-language models (Med-LVLMs) have recently achieved remarkable progress in vision-language comprehension and medical image segmentation. However, existing models still struggle to unify these two capabilities, which is essential for achieving clinically reasoning that connects visual findings with semantic interpretation. We present MedSIGHT, a unified framework that equips Med-LVLMs with structured, pixel-level understanding for grounded visual comprehension. MedSIGHT introduces a novel Region Perceiver module that produces region-centric tokens, encoding spatial information directly into representation space of the language model. We further propose a medical region codebook into the LLM vocabulary, allowing the model to generate discrete region codes as symbolic representations of anatomical and pathological regions. These codes are decoded through the Region Perceiver to reconstruct segmentation mask, achieving end-to-end spatial grounding. Lastly, MedSIGHT combines Region Perceiver, Codebook and LLM using our proposed progressive training strategy to gradually aligns these modules stably. Trained on only 72K multimodal instruction pairs, MedSIGHT achieves state-of-the-art performance across diverse imaging modalities on both medical comprehension and segmentation tasks.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/12/2606.12371v1-a-turbo-inference-strategy-for-object-detection-and-instance-segmentation",
+      "section": "quick",
+      "title_en": "A Turbo-Inference Strategy for Object Detection and Instance Segmentation",
+      "authors": "Zhen Zhao, Gang Zhang, Xiaolin Hu, Liang Tang",
+      "date": "2026-06-10",
+      "pdf": "https://arxiv.org/pdf/2606.12371v1",
+      "score": "6.0",
+      "evidence": "对语义分割有参考价值的实例分割优化策略",
+      "tldr": "目标检测与实例分割任务紧密耦合，但现有自上而下方法仅单向利用检测辅助分割，忽略了分割对检测的反馈。本文提出一种涡轮推理策略，通过设计涡轮检测头和涡轮分割头，形成检测与分割结果交替优化的闭环，无需重新训练模型。在COCO等数据集上，该方法显著提升了检测和分割精度，同时仅增加少量计算开销，实现了精度与速度的有效权衡。",
+      "tags": "query:raw-seg",
+      "abstract_en": "Object detection and instance segmentation tasks are closely related. Existing top-down instance segmentation methods usually follow a detect-then-segment paradigm, where an initial detector is used to recognize and localize objects with bounding boxes, followed by the segmentation of an instance mask within each bounding box. In such methods, the detection accuracy directly influences the subsequent segmentation performance. However, previous research has seldom explored the impact of the instance segmentation task on object detection. In this paper, we present a turbo-inference strategy for the top-down methods that leverages the complementary information between detection and segmentation tasks iteratively. Specifically we design two modules: turbo-detection head and turbo-segmentation head, which facilitate communication between the tasks. The two modules form a closed loop that interlaces the detection and segmentation results without retraining the model. Comprehensive experiments on the COCO, iFLYTEK, and Cityscapes datasets demonstrate that our method substantially enhances both detection and segmentation accuracies with a certain increase in computational cost. The proposed method represents a tradeoff between prediction accuracy and inference speed. Codes are available at https://github.com/zhaozhen2333/Turbo-Learning.git.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
