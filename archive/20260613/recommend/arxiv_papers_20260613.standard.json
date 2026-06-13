@@ -1,0 +1,94 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-13T21:11:53.725422+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.08906v1",
+      "source": "arxiv",
+      "title": "DifferSeg: Towards Diverse Multimodal Binary Segmentation via Differential Perception and Frequency Guidance",
+      "abstract": "In many binary segmentation tasks, most multimodal methods rely on fixed feature concatenation for cross-modal interaction and straightforward decoder designs dominated by low-frequency semantics. %ToDO: % However, they ignore two key challenges: one is the lack of an adaptive mechanism to handle modality discrepancies and complementarity, and the other is the absence of an efficient decoding strategy to balance both high- and low-frequency representations. % In this work, we propose a simple yet general multimodal binary segmentation framework, termed DifferSeg, to address both problems simultaneously. With the help of the differential perception fusion (DPF) module, DifferSeg employs learnable differential operators to adaptively align multimodal features and enhance their complementarity through residual fusion, effectively mitigating modality mismatch and fusion redundancy. % In addition, we design a frequency-guided decoder (FGD) that builds cross-frequency interactions and multi-path upsampling to maintain consistency between detailed high-frequency structures and semantic low-frequency representations, ensuring fine-grained boundary recovery and noise suppression. % Benefiting from these designs, DifferSeg can be easily generalized to diverse binary segmentation tasks, including both natural and medical modalities. Without bells and whistles, it consistently surpasses 67 state-of-the-art methods across 29 public datasets involving 18 downstream tasks, demonstrating superior generalization and segmentation accuracy.Code and pretrained models will be available at the Link.",
+      "authors": [
+        "Qiangqiang Zhou",
+        "Jiawei Xu",
+        "Yong Chen",
+        "Dandan Zhu",
+        "Yugen Yi",
+        "Xiaoqi Zhao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-08T01:10:36+00:00",
+      "link": "https://arxiv.org/pdf/2606.08906v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multimodal binary segmentation framework with differential perception and frequency guidance",
+      "llm_evidence_cn": "多模态二值分割框架，基于差分感知和频率引导",
+      "llm_evidence": "多模态二值分割框架，基于差分感知和频率引导",
+      "canonical_evidence": "多模态二值分割框架，基于差分感知和频率引导",
+      "llm_tldr_en": "DifferSeg proposes a differential perception fusion module and frequency-guided decoder for multimodal binary segmentation, improving cross-modal interaction and high/low-frequency balance.",
+      "llm_tldr_cn": "现有二值分割方法依赖固定特征拼接，忽视模态差异和频率平衡。本文提出DifferSeg，通过可学习的差分操作融合多模态特征，并设计频率引导解码器平衡高低频表示。在多个二值分割基准上超越了先前方法，且具有通用性。该方法无需复杂预处理即可适配不同模态。",
+      "llm_tldr": "现有二值分割方法依赖固定特征拼接，忽视模态差异和频率平衡。本文提出DifferSeg，通过可学习的差分操作融合多模态特征，并设计频率引导解码器平衡高低频表示。在多个二值分割基准上超越了先前方法，且具有通用性。该方法无需复杂预处理即可适配不同模态。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.10769v1",
+      "source": "arxiv",
+      "title": "ZODS-RS -- Zero-training Oriented Detection & Segmentation for Remote Sensing",
+      "abstract": "Remote-sensing and UAV applications need models that generalize across platforms and viewpoints without task-specific training. Yet training-free pipelines often falter on oriented geometry, scale/rotation variation, and crowded ports or airfields, and rarely unify detection and segmentation. We introduce ZODS-RS, a training-free, closed-form pipeline that outputs horizontal boxes (HBB) and instance masks. Built on DINOv3 dense features and SAM-style proposals, ZODS-RS chains: PP (prototype purification via Tyler covariance), R-SEM (rotation-scale equivariant matching with separable kernels and global Hungarian assignment), and UAM (uncertainty-aware pixelwise merging with adaptive priors and optional negative prototypes). A lightweight CWLA fuses multiple DINOv3 layers. On FAIR1M (HBB) we obtain $\\mathrm{mAP}_{0.50:0.95}=\\mathbf{13.06}$ and $\\mathrm{AP}_S=\\mathbf{2.93}$ \\emph{(class-averaged over ship/airplane)}; on xView (HBB) we report $\\mathrm{mAP}=\\mathbf{16.69}$. On our UAV dataset, ZODS-RS achieves mask $\\mathrm{mIoU}=\\mathbf{31.10}$ and improves small-object AP by $\\mathbf{+30.70}$ over Grounded-SAM on a single 5090. This work offers a unified, \\emph{no-training} solution for horizontal-box detection plus instance segmentation in aerial imagery; provides explicit closed-form formulations for PP/R-SEM/UAM tightly coupled with DINOv3; and demonstrates \\emph{consistent} gains on small and crowded targets and under cross-domain shifts while keeping deployment simple.",
+      "authors": [
+        "Zuan Gu",
+        "Tianhan Gao",
+        "Langxu Zhao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-09T12:24:55+00:00",
+      "link": "https://arxiv.org/pdf/2606.10769v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "training-free pipeline for remote sensing detection and segmentation, outputting instance masks",
+      "llm_evidence_cn": "遥感零训练检测与分割管道，输出实例掩码",
+      "llm_evidence": "遥感零训练检测与分割管道，输出实例掩码",
+      "canonical_evidence": "遥感零训练检测与分割管道，输出实例掩码",
+      "llm_tldr_en": "ZODS-RS is a training-free pipeline that outputs boxes and instance masks for remote sensing images using DINOv3 features and SAM proposals, handling oriented geometry and scale variations.",
+      "llm_tldr_cn": "遥感图像分割通常需要任务特定训练，零训练方法在几何变化下效果不佳。本文提出ZODS-RS，基于DINOv3密集特征和SAM候选，通过原型纯化、旋转尺度等变匹配和不确定性感知像素合并，实现无训练的水平框和实例掩码输出。在多个遥感数据集上展示了对旋转、尺度和拥挤场景的鲁棒性，为快速部署分割模型提供了新途径。",
+      "llm_tldr": "遥感图像分割通常需要任务特定训练，零训练方法在几何变化下效果不佳。本文提出ZODS-RS，基于DINOv3密集特征和SAM候选，通过原型纯化、旋转尺度等变匹配和不确定性感知像素合并，实现无训练的水平框和实例掩码输出。在多个遥感数据集上展示了对旋转、尺度和拥挤场景的鲁棒性，为快速部署分割模型提供了新途径。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "raw image semantic segmentation methods",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

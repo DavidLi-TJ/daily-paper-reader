@@ -6,32 +6,30 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-12
-- 运行时间：2026-06-12 20:47:53 UTC
+- 最新运行日期：2026-06-13
+- 运行时间：2026-06-13 21:14:10 UTC
 - 运行状态：成功
-- 本次总论文数：3
-- 精读区：0
-- 速读区：3
+- 本次总论文数：2
+- 精读区：1
+- 速读区：1
 
 ### 今日简报（AI）
-今日速读3篇论文，聚焦水下检测、医学视觉语言模型与推理策略。  
-最值得关注的是Aqua边界显著性注意力模块（7.0分）与MedSIGHT接地视觉理解方法，分别推动轻量水下实例分割和医学大语言模型发展。  
-建议重点关注水下场景的注意力机制设计，以及医疗多模态融合的落地思路。
-- 详情：[/202606/12/README](/202606/12/README)
+今日精读与速读两篇视觉分割论文，聚焦多模态差异感知和遥感零训练检测。
+
+最值得关注的是精读论文《DifferSeg》，其差分感知与频率引导机制在多模态二值分割中表现突出（8.0分），以及零训练方法在遥感场景的潜力（7.0分）。
+
+建议普通读者优先精读《DifferSeg》以理解多模态融合新范式，再浏览速读论文了解遥感领域少样本落地方向。
+- 详情：[/202606/13/README](/202606/13/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [DifferSeg: Towards Diverse Multimodal Binary Segmentation via Differential Perception and Frequency Guidance](/202606/13/2606.08906v1-differseg-towards-diverse-multimodal-binary-segmentation-via-differential-perception-and-frequency-guidance)  
+   标签：评分：8.0/10、query:raw-seg
+   evidence：多模态二值分割框架，基于差分感知和频率引导
 
 ### 速读区论文标签
-1. [Aqua Boundary-Saliency Attention Module for Lightweight Underwater Salient Instance Segmentation Detection Transformer](/202606/12/2606.08002v1-aqua-boundary-saliency-attention-module-for-lightweight-underwater-salient-instance-segmentation-detection-transformer)  
+1. [ZODS-RS -- Zero-training Oriented Detection & Segmentation for Remote Sensing](/202606/13/2606.10769v1-zods-rs----zero-training-oriented-detection--segmentation-for-remote-sensing)  
    标签：评分：7.0/10、query:raw-seg
-   evidence：水下实例分割，像素级掩码预测
-2. [MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](/202606/12/2606.06760v1-medsight-towards-grounded-visual-comprehension-in-medical-large-vision-language-models)  
-   标签：评分：6.0/10、query:raw-seg
-   evidence：医学图像分割，具备像素级理解
-3. [A Turbo-Inference Strategy for Object Detection and Instance Segmentation](/202606/12/2606.12371v1-a-turbo-inference-strategy-for-object-detection-and-instance-segmentation)  
-   标签：评分：6.0/10、query:raw-seg
-   evidence：对语义分割有参考价值的实例分割优化策略
+   evidence：遥感零训练检测与分割管道，输出实例掩码
 
 
 <div class="dpr-home-promo-card">

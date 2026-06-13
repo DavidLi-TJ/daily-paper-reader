@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-13",
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T21:14:17",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/13/2606.08906v1-differseg-towards-diverse-multimodal-binary-segmentation-via-differential-perception-and-frequency-guidance",
+      "section": "deep",
+      "title_en": "DifferSeg: Towards Diverse Multimodal Binary Segmentation via Differential Perception and Frequency Guidance",
+      "authors": "Qiangqiang Zhou, Jiawei Xu, Yong Chen, Dandan Zhu, Yugen Yi, Xiaoqi Zhao",
+      "date": "2026-06-08",
+      "pdf": "https://arxiv.org/pdf/2606.08906v1",
+      "score": "8.0",
+      "evidence": "多模态二值分割框架，基于差分感知和频率引导",
+      "tldr": "多模态二值分割现有方法缺乏自适应跨模态交互且忽视高频细节。本文提出DifferSeg，通过差分感知融合模块自适应对齐多模态特征并增强互补性，同时设计频率引导解码器平衡高低频表示。该方法在29个公开数据集上超越67种先进方法，覆盖18个下游任务，展现强泛化能力和精确分割。",
+      "tags": "query:raw-seg",
+      "abstract_en": "In many binary segmentation tasks, most multimodal methods rely on fixed feature concatenation for cross-modal interaction and straightforward decoder designs dominated by low-frequency semantics. %ToDO: % However, they ignore two key challenges: one is the lack of an adaptive mechanism to handle modality discrepancies and complementarity, and the other is the absence of an efficient decoding strategy to balance both high- and low-frequency representations. % In this work, we propose a simple yet general multimodal binary segmentation framework, termed DifferSeg, to address both problems simultaneously. With the help of the differential perception fusion (DPF) module, DifferSeg employs learnable differential operators to adaptively align multimodal features and enhance their complementarity through residual fusion, effectively mitigating modality mismatch and fusion redundancy. % In addition, we design a frequency-guided decoder (FGD) that builds cross-frequency interactions and multi-path upsampling to maintain consistency between detailed high-frequency structures and semantic low-frequency representations, ensuring fine-grained boundary recovery and noise suppression. % Benefiting from these designs, DifferSeg can be easily generalized to diverse binary segmentation tasks, including both natural and medical modalities. Without bells and whistles, it consistently surpasses 67 state-of-the-art methods across 29 public datasets involving 18 downstream tasks, demonstrating superior generalization and segmentation accuracy.Code and pretrained models will be available at the Link.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/13/2606.10769v1-zods-rs----zero-training-oriented-detection--segmentation-for-remote-sensing",
+      "section": "quick",
+      "title_en": "ZODS-RS -- Zero-training Oriented Detection & Segmentation for Remote Sensing",
+      "authors": "Zuan Gu, Tianhan Gao, Langxu Zhao",
+      "date": "2026-06-09",
+      "pdf": "https://arxiv.org/pdf/2606.10769v1",
+      "score": "7.0",
+      "evidence": "遥感零训练检测与分割管道，输出实例掩码",
+      "tldr": "遥感图像中零训练模型难以处理定向几何、尺度旋转变化及拥挤场景，且检测与分割未统一。本文提出ZODS-RS，基于DINOv3特征和SAM提案，通过原型纯化、旋转尺度等变匹配和不确定性感知像素融合，在无训练条件下联合输出水平框和实例掩膜。在FAIR1M、xView及无人机数据集上，小目标和跨域场景性能显著提升，mAP和mIoU均优于基线。该工作提供了首个统一的无训练遥感检测与分割方案，具有简洁闭式解和强泛化能力。",
+      "tags": "query:raw-seg",
+      "abstract_en": "Remote-sensing and UAV applications need models that generalize across platforms and viewpoints without task-specific training. Yet training-free pipelines often falter on oriented geometry, scale/rotation variation, and crowded ports or airfields, and rarely unify detection and segmentation. We introduce ZODS-RS, a training-free, closed-form pipeline that outputs horizontal boxes (HBB) and instance masks. Built on DINOv3 dense features and SAM-style proposals, ZODS-RS chains: PP (prototype purification via Tyler covariance), R-SEM (rotation-scale equivariant matching with separable kernels and global Hungarian assignment), and UAM (uncertainty-aware pixelwise merging with adaptive priors and optional negative prototypes). A lightweight CWLA fuses multiple DINOv3 layers. On FAIR1M (HBB) we obtain $\\mathrm{mAP}_{0.50:0.95}=\\mathbf{13.06}$ and $\\mathrm{AP}_S=\\mathbf{2.93}$ \\emph{(class-averaged over ship/airplane)}; on xView (HBB) we report $\\mathrm{mAP}=\\mathbf{16.69}$. On our UAV dataset, ZODS-RS achieves mask $\\mathrm{mIoU}=\\mathbf{31.10}$ and improves small-object AP by $\\mathbf{+30.70}$ over Grounded-SAM on a single 5090. This work offers a unified, \\emph{no-training} solution for horizontal-box detection plus instance segmentation in aerial imagery; provides explicit closed-form formulations for PP/R-SEM/UAM tightly coupled with DINOv3; and demonstrates \\emph{consistent} gains on small and crowded targets and under cross-domain shifts while keeping deployment simple.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
