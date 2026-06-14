@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-14",
+  "date": "2026-06-14",
+  "generated_at": "2026-06-14T20:50:49",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/14/2606.13587v1-towards-effective-waste-segmentation-for-automated-waste-recycling-in-cluttered-background",
+      "section": "quick",
+      "title_en": "Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background",
+      "authors": "Mamoona Javaid, Mubashir Noman, Abdul Hannan, Shah Nawaz, Mustansar Fiaz, Sajid Ghuffar",
+      "date": "2026-06-11",
+      "pdf": "https://arxiv.org/pdf/2606.13587v1",
+      "score": "6.0",
+      "evidence": "深度学习在杂乱背景下的垃圾分割",
+      "tldr": "随着城市扩张，垃圾产量剧增，自动化垃圾回收（AWR）成为刚需。现有基于深度学习的分割方法通常使用大骨干网络，效率低下且在杂乱场景中性能劣化。为此，本文提出一种级联式分割网络，巧妙结合空间域（捕获局部纹理）与频域（提取全局依赖），并引入辅助特征增强模块（AFEM）来锐化边界和增强斑点。在ZeroWaste-aug、ZeroWaste-f和SpectralWaste等多个数据集上的实验表明，该方法显著优于现有方案。该工作为AWR系统提供了高效且鲁棒的分割方案，尤其适用于杂乱背景。",
+      "tags": "query:raw-seg",
+      "abstract_en": "Rapid expansion of urban areas and population growth is causing an immense increase in waste production, which demands the need for efficient and automated waste management. In this scenario, automated waste recycling (AWR) using deep learning methods can assist humans in optimal waste management. Recent deep learning approaches for AWR provide promising waste segmentation performance, however, these methods rely on large backbone networks that are inefficient for AWR systems and suffer from performance deterioration in cluttered scenes. To this end, an optimal waste segmentation network is introduced which effectively utilizes the spatial domain to capture localized structural dependencies and the spectral domain to efficiently extract global contextual relationships. This cascaded design allows the network to progressively leverage both local and global representations across complementary domains to highlight the semantic information necessary for effective segmentation of various waste objects. Furthermore, auxiliary feature enhancement module (AFEM) is introduced to enhance the target objects' boundaries and blob amplification for better segmentation in cluttered scenarios. Extensive experimentation on ZeroWaste-aug, ZeroWaste-f and SpectralWaste datasets reveals the merits of the proposed method.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

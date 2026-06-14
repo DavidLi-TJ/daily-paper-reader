@@ -1,0 +1,57 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-14T20:49:58.090394+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.13587v1",
+      "source": "arxiv",
+      "title": "Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background",
+      "abstract": "Rapid expansion of urban areas and population growth is causing an immense increase in waste production, which demands the need for efficient and automated waste management. In this scenario, automated waste recycling (AWR) using deep learning methods can assist humans in optimal waste management. Recent deep learning approaches for AWR provide promising waste segmentation performance, however, these methods rely on large backbone networks that are inefficient for AWR systems and suffer from performance deterioration in cluttered scenes. To this end, an optimal waste segmentation network is introduced which effectively utilizes the spatial domain to capture localized structural dependencies and the spectral domain to efficiently extract global contextual relationships. This cascaded design allows the network to progressively leverage both local and global representations across complementary domains to highlight the semantic information necessary for effective segmentation of various waste objects. Furthermore, auxiliary feature enhancement module (AFEM) is introduced to enhance the target objects' boundaries and blob amplification for better segmentation in cluttered scenarios. Extensive experimentation on ZeroWaste-aug, ZeroWaste-f and SpectralWaste datasets reveals the merits of the proposed method.",
+      "authors": [
+        "Mamoona Javaid",
+        "Mubashir Noman",
+        "Abdul Hannan",
+        "Shah Nawaz",
+        "Mustansar Fiaz",
+        "Sajid Ghuffar"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-11T17:11:04+00:00",
+      "link": "https://arxiv.org/pdf/2606.13587v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "deep learning waste segmentation in cluttered backgrounds",
+      "llm_evidence_cn": "深度学习在杂乱背景下的垃圾分割",
+      "llm_evidence": "深度学习在杂乱背景下的垃圾分割",
+      "canonical_evidence": "深度学习在杂乱背景下的垃圾分割",
+      "llm_tldr_en": "Proposes an optimal waste segmentation network using spatial and spectral domains for efficient automated waste recycling.",
+      "llm_tldr_cn": "为了在杂乱场景下实现高效的自动垃圾回收，本文设计了一种最优垃圾分割网络。该网络同时利用空间域捕获局部结构依赖和谱域提取特征，在保持轻量级的同时提升了分割性能，为实际回收系统提供了可行方案。",
+      "llm_tldr": "为了在杂乱场景下实现高效的自动垃圾回收，本文设计了一种最优垃圾分割网络。该网络同时利用空间域捕获局部结构依赖和谱域提取特征，在保持轻量级的同时提升了分割性能，为实际回收系统提供了可行方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+Title: Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background
+
+URL Source: https://arxiv.org/pdf/2606.13587v1
+
+Published Time: Fri, 12 Jun 2026 01:21:42 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+# Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background 
+
+Mamoona Javaid 1 Mubashir Noman 2 Abdul Hannan 3 Shah Nawaz 4 Mustansar Fiaz 5 Sajid Ghuffar 1
+
+§ Code  Webpage 
+
+# Abstract 
+
+Rapid expansion of urban areas and population growth is causing an immense increase in waste production, which demands the need for efficient and automated waste management. In this sce-nario, automated waste recycling (AWR) using deep learning methods can assist humans in op-timal waste management. Recent deep learning approaches for AWR provide promising waste segmentation performance, however, these meth-ods rely on large backbone networks that are inef-ficient for AWR systems and suffer from perfor-mance deterioration in cluttered scenes. To this end, an optimal waste segmentation network is introduced which effectively utilizes the spatial domain to capture localized structural dependen-cies and the spectral domain to efficiently extract global contextual relationships. This cascaded design allows the network to progressively lever-age both local and global representations across complementary domains to highlight the semantic information necessary for effective segmentation of various waste objects. Furthermore, auxiliary feature enhancement module (AFEM) is intro-duced to enhance the target objects’ boundaries and blob amplification for better segmentation in cluttered scenarios. Extensive experimenta-tion on ZeroWaste-aug , ZeroWaste-f and Spectral-Waste datasets reveals the merits of the proposed method. 
+
+# 1. Introduction 
+
+Recent studies state that annual waste generation can reach an estimate of three billion tons by 2050 (Kaza et al., 2018). This drastic increase in solid waste production will have de-
+
+> 1
+
+Institute of Space Technology, Islamabad, Pakistan 2MBZUAI, UAE 3Fondazione Bruno Kessler, Italy 4Johannes Kepler Uni-versity, Linz, Austria 5IBM Research, UAE. Correspondence to: Mubashir Noman <mubashir.noman@mbzuai.ac.ae >.
+
+Preprint. June 12, 2026. 
+
+structive effects on the ecosystem and requires careful con-siderations for waste disposal and recycling (Subedi et al., 2025). The current advancement in artificial intelligence techniques encourages humans to perform automated separa-tion of recyclable waste items from solid waste. This enables recycling plants to quickly process waste material without exposing the manpower to pointed and unhygienic waste ob-jects. In this scenario, several waste classification and sort-ing frameworks (Mao et al., 2021; Feng et al., 2022) have been introduced that utilize convolution neural networks for waste classification. These methods are marginally prac-tical and require more sophisticated approaches that can detect the solid waste and separate it. To this extent, waste detection methods are proposed that can effectively detect the waste objects in a scene. For example, Xia et al. (Xia et al., 2024) introduced a lightweight YOLO model to detect the garbage items in densely accumulated scenarios. Sun et al. (Sun et al., 2025) proposed a framework based on YOLOv10n for household garbage detection. Such works provide reasonable performance for detection in moderately complex scenarios, however, their performance degrades considerably in more challenging scenes such as the pres-ence of translucent and varying-sized deformable waste objects in a cluttered environment. Considering that the need for effective and efficient waste de-tection and segmentation frameworks is crucial, Bashkirova et al. (Bashkirova et al., 2022) introduced the ZeroWaste dataset that provides the opportunity for the research com-munity to improve the performance of waste detection and segmentation networks. The authors demonstrated that ex-isting popular segmentation methods (Chen et al., 2018; Liu et al., 2022; Ouali et al., 2020) strive to accurately segment various waste items in cluttered scenes. Later, Casao et al. (Casao et al., 2024) presented the SpectralWaste dataset that further poses significant challenges by including thin and elongated waste items such as video tape and filament. To address these challenges, Ali et al. (Ali et al., 2024) proposed FANet that uses an adaptive feature enhancement layer to highlight the object boundaries and improve seg-mentation results. Subsequently, COSNet (Ali et al., 2025) is introduced that reduces computational cost while improv-ing waste segmentation performance. Although effective, 1
+
+> arXiv:2606.13587v1 [cs.CV] 11 Jun 2026 Towards Effective Waste Segmentation for AWR
+
+these methods are inspired from spatial enhancement convo-lution filters that only capture a small neighborhood context and become computationally more expensive when the filter size is increased to capture global relationships between features. Additionally, these methods need further optimiza-tion for practical use in automated waste recycling. To this end, we propose an effective waste segmentation network (EWSegNet), where spatial features are first refined to cap-ture local dependencies, followed by spectral features that model global contextual relationships. The sequential de-sign enables the network to leverage the complementary context across domains efficiently. Moreover, by incorpo-rating structural information and blob amplification, our auxiliary feature enhancement strengthens object bound-aries and highlights semantic regions, resulting in better segmentation performance without degrading the efficiency of the model. We summarize the key contributions of our work as follows: • We propose a novel end-to-end effective waste seg-mentation network (EWSegNet) which improves the model’s computational efficiency without compromis-ing the segmentation performance. • Our frequency context module (FCM) optimally cap-tures global context by using data-dependent kernels in the frequency domain to improve segmentation results. • The proposed spatial context module (SCM) performs feature excitation and weighting to complement the FCM for rich feature extraction. • To emphasize the boundaries of the waste items and blob regions, we design auxiliary feature enhancement module (AFEM) that uses difference of Gaussian fil-tering and pooled attention thereby improving waste segmentation performance in cluttered scenes. 
+
+# 2. Related Work 
+
+This section briefly reviews the existing work related to waste identification and segmentation methods. In addition, we discuss image and boundary enhancement techniques in spatial and frequency domains. 
+
+Waste Detection and Segmentation Methods: With the advancement of deep learning approaches, automated waste recognition and detection became more demanding from industrial perspective. For instance, Mao et al. (Mao et al., 2021) utilized DenseNet (Huang et al., 2017) for waste clas-sification necessary to perform recycling tasks, Feng et al. (Feng et al., 2022) introduced EfficientNet (Koonce, 2021) based method for automated waste classification and sort-ing, Meng et al. (Meng et al., 2022) demonstrated the use of MobileNet (Howard et al., 2017) for waste detection, Tian et al. (Tian et al., 2024) proposed efficient garbage classification method, and Xia et al. (Xia et al., 2024) introduced a light-weight YOLO model for garbage de-tection that utilizes MobileVit-v3 (Wadekar & Chaurasia, 2022) for feature extraction. Despite the fact that these methods perform favorably for waste classification and de-tection, their performance is degraded in cluttered scenes. Moreover, recent waste detection and segmentation datasets (Bashkirova et al., 2022; Casao et al., 2024) pose signifi-cant challenges to existing methods due to scale variations, presence of translucent and deformable objects, and clut-tered background. Bashkirova et al. (Bashkirova et al., 2022) demonstrated that existing detection and segmenta-tion methods (He et al., 2017; Li et al., 2019; Chen et al., 2018; Liu et al., 2022; Ouali et al., 2020) struggle to de-tect and segment translucent and deformable waste objects in cluttered scenes. Subsequently, Ali et al. (Ali et al., 2024) proposed FANet that utilizes the feature refinement module to enhance the features for better segmentation of translucent objects. Recently, COSNet (Ali et al., 2025) is introduced that utilizes sharpening module to emphasize the boundary details of the waste objects on cluttered scenes. Although these methods provide promising results, they have relatively high computational cost which makes them less appropriate for automated waste recycling. More re-cently, Li and Zhang (Li & Zhang, 2026) demonstrated that the lightweight transformer based methods struggle to ac-curately segment the waste objects in cluttered scenes. In contrast, we propose a waste segmentation network that provides promising waste segmentation performance while reducing computational overhead by exploiting spatial and spectral domains. 
+
+Image Enhancement and Sharpening: Several image and boundary enhancement procedures exist in the literature that utilize the sharpening filters to emphasize edges and improve the contrast of the image. Most of the techniques operate in spatial domain and utilize predefined filters or kernels to sharpen the edges and highlight the fine details (Gonzalez & Woods, 2018a). For example, Laplacian ker-nel, unsharp masking and high-boost filtering are some of the techniques that operate in spatial domain to sharpen the boundaries and enhance the image. However, utilizing these spatial domain kernels for convolution in deep neural networks is tricky. Additionally, spatial domain filtering is suitable for small-sized kernels, as computational cost and parameters increase significantly with increasing kernel size. Alternatively, image enhancement in frequency domain is fairly easier as convolution of a function f (x) with a ker-nel h(x) in spatial domain is equivalent to multiplication in frequency domain (Gonzalez & Woods, 2018b) and is expressed as: 
+
+(f ⋆ h )( x) ⇔ (H · F )( μ) (1) where H and F denote the Fourier transform of the corre-sponding functions. In addition, frequency domain provides 2Towards Effective Waste Segmentation for AWR            
+
+> Figure 1. Overall framework of the proposed effective waste segmentation network (EWSegNet) is illustrated here. The encoder consists of four stages that provide multiscale feature representations (i.e., F1, F 2, F 3, F 4). Each stage ( i) contains Ninumber of EWFE layers (where i∈[1 ,2,3,4] ). Before each stage, a convolution layer is used to downsample the feature maps. Feature representations of stage three are fed to auxiliary feature enhacement (AFE) module to emphasize boundaries and blob regions and obtain feature maps F5. Finally, these multiscale features are fed to decoder to obtain segmentation map.
+
+more flexibility to design any type of kernel such as a high-pass or low-pass kernel. For instance, a high-pass kernel can be designed by using difference of Gaussian functions as follows. 
+
+H(u) = Ae −u22σ12 − Be −u22σ22 (2) where A ≥ B and σ1 > σ 2. Inspired by frequency domain filtration, we design our Frequency Context module (FCM) and Auxiliary Feature Enhancement module (AFEM) which are discussed in Sec. 3.2.2 and 3.3 respectively. 
+
+# 3. Method 
+
+This section describes the overall architecture of the pro-posed EWSegNet in detail. 
+
+3.1. Overall Architecture 
+
+The general architecture of the proposed waste segmenta-tion framework (EWSegNet) is shown in Figure 1. The framework consists of an encoder, an auxiliary feature en-hancement module (AFEM), and a segmentation decoder. The EWSegNet encoder is responsible for extracting mul-tiscale feature maps by utilizing the efficient waste feature extraction (EWFE) layers. The encoder is composed of four stages; each stage ( i) contains Ni number of EWFE layers (where i ∈ [1 , 2, 3, 4] ). Before each stage, a convolution layer is utilized to decrease the spatial resolution of fea-ture maps while increasing the number of channels. The first convolution layer is represented as a stem layer that is responsible for projecting the image to feature space and reducing the spatial resolution. Unlike other segmentation encoders, EWSegNet takes the features of the third stage and performs feature enhancement by means of an auxiliary feature enhancement module. Afterwards, these enhanced features are added back to the feature maps of the third stage and then fed to the fourth stage of the encoder. This operation encourages the network to focus on the boundary information necessary to segment the translucent waste ob-jects in cluttered scenes and is described in detail in Sec. 3.3. The extracted multiscale feature maps of four stages and the enhanced feature maps from the AFEM are then fed to the segmentation decoder which processes these multiscale feature representations and provides the segmentation mask. 
+
+3.2. Efficient Waste Feature Extraction Layer 
+
+The basic building block of EWSegNet encoder is efficient waste feature extraction (EWFE) layer as shown in Fig. 2-(a). The figure illustrates that EWFE consists of three blocks, including spatial context module (SCM), frequency context module (FCM), and a multilayer perceptron (MLP). The SCM and FCM blocks are responsible for effectively capturing the semantic information in spatial and spectral domains. We discuss these blocks in more detail as follows. 3.2.1. S PATIAL CONTEXT MODULE 
+
+The main objective of the spatial context module (SCM) is to capture the contextual relationship of pixels within a local neighborhood. As illustrated in Fig. 2-(b), it first utilizes the 5 × 5 group-wise convolution to project the in-put X ∈ RC×H×W to ˆX of shape 3C × H × W . Then, it splits the features maps ¯X in the channel dimension to obtain features X1, X 2 and X3 of shape C × H × W . The feature maps X2 and X3 are used to highlight the significant features in X1. To achieve this, the mean is taken along the channel dimension of the features X2 and sigmoid function (σ) is applied to obtain the feature weights which are then multiplied element-wise to get weighted features ¯X. Simi-larly, spatial mean is taken for the features X3 and softmax 
+
+function ( ρ) is applied along the channel dimension. This vector is then multiplied with the features X1 to highlight the important channels and obtain feature maps ¯¯X. Finally, feature maps ¯X and ¯¯X are concatenated along channel di-3Towards Effective Waste Segmentation for AWR  
+
+> Figure 2. Efficient waste feature extraction (EWFE) layer is shown in Fig. a). Fig b) represents the spatial context module (SCM) that is used for feature excitation and weighting in spatial domain. In c), frequency context module (FCM) is illustrated that captures global contextual relationship between pixels in frequency domain.
+
+mension and passed to a 1 × 1 convolution to obtain the weighted features X′. Mathematically, the whole operation is expressed as follows: 
+
+X1, X 2, X 3 = CSplit (Conv 5×5(X)) ¯X = X1 · σ(CM ean (X2)) ¯¯X = X1 · ρ(SM ean (X3)) 
+
+X′ = Conv 1×1(concat ( ¯X, ¯¯X)) 
+
+(3) where CSplit refers to the channel-wise split, SM ean is spatial mean, CM ean is the mean along channel dimen-sion, σ represents sigmoid function, and ρ denotes softmax function, respectively. 3.2.2. F REQUENCY CONTEXT MODULE 
+
+The purpose of the frequency context module (FCM) is to capture the global relationship between pixels which is illus-trated in Fig. 2-(c). To accomplish this efficiently, the input feature maps Z ∈ RC×H×W are fed to 1 × 1 convolution to obtain feature maps Z1 and Z2 of shape C × H × W
+
+respectively. Afterwards, Fourier transform is applied on the feature maps Z1 and Z2 to project the features in frequency domain. Then, the features in frequency domain are multi-plied together to signify the important features and obtain feature maps ¯Z. As multiplication in frequency domain is equivalent to the convolution in spatial domain, therefore, this operation encourages the model to learn to focus on the significant information necessary for the required task. Eventually, the feature representations ¯Z are projected back to the spatial domain by taking the inverse Fourier transform and obtain rich feature representations Z′. 
+
+> Figure 3. This figure demonstrates the auxiliary feature enhance-ment module (AFEM) that has dual functions: boundaries enhance-ment (BE) and blob amplification (BA). BE emphasizes the fine details by using difference of Gaussian filtration while BA uses pooled attention to focus on semantic regions.
+
+3.3. Auxiliary Feature Enhancement Module 
+
+Auxiliary feature enhancement module (AFEM) is the criti-cal component of EWSegNet as its objective is to enhance the boundary information and to emphasize the structural information and the blob regions. AFEM has two main components including boundary emphasis (BE) and blob amplification (BA) as demonstrated in Fig. 3. AFEM takes the features of third stage as input and emphasize the bound-ary information by utilizing difference of Gaussian filter in frequency domain. To accomplish this, input Y is first transformed to frequency domain by means of Fourier trans-form and multiplied with two Gaussian functions having 4Towards Effective Waste Segmentation for AWR 
+
+sigma values of σ1 and σ2 to obtain features Yf 1 and Yf 2
+
+respectively. These feature maps are then projected back to spatial domain by using inverse Fourier transform and get features Yi1 and Yi2 respectively. Afterwards, difference is taken between them to get the high frequency information 
+
+Hf needed to focus on the boundary information. Addi-tionally, spatial mean is taken on the input features Y to get the channel weights Wc. These channel weights Wc
+
+are multiplied with the boundary features Hf to boost the relevant channels and obtain the emphasized boundary fea-tures Be. Finally, features Yi2 are added to the extracted boundary information Be to obtain boundary emphasized feature representations YB .To amplify the blob regions, first, the input Y is passed to the 1 × 1 convolution layer to obtain feature maps Q, K 
+
+and V . Then, feature maps Q are passed to average pooling layer to reduce the spatial dimension and obtain averaged response in a n × n neighborhood. Similarly, feature maps 
+
+K are passed to a max-pooling layer to get the significant features within the n × n neighborhood. Afterwards, self-attention is computed between the pooled features and V
+
+features to obtain the blob amplified features YA. Eventu-ally, enhanced features ( YB , Y A) are concatenated along the channel dimension and passed to 1 × 1 convolution layer to get the enhanced feature representations YE .
+
+# 4. Experiments 
+
+4.1. Datasets 
+
+In our experiments, we utilized three challenging waste segmentation datasets including ZeroWaste-f (Bashkirova et al., 2022), ZeroWaste-aug (Bashkirova et al., 2022), and SpectralWaste (Casao et al., 2024). 
+
+ZeroWaste-f (Bashkirova et al., 2022) is a public waste segmentation dataset that poses significant challenges to the segmentation methods due to presence of translucent and deformable shaped waste objects in a highly cluttered envi-ronment. The dataset contains four types of waste objects that includes metal, cardboard, soft and rigid plastic. This dataset is divided into train, validation and test sets having 3002, 572 and 929 images respectively. 
+
+ZeroWaste-aug (Bashkirova et al., 2022) ZeroWaste-f con-tains significant class imbalance that degrades the perfor-mance of segmentation networks. ZeroWaste-aug is the augmented version of ZeroWaste-f dataset to reduce the class imbalance by including the cropped objects of metal and rigid plastic classes from TACO (Proen c¸ a & Sim ˜oes, 2020) dataset. The dataset contains 3002, 572 and 929 images in train, validation, and test sets respectively. 
+
+SpectralWaste (Casao et al., 2024) is yet another challeng-ing waste segmentation dataset that contains RGB and hy-perspectral images. Similar to other works (Ali et al., 2025), we utilized the RGB version of the dataset in our experi-ments for fair comparison. SpectralWaste is challenging in the sense as it contains translucent as well as thin elongated objects in cluttered scenes. The dataset contains six types of recyclable waste objects including basket, cardboard, film, filaments, video tape, and trash bags. SpectralWaste dataset is available in train, validation and test splits having 514, 167, and 171 images respectively. 
+
+4.2. Evaluation Metrics 
+
+Similar to prior works (Bashkirova et al., 2022; Ali et al., 2025), we used mean intersection over union (mIoU) and 
+
+pixel accuracy metrics to evaluate the performance of the proposed method on waste segmentation datasets. 
+
+4.3. Implementation Details 
+
+We implemented our method using MMSegmentation (Con-tributors, 2020) codebase and utilized Quadro RTX 6000 GPU for all experiments. We performed the experiments on a single GPU and used the batch size of 8. We initialize the encoder with pre-trained weights of ImageNet-1k (Deng et al., 2009) and perform random initialization of decoder. Similar to the existing works (Ali et al., 2024; 2025), we used UPerNet (Xiao et al., 2018) decoder in our model. During training, we utilized data augmentations of random resize, random crop to 512 × 512 , and random horizontal flip. We utilized AdamW optimizer and an initial learning rate of 5e-5. We trained the model for 40k iterations on all three datasets. During the evaluation phase, we resized the shorter side of the image to 512 as performed in training while keeping the aspect ratio. 
+
+4.4. Quantitative Results Comparison on ZeroWaste-f: We present the compar-ison of the proposed EWSegNet with the state-of-the-art (SOTA) waste segmentation methods (Ali et al., 2025; 2024; Chen et al., 2018; Yang et al., 2022) on ZeroWaste-f dataset in Tab. 1. We observe that our method provides similar performance in terms of mIoU metric while fairly reduc-ing the number of trainable parameters and average latency (computed on test set of ZeroWaste-f dataset) as compared to the SOTA method COSNet. As demonstrated in Tab. 1, EWSegNet obtains mIoU score of 56.44% having num-ber of encoder parameters equal to 23.3M and latency of 64.8 msec. Whereas the existing SOTA method COSNet provides the mIoU score of 56.67% while having encoder parameters equal to 27.3M and latency of 73.6 msec. We further compare the class-wise IoU score of EWSegNet with the recent methods in Tab. 2. We notice that EWSegNet performs considerably better for the segmentation of metal 5Towards Effective Waste Segmentation for AWR 
+
+Table 1. Performance comparison of EWSegNet with state-of-the-art waste segmentation methods in terms of mIoU (%) and pixel accuracy (%) metrics on the test split of ZeroWaste-f dataset. Encoder FLOPs are reported with RGB image size of 512 × 512 . Best results are highlighted in bold and second best are underlined.                                       
+
+> Method Encoder Params (M) ↓GFLOPs ↓Latency (msec) ↓mIoU (%) ↑Pix. Acc. (%) ↑
+> ReCo (Liu et al., 2022) –––52.28 89.33 DeepLabv3+ (Chen et al., 2018) –––52.13 91.38 FANet (Ali et al., 2024) 36.0 30.3 74.5 54.89 91.41 FocalNet-B (Yang et al., 2022) 88.7 80.6 –54.26 91.28 COSNet (Ali et al., 2025) 27.3 24.4 73.6 56.67 91.91
+> EWSegNet (Ours) 23.3 20.5 64.8 56.44 91.75
+
+Figure 4. Qualitative comparison of EWSegNet with the recent waste segmentation methods FANet (Ali et al., 2024) and COSNet (Ali et al., 2025) on ZeroWaste-f. Proposed EWSegNet provides reasonably better segmentation performance as highlighted in yellow boxes. 
+
+Table 2. Performance comparison in terms of class-wise IoU (%) scores of EWSegNet with recent waste segmentation frameworks on ZeroWaste-f dataset. Best results are highlighted in bold text.                      
+
+> IoU (%) ↑
+> Method Background Cardboard Soft Plastic Rigid Plastic Metal DeepLabv3+ 91.02 54.47 63.18 24.82 27.14 COSNet 91.44 59.13 65.92 37.24 29.61 EWSegNet (Ours) 91.45 59.24 63.17 33.28 35.05
+
+class by achieving IoU gain of 5.44%. Overall, EWSeg-Net provides similar performance in terms of IoU while improving model efficiency. 
+
+Comparison on ZeroWaste-aug: We compare proposed EWSegNet with efficient waste segmentation methods on ZeroWaste-aug dataset in Tab. 3. Notably, our proposed method substantially outperforms the existing best methods by achieving an absolute gain of 10.8% in terms of mIoU metric over the recently introduced best performing method LWCHNet (Li & Zhang, 2026). We associate this remark-able performance with the integration of augmented objects in the dataset to reduce class imbalance. 
+
+Comparison on SpectralWaste: In Tab. 4, performance 
+
+Table 3. Performance comparison of EWSegNet with state-of-the-art waste segmentation methods in terms of mIoU (%) metric on test split of ZeroWaste-aug (Bashkirova et al., 2022) dataset. Best results are highlighted in bold and second best are underlined.                         
+
+> Method mIoU (%) ↑mF1 (%) ↑
+> TopFormer-S (Zhang et al., 2022) 52.53 66.87 SeaFormer-S (Wan et al., 2023) 54.47 68.75 AFFormer-B (Dong et al., 2023) 54.76 69.03 FeedFormer-B0 (Shim et al., 2023) 59.18 72.58 PIDNet-S (Xu et al., 2023) 57.74 71.13 DDRNet-slim (Pan et al., 2022) 61.12 74.35 LWCHNet (Li & Zhang, 2026) 63.16 76.03 DeepLabv3+ (Chen et al., 2018) 52.50 –EWSegNet (Ours) 74.10 84.31
+
+comparison of the proposed EWSegNet and SOTA waste segmentation methods is reported. We observe that EWSeg-Net provides favorably better overall performance by achiev-ing the mIoU score of 71.03% as compared to the SOTA method COSNet that obtains the mIoU score of 69.96%. It is worth notable that our method provides relatively better performance while being efficient. Additionally, we observe that our method achieves relatively 6Towards Effective Waste Segmentation for AWR                                                        
+
+> Figure 5. Visual comparison of EWSegNet with recent waste segmentation methods FANet (Ali et al., 2024) and COSNet (Ali et al., 2025) on Spectral Waste dataset. As highlighted in yellow boxes, proposed EWSegNet is fairly better to segment the waste objects in cluttered scenes.
+> Table 4. Performance comparison of EWSegNet with SOTA waste segmentation methods in terms of mIoU (%) and class-wise IoU (%) scores on test split of SpectralWaste (Casao et al., 2024) dataset. Best results are highlighted in bold and second best are underlined.
+> IoU (%) ↑
+> Method mIoU (%) ↑Film Basket Cardboard Video Tape Filament Trash Bag MiniNet-v2 (Alonso et al., 2020) 44.5 63.1 58.9 55.4 30.6 10.0 49.2 SegFormer-B0 (Xie et al., 2021) 48.4 66.9 71.3 48.9 33.6 15.2 54.6 FANet (Ali et al., 2024) 67.83 72.47 82.98 75.26 41.28 67.65 67.36 InternImage-T (Wang et al., 2023) 47.99 42.38 82.8 69.1 41.39 16.5 35.77 COSNet(Ali et al., 2025) 69.96 77.61 83.65 75.14 42.95 69.06 71.38
+> EWSegNet (Ours) 71.03 77.88 84.16 79.77 42.05 73.39 68.96
+
+better IoU scores on four waste object types achieving an absolute gain of as high as 4.63% for Cardboard class. Whereas COSNet still performs better in case of Video Tape 
+
+and Trash Bag classes. 
+
+4.5. Qualitative Results ZeroWaste-f: Fig. 4 demonstrates the qualitative compari-son of EWSegNet with SOTA waste segmentation methods including FANet (Ali et al., 2024) and COSNet (Ali et al., 2025). In the first row of the figure, FANet is unable to detect waste objects (overlaid with cyan and magenta) as highlighted in a yellow colored box, whereas our method and COSNet accurately segment the desired waste objects. In second and third rows, FANet and COSNet incorrectly classify the soft plastic objects as rigid plastic objects as shown in yellow boxes. We also notice that all the methods falsely segment the paper as cardboard object in second row of the Fig. 4 overlaid in green color. 
+
+SpectralWaste: The qualitative comparison of the pro-posed method with SOTA methods (Ali et al., 2024; 2025) on SpectralWaste dataset is illustrated in Fig. 5. From the figure, we observe that the proposed EWSegNet and COSNet provide better performance compared to FANet by accurately segmenting the waste objects. As highlighted in the yellow box in first row of Fig. 5, FANet struggles to segment the waste objects whereas EWSegNet and COSNet provide fairly accurate segmentation of the waste objects such as video tape. Similarly, FANet struggles to accurately segment the desired waste objects in second and third rows while our method provides fairly better segmentation results 7Towards Effective Waste Segmentation for AWR                                
+
+> Figure 6. Here we demonstrate the efficacy of AFEM. a) shows the input image to EWSegNet, b) is the visualization of 3rd stage features which are input to AFEM, c) shows the visualization of the output features of AFEM, d) represents the boundaries highlighted by BE part in AFEM, e) shows the blobs emphasized by BA part in AFEM, f) is prediction of the EWSegNet, and g) shows the Ground Truth segmentation map.
+> Table 5. This ablation study reports the effectiveness of each proposed component of EWSegNet on ZeroWaste-f dataset. We observe that the baseline model provides reasonable performance. However, when FCM, SCM, and AFEM are integrated in the framework, the mIoU score is improved. Best results are highlighted in bold text.
+> FCM SCM AFEM mIoU (%) ↑Pix. Acc. (%) ↑
+> Baseline ---47.32 90.77 SCM -✓-51.63 90.89 FCM ✓--53.05 91.54 FCM + SCM ✓✓-54.11 91.72 EWSegNet ✓✓✓56.44 91.75
+
+as shown in yellow boxes. 
+
+4.6. Ablation Experiments 
+
+To verify the efficacy of the proposed modules, we per-formed ablation experiments by integrating the modules sequentially in the baseline. We report the performance of ablation experiments in Tab. 5. From the table, we observe that the baseline network (in which FCM, SCM and AFEM are missing and a large spatial convolution is used) strug-gles to provide reasonable performance by achieving mIoU score of 47.32% on ZeroWaste-f dataset. When the baseline block is replaced with SCM, the performance gain is 4.31%. Similarly, replacing with FCM, segmentation performance is increased to mIoU score of 53.05%. After integrating the spatial context module (SCM) with the FCM, segmentation performance improves by 1.06%. Finally, when the aux-iliary feature enhancement module (AFEM) is utilized in EWSegNet, the mIoU score further improves to reach the value of 56.44% indicating the effectiveness of the proposed contributions. 
+
+Efficacy of AFEM: We further present the visual analy-sis of boundary enhancement and blob amplification in the auxiliary feature enhancement module in Fig. 6. As illus-trated in the figure, features maps (see Fig. 6 b) which are input to the AFEM need to highlight the boundaries of the waste objects. AFEM takes these features and separately enhances the boundaries and blobs regions using BE and BA components resulting in emphasizing the desired seman-tic information as shown in Fig. 6 d) and e), respectively. Subsequently, the enhanced features from BE and BA are concatenated and fed to the convolution layer to obtain the highlighted waste objects as depicted in Fig. 6 c). This figure undoubtedly demonstrates the efficacy of the AFEM. 
+
+# 5. Conclusion 
+
+This work has introduced an effective waste segmentation network (EWSegNet) that provides promising segmentation performance while reducing the computational cost of the network. The proposed EWSegNet processes the image in both spatial and frequency domains to capture the local and global contextual relationship between pixels without increasing the computational cost. In addition, the pro-posed EWSegNet uses AFEM to focus on the boundaries and desired semantic regions that are crucial for enhanced segmentation performance in cluttered scenarios. Further-more, the mixing of the highlighted feature representation with third stage feature maps of encoder provides critical semantic information for the layers of last stage of encoder thereby improving the segmentation results. Extensive ex-periments on three challenging waste segmentation datasets demonstrate that EWSegNet can be utilized for automated waste recycling in complex scenes. 8Towards Effective Waste Segmentation for AWR 
+
+# Impact Statement 
+
+“This paper presents work whose goal is to advance the field of Machine Learning for Automated Waste Recycling. There are many potential societal consequences of our work, none which we feel must be specifically highlighted here.” 
+
+# References 
+
+Ali, M., Javaid, M., Noman, M., Fiaz, M., and Khan, S. Fanet: Feature amplification network for semantic seg-mentation in cluttered background. In 2024 IEEE In-ternational Conference on Image Processing (ICIP) , pp. 2592–2598, 2024. Ali, M., Javaid, M., Noman, M., Fiaz, M., and Khan, S. Cosnet: A novel semantic segmentation network using enhanced boundaries in cluttered scenes. In Proceedings of the Winter Conference on Applications of Computer Vision (WACV) , pp. 1363–1372, February 2025. Alonso, I., Riazuelo, L., and Murillo, A. C. Mininet: An effi-cient semantic segmentation convnet for real-time robotic applications. IEEE Transactions on Robotics , 36(4):1340– 1347, 2020. doi: 10.1109/TRO.2020.2974099. Bashkirova, D., Abdelfattah, M., Zhu, Z., Akl, J., Allad-kani, F., Hu, P., Ablavsky, V., Calli, B., Bargal, S. A., and Saenko, K. Zerowaste dataset: Towards deformable object segmentation in cluttered scenes. In CVPR , pp. 21147–21157, 2022. Casao, S., Pe ˜na, F., Sabater, A., Castill ´on, R., Su ´arez, D., Montijano, E., and Murillo, A. C. Spectralwaste dataset: Multimodal data for waste sorting automation. In 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , pp. 5852–5858. IEEE, 2024. Chen, L.-C., Zhu, Y., Papandreou, G., Schroff, F., and Adam, H. Encoder-decoder with atrous separable convolution for semantic image segmentation. In ECCV , pp. 801–818, 2018. Contributors, M. MMSegmentation: Openmmlab semantic segmentation toolbox and benchmark. https:// github.com/open-mmlab/mmsegmentation ,2020. Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., and Fei-Fei, L. Imagenet: A large-scale hierarchical image database. In CVPR , pp. 248–255, 2009. Dong, B., Wang, P., and Wang, F. Head-free lightweight semantic segmentation with linear transformer. In Pro-ceedings of the AAAI conference on artificial intelligence ,volume 37, pp. 516–524, 2023. Feng, Z., Yang, J., Chen, L., Chen, Z., and Li, L. An intelligent waste-sorting and recycling device based on improved efficientnet. International Journal of Environ-mental Research and Public Health , 19(23):15987, 2022. Gonzalez, R. and Woods, R. Intensity transformations and spatial filtering. In Digital Image Processing , chapter 3, pp. 153–187. Pearson, 2018a. Gonzalez, R. and Woods, R. Filtering in the frequency domain. In Digital Image Processing , chapter 4, pp. 153– 187. Pearson, 2018b. He, K., Gkioxari, G., Doll ´ar, P., and Girshick, R. Mask r-cnn. In Proceedings of the IEEE International Conference on Computer Vision , pp. 2961–2969, 2017. Howard, A. G., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., and Adam, H. Mobilenets: Efficient convolutional neural networks for mobile vision applications. arXiv preprint arXiv:1704.04861 , 2017. Huang, G., Liu, Z., Van Der Maaten, L., and Weinberger, K. Q. Densely connected convolutional networks. In 
+
+Proceedings of the IEEE conference on computer vision and pattern recognition , pp. 4700–4708, 2017. Kaza, S., Yao, L. C., Bhada-Tata, P., and Van Woerden, F. What a waste 2.0: A global snapshot of solid waste management to 2050. Urban Development , 2018. URL 
+
+http://hdl.handle.net/10986/30317 .Koonce, B. Efficientnet. Convolutional neural networks with swift for Tensorflow: image recognition and dataset categorization , pp. 109–123, 2021. Li, Y. and Zhang, X. Lightweight context-awareness hybrid-attention network for waste segmentation in cluttered scenes. Displays , 91:103213, 2026. ISSN 0141-9382. doi: https://doi.org/10.1016/j.displa.2025.103213. URL https://www.sciencedirect.com/ science/article/pii/S0141938225002501 .Li, Y., Chen, Y., Wang, N., and Zhang, Z. Scale-aware trident networks for object detection. In Proceedings of the IEEE/CVF International Conference on Computer Vision , pp. 6054–6063, 2019. Liu, S., Zhi, S., Johns, E., and Davison, A. J. Bootstrap-ping semantic segmentation with regional contrast. In 
+
+International Conference on Learning Representations ,2022. Mao, W.-L., Chen, W.-C., Wang, C.-T., and Lin, Y.-H. Recy-cling waste classification using optimized convolutional neural network. Resources, Conservation and Recycling ,164:105132, 2021. 9Towards Effective Waste Segmentation for AWR 
+
+Meng, J., Jiang, P., Wang, J., and Wang, K. A mobilenet-ssd model with fpn for waste detection. Journal of Electrical Engineering & Technology , 17(2):1425–1431, 2022. Ouali, Y., Hudelot, C., and Tami, M. Semi-supervised semantic segmentation with cross-consistency training. In CVPR , pp. 12671–12681, 2020. doi: 10.1109/ CVPR42600.2020.01269. Pan, H., Hong, Y., Sun, W., and Jia, Y. Deep dual-resolution networks for real-time and accurate semantic segmenta-tion of traffic scenes. IEEE Transactions on Intelligent Transportation Systems , 24(3):3448–3460, 2022. Proen c¸ a, P. F. and Sim ˜oes, P. Taco: Trash annotations in con-text for litter detection. arXiv preprint arXiv:2003.06975 ,2020. Shim, J.-h., Yu, H., Kong, K., and Kang, S.-J. Feedformer: Revisiting transformer decoder for efficient semantic seg-mentation. In Proceedings of the AAAI conference on artificial intelligence , volume 37, pp. 2263–2271, 2023. Subedi, A., Shrestha, S., Ghimire, A., and Paudel, S. R. Leveraging machine learning for sustainable solid waste management: A global perspective. 
+
+Sustainable Futures , 10:101098, 2025. ISSN 2666-1888. doi: https://doi.org/10.1016/j.sftr.2025.101098. URL https://www.sciencedirect.com/ science/article/pii/S2666188825006628 .Sun, S., Zheng, S., Xu, X., and He, Z. Gd-yolo: A lightweight model for household waste image detection. Expert Systems with Appli-cations , 279:127525, 2025. ISSN 0957-4174. doi: https://doi.org/10.1016/j.eswa.2025.127525. URL https://www.sciencedirect.com/ science/article/pii/S0957417425011479 .Tian, X., Shi, L., Luo, Y., and Zhang, X. Garbage classifi-cation algorithm based on improved mobilenetv3. IEEE Access , 12:44799–44807, 2024. Wadekar, S. N. and Chaurasia, A. Mobilevitv3: Mobile-friendly vision transformer with simple and effective fu-sion of local, global and input features. arXiv preprint arXiv:2209.15159 , 2022. Wan, Q., Huang, Z., Lu, J., Yu, G., and Zhang, L. Seaformer: Squeeze-enhanced axial transformer for mobile semantic segmentation. In The eleventh international conference on learning representations , 2023. Wang, W., Dai, J., Chen, Z., Huang, Z., Li, Z., Zhu, X., Hu, X., Lu, T., Lu, L., Li, H., et al. Internimage: Exploring large-scale vision foundation models with deformable convolutions. In CVPR , pp. 14408–14419, 2023. Xia, Z., Zhou, H., Yu, H., Hu, H., Zhang, G., Hu, J., and He, T. Yolo-mtg: a lightweight yolo model for multi-target garbage detection. Signal, Image and Video Processing ,18(6):5121–5136, 2024. Xiao, T., Liu, Y., Zhou, B., Jiang, Y., and Sun, J. Unified perceptual parsing for scene understanding. In ECCV , pp. 418–434, 2018. Xie, E., Wang, W., Yu, Z., Anandkumar, A., Alvarez, J. M., and Luo, P. Segformer: Simple and efficient design for semantic segmentation with transformers. In Ranzato, M., Beygelzimer, A., Dauphin, Y., Liang, P., and Vaughan, J. W. (eds.), Advances in Neural Information Process-ing Systems , volume 34, pp. 12077–12090. Curran Asso-ciates, Inc., 2021. Xu, J., Xiong, Z., and Bhattacharyya, S. P. Pidnet: A real-time semantic segmentation network inspired by pid controllers. In CVPR , pp. 19529–19539, 2023. Yang, J., Li, C., Dai, X., and Gao, J. Focal modulation networks. Advances in Neural Information Processing Systems , 35:4203–4217, 2022. Zhang, W., Huang, Z., Luo, G., Chen, T., Wang, X., Liu, W., Yu, G., and Shen, C. Topformer: Token pyramid transformer for mobile semantic segmentation. In CVPR ,pp. 12083–12093, 2022. 10 Towards Effective Waste Segmentation for AWR 
+
+# A. Appendix 
+
+A.1. Implementation Details of EWSegNet Encoder 
+
+The EWSegNet encoder is composed of four stages. The depth and channel dimension of the stages are selected as (2,2,8,2) and (80,160,320,640) respectively. The hyperparameters of the encoder are selected such that they provide a strong balance between performance and complexity. The EWSegNet encoder was pre-trained on ImageNet-1k dataset for 600 epochs. The best performing model achieves Top-1 accuracy of 81.7 on the ImageNet-1k dataset. 
+
+A.2. Hyperparameter Tuning 
+
+We observe that the mIoU score of the proposed model is improved to 57.14% when the value of the initial learning rate is set to 1e-4. The improved results of EWSegNet are shown in Table 6.                       
+
+> Table 6. Hyperparameter Tuning on ZeroWaste-f dataset.
+> IoU (%) ↑
+> Model LR mIoU Background Cardboard Soft Plastic Rigid Plastic Metal 5e-5 56.44 91.45 59.24 63.17 33.28 35.05 EWSegNet 1e-4 57.14 91.34 58.69 64.07 32.81 38.78
+
+A.3. Additional Visualizations 
+
+Fig. 7 illustrates a few examples from the ZeroWaste-f dataset where the proposed EWSegNet and COSNet (Ali et al., 2025) struggle to accurately detect waste objects. We notice that both methods have some false detections in the first three rows. Moreover, the models struggle to identify some cardboard objects in the last two rows.  
+
+> Figure 7. Additional qualitative results from the ZeroWaste-f dataset illustrating the limitations of EWSegNet and COSNet.
+
+11

@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-14 <!--dpr-date:20260614-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/14/2606.13587v1-towards-effective-waste-segmentation-for-automated-waste-recycling-in-cluttered-background" data-sidebar-item="{&quot;title&quot;: &quot;Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.13587v1-towards-effective-waste-segmentation-for-automated-waste-recycling-in-cluttered-background&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;raw-seg&quot;}], &quot;evidence&quot;: &quot;深度学习在杂乱背景下的垃圾分割&quot;}">Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background</a>
   * 2026-06-13 <!--dpr-date:20260613-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/13/2606.08906v1-differseg-towards-diverse-multimodal-binary-segmentation-via-differential-perception-and-frequency-guidance" data-sidebar-item="{&quot;title&quot;: &quot;DifferSeg: Towards Diverse Multimodal Binary Segmentation via Differential Perception and Frequency Guidance&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.08906v1-differseg-towards-diverse-multimodal-binary-segmentation-via-differential-perception-and-frequency-guidance&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;raw-seg&quot;}], &quot;evidence&quot;: &quot;多模态二值分割框架，基于差分感知和频率引导&quot;}">DifferSeg: Towards Diverse Multimodal Binary Segmentation via Differential Perception and Frequency Guidance</a>
