@@ -1,0 +1,337 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-15T21:53:01.125526+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2606.14072v1",
+      "source": "arxiv",
+      "title": "Diffusion-Refined Segmentation and Vision-Language Interpretation for Pediatric Brain Tumor MRI",
+      "abstract": "Accurate pediatric brain tumor segmentation remains challenging due to limited annotated data, heterogeneous imaging phenotypes, diffuse tumor boundaries, and class imbalance across tumor subregions. Here, we present a two-stage deep learning framework for improving multi-modal pediatric brain MRI segmentation and clinical interpretation. First, we evaluate 3D Res U-Net and Swin-UNETR baselines on BraTS-PEDs MRI scans, using four co-registered modalities to predict tumor core, whole tumor, and enhancing tumor regions. Second, we introduce diffusion-based refinement models conditioned on coarse Swin-UNETR predictions, including a 3D DDPM refiner and MedSegDiff. Conditioning substantially improves diffusion stability and performance, particularly for enhancing tumor boundary segmentation. Conditioned MedSegDiff achieves the strongest boundary agreement with the lowest HD95. Finally, predicted tumor volumes and representative segmentation overlays are integrated with a multimodal language model to generate structured radiology-style reports. Together, our results suggest that coarse-to-refined diffusion segmentation can improve pediatric tumor boundary delineation and support end-to-end interpretable AI-assisted neuro-oncology workflows.",
+      "authors": [
+        "Wentao Ke",
+        "Jianche Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-06-12T03:38:40+00:00",
+      "link": "https://arxiv.org/pdf/2606.14072v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "deep learning semantic segmentation for pediatric brain tumors",
+      "llm_evidence_cn": "深度学习用于儿科脑肿瘤语义分割",
+      "llm_evidence": "深度学习用于儿科脑肿瘤语义分割",
+      "canonical_evidence": "深度学习用于儿科脑肿瘤语义分割",
+      "llm_tldr_en": "Proposes a two-stage deep learning framework combining Swin-UNETR with diffusion-based refinement for multi-modal pediatric brain MRI segmentation, improving accuracy and robustness for tumor subregions.",
+      "llm_tldr_cn": "针对儿科脑肿瘤分割中标注数据有限、肿瘤异质性高等挑战，提出两阶段深度学习框架：首先使用Swin-UNETR进行粗分割，然后引入扩散模型（3D DDPM和MedSegDiff）对粗分割结果进行精细化。实验表明，条件扩散显著提升了分割稳定性和性能，在BraTS-PEDs数据集上取得了优秀结果。该工作为医学图像语义分割提供了有效的方法，尤其在数据稀缺场景下具有实用价值。",
+      "llm_tldr": "针对儿科脑肿瘤分割中标注数据有限、肿瘤异质性高等挑战，提出两阶段深度学习框架：首先使用Swin-UNETR进行粗分割，然后引入扩散模型（3D DDPM和MedSegDiff）对粗分割结果进行精细化。实验表明，条件扩散显著提升了分割稳定性和性能，在BraTS-PEDs数据集上取得了优秀结果。该工作为医学图像语义分割提供了有效的方法，尤其在数据稀缺场景下具有实用价值。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.14024v1",
+      "source": "arxiv",
+      "title": "ViT-Up: Faithful Feature Upsampling for Vision Transformers",
+      "abstract": "Vision Transformers (ViTs) have become a dominant architecture for visual representation learning, providing exceptionally strong and broadly reusable backbone features. However, ViTs are commonly operated on relatively small patch-token grids due to the quadratic cost of global self-attention, which creates a persistent bottleneck for dense prediction tasks such as semantic segmentation and depth estimation. This has motivated the development of task-agnostic feature upsamplers. While recent state-of-the-art methods produce visually sharp dense representations, their reliance on shallow image encoders for guided upsampling can introduce feature leakage, fragmentation, and blur. We introduce ViT-Up, an implicit feature upsampling framework that replaces external image guidance with layer-wise query construction from intermediate ViT hidden states. This enables feature prediction at arbitrary continuous image coordinates while preserving alignment with the backbone feature space. Experiments demonstrate that ViT-Up consistently outperforms state-of-the-art image-guided upsamplers across dense prediction and semantic correspondence. On DINOv3-S+, ViT-Up improves over prior methods by up to +2.07 mIoU on Cityscapes and +4.17 PCK@0.10 on SPair-71k. With the larger DINOv3-B backbone, these gains increase to +3.36 mIoU and +8.09 PCK@0.10, demonstrating that ViT-Up scales favorably with backbone capacity.",
+      "authors": [
+        "Krispin Wandel",
+        "Jingchuan Wang",
+        "Hesheng Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-12T01:55:17+00:00",
+      "link": "https://arxiv.org/pdf/2606.14024v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "faithful feature upsampling for semantic segmentation",
+      "llm_evidence_cn": "用于语义分割的忠实特征上采样",
+      "llm_evidence": "用于语义分割的忠实特征上采样",
+      "canonical_evidence": "用于语义分割的忠实特征上采样",
+      "llm_tldr_en": "Introduces ViT-Up, an implicit feature upsampling framework to improve dense prediction tasks like semantic segmentation for Vision Transformers.",
+      "llm_tldr_cn": "视觉Transformer在语义分割等密集预测任务中受限于小尺寸补丁网格，现有特征上采样方法存在特征泄漏和模糊。本文提出ViT-Up，一种隐式特征上采样框架，无需外部引导即可生成忠实的密集表示。实验表明，该方法在多个分割任务上优于现有上采样器，且计算高效。",
+      "llm_tldr": "视觉Transformer在语义分割等密集预测任务中受限于小尺寸补丁网格，现有特征上采样方法存在特征泄漏和模糊。本文提出ViT-Up，一种隐式特征上采样框架，无需外部引导即可生成忠实的密集表示。实验表明，该方法在多个分割任务上优于现有上采样器，且计算高效。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.11320v1",
+      "source": "arxiv",
+      "title": "Semantic Segmentation of Node and Edge Diagrams for Assistive Technology",
+      "abstract": "In this paper, we present a novel set of related models for semantic segmentation of node-link diagrams. These diagrams are frequently used to represent mathematical graphs, relationships between concepts, and flowcharts. Such diagrams are difficult to access non-visually; while some assistive interfaces have been designed for node-link diagrams, they rely upon a machine-readable representation of the diagram, whereas such diagrams will generally be made available as bitmap images. Our compact deep learning models show excellent quantitative and qualitative performance on a large synthetic dataset of node-link diagrams, reaching per-pixel accuracy over 93\\%.",
+      "authors": [
+        "Michael Cormier",
+        "Yichun Zhao",
+        "Laura Paul",
+        "Cameron Swift",
+        "Duc Tri Dang",
+        "Miguel Nacenta"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-09T18:02:12+00:00",
+      "link": "https://arxiv.org/pdf/2606.11320v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "deep learning semantic segmentation of node-link diagrams",
+      "llm_evidence_cn": "深度学习语义分割节点链接图",
+      "llm_evidence": "深度学习语义分割节点链接图",
+      "canonical_evidence": "深度学习语义分割节点链接图",
+      "llm_tldr_en": "Presents compact deep learning models for semantic segmentation of node-link diagrams, achieving over 93% per-pixel accuracy on a large synthetic dataset.",
+      "llm_tldr_cn": "该论文针对节点链接图的语义分割问题，提出了一套紧凑的深度学习模型。模型在合成数据集上达到93%以上的逐像素准确率，为辅助技术提供了有效支持。虽然目标领域非自然图像，但其语义分割方法可启发原始图像分割任务。",
+      "llm_tldr": "该论文针对节点链接图的语义分割问题，提出了一套紧凑的深度学习模型。模型在合成数据集上达到93%以上的逐像素准确率，为辅助技术提供了有效支持。虽然目标领域非自然图像，但其语义分割方法可启发原始图像分割任务。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.08980v1",
+      "source": "arxiv",
+      "title": "EPS3D: End-to-End Feed-Forward 3D Panoptic Segmentation",
+      "abstract": "This paper introduces EPS3D, a new end-to-end feed-forward framework for open-vocabulary 3D panoptic segmentation. Unlike existing methods relying on additional preprocessing, we design an end-to-end architecture, with a distillation-based training strategy on diverse 3D scenes to predict 3D-aware semantic and instance features from multi-view images, improving 3D consistency and avoiding error accumulation. We further propose a mutual enhancement module to enforce inherent semantic-instance consistency. By aligning semantics within instances (Ins2Sem) and refining instance features with semantic guidance (Sem2Ins), we achieve more coherent 3D scene understanding. Ultimately, EPS3D outperforms SOTA baselines on two benchmarks (e.g., +13% mIoU for semantics on Replica) with high efficiency (e.g., 1s per scene), supporting tasks like robotic manipulation and 3D scene editing.",
+      "authors": [
+        "Runsong Zhu",
+        "Jiaxin Guo",
+        "Xiaoyang Guo",
+        "Zhengzhe Liu",
+        "Ka-Hei Hui",
+        "Wei Yin",
+        "Kai Chen",
+        "Wei Chen",
+        "Weiqiang Ren",
+        "Yunhui Liu",
+        "Pheng-Ann Heng",
+        "Chi-Wing Fu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-08T03:26:54+00:00",
+      "link": "https://arxiv.org/pdf/2606.08980v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "3D panoptic segmentation method, conceptually related to semantic segmentation",
+      "llm_evidence_cn": "3D全景分割方法，概念上相关于语义分割",
+      "llm_evidence": "3D全景分割方法，概念上相关于语义分割",
+      "canonical_evidence": "3D全景分割方法，概念上相关于语义分割",
+      "llm_tldr_en": "Proposes EPS3D, an end-to-end feed-forward framework for 3D panoptic segmentation, achieving state-of-the-art mIoU.",
+      "llm_tldr_cn": "论文提出EPS3D，一种端到端的前馈框架用于开放词汇3D全景分割。通过蒸馏训练策略和语义-实例相互增强模块，在3D场景理解中取得显著性能提升，如语义mIoU提升13%。",
+      "llm_tldr": "论文提出EPS3D，一种端到端的前馈框架用于开放词汇3D全景分割。通过蒸馏训练策略和语义-实例相互增强模块，在3D场景理解中取得显著性能提升，如语义mIoU提升13%。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.12826v1",
+      "source": "arxiv",
+      "title": "DIMOS: Disentangling Instance-level Moving Object Segmentation",
+      "abstract": "Moving instance segmentation (MIS) attracts increasing attention due to its broad applications in traffic surveillance, autonomous driving, and animal tracking. Event cameras record asynchronous brightness changes, providing high temporal resolution and dynamic range, which makes them highly sensitive to motion information. By fusing event and image features, motion cues from events can complement spatial details from images, enhancing the performance of MIS. However, current multimodal MIS methods still struggle to segment small moving instances, as event cameras often yield sparse features under limited resolution. Moreover, event features entangle appearance attributes with motion cues, which further restricts effective cross-modal fusion. To address these challenges, we first propose a dual-disentangling feature extraction framework that separates and extracts appearance and motion information within both image and event modalities, thereby improving feature density. Subsequently, a multi-granularity cross-modal alignment is introduced to align distributionally and semantically consistent features across modalities, enabling more effective fusion with rich spatial and temporal details. The experiment results demonstrate that our method achieves state-of-the-art performance in multimodal MIS, especially for small instances under challenging conditions such as fast motion and low-light settings.",
+      "authors": [
+        "Hongxiang Huang",
+        "Hongwei Ren",
+        "Xiaopeng Lin",
+        "Yulong Huang",
+        "Zeke Xie",
+        "Bojun Cheng"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-11T02:44:30+00:00",
+      "link": "https://arxiv.org/pdf/2606.12826v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "pixel-level instance segmentation with event and image fusion",
+      "llm_evidence_cn": "利用事件和图像融合的像素级实例分割",
+      "llm_evidence": "利用事件和图像融合的像素级实例分割",
+      "canonical_evidence": "利用事件和图像融合的像素级实例分割",
+      "llm_tldr_en": "Proposes DIMOS for moving instance segmentation by fusing event and image features, improving small object segmentation.",
+      "llm_tldr_cn": "移动实例分割在交通监控等中很重要，但现有多模态方法难以分割小运动目标。本文提出DIMOS，通过解耦事件特征中的外观和运动信息，实现更有效的跨模态融合。在事件相机数据集上，该方法在移动实例分割任务中尤其对小目标取得了显著提升，推动了像素级分类在动态场景中的应用。",
+      "llm_tldr": "移动实例分割在交通监控等中很重要，但现有多模态方法难以分割小运动目标。本文提出DIMOS，通过解耦事件特征中的外观和运动信息，实现更有效的跨模态融合。在事件相机数据集上，该方法在移动实例分割任务中尤其对小目标取得了显著提升，推动了像素级分类在动态场景中的应用。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "pixel level classification raw images",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.10775v1",
+      "source": "arxiv",
+      "title": "Spatially Selective Self-Training for Unsupervised Building Change Detection",
+      "abstract": "Unsupervised building change detection aims to learn building-change masks from unlabeled bi-temporal remote sensing images. Existing label-free methods often follow a discrepancy-to-mask paradigm, directly using temporal differences, frozen foundation-model responses, prompt-based outputs, or post-processing results as final change maps. Although these strategies provide annotation-free cues, they do not learn a task-specific building-change detector and remain vulnerable to the gap between generic temporal discrepancies and building-defined structural changes. In practice, such discrepancies are often noisy and task-irrelevant, as appearance shifts, registration errors, and non-building modifications can produce strong but misleading responses. To address this problem, we propose SST-CD, a spatially selective self-training framework that reformulates fully label-free building change detection as end-to-end detector learning under noisy pseudo supervision.   SST-CD uses temporal discrepancies as candidate pseudo labels and trains the detector only on spatially reliable pixels, whose reliability is estimated by a local consistency criterion that filters inconsistent regions from supervision. To further stabilize noisy self-training, a lightweight feature adapter recalibrates bi-temporal features, while a prototype-based decoder produces compact change and no-change representations. Experiments on LEVIR-CD, WHU-CD, and DSIFN-CD show that SST-CD achieves F1 scores of 83.08\\%, 91.69\\%, and 86.60\\%, respectively, outperforming existing unsupervised and label-free baselines. Code will be made publicly available.",
+      "authors": [
+        "Wafaa I. M. Hussin",
+        "Zhi Lu",
+        "Anas M. I. Mohammed",
+        "Xiang Zhou",
+        "Ratiba A. H. Abubaker",
+        "Zhenming Peng"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-09T12:31:16+00:00",
+      "link": "https://arxiv.org/pdf/2606.10775v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "pixel-level classification for building change detection on raw remote sensing images",
+      "llm_evidence_cn": "对原始遥感图像进行建筑物变化检测的像素级分类",
+      "llm_evidence": "对原始遥感图像进行建筑物变化检测的像素级分类",
+      "canonical_evidence": "对原始遥感图像进行建筑物变化检测的像素级分类",
+      "llm_tldr_en": "Proposes spatially selective self-training for unsupervised building change detection, addressing noisy pseudo-labels through selective learning.",
+      "llm_tldr_cn": "论文针对无监督建筑物变化检测中伪标签噪声问题，提出空间选择性自训练方法。通过利用空间一致性引导伪标签筛选，训练一个专门的建筑物变化检测器，在多个基准数据集上优于现有无监督方法，缩小了与监督方法的差距。",
+      "llm_tldr": "论文针对无监督建筑物变化检测中伪标签噪声问题，提出空间选择性自训练方法。通过利用空间一致性引导伪标签筛选，训练一个专门的建筑物变化检测器，在多个基准数据集上优于现有无监督方法，缩小了与监督方法的差距。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "pixel level classification raw images",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.11466v1",
+      "source": "arxiv",
+      "title": "PT-WNO: Point Transformer with Wavelet Neural Operator for 3D Point Cloud Semantic Segmentation",
+      "abstract": "Point cloud semantic segmentation requires architectures that capture both fine-grained local geometry and broad global scene structure. Transformer-based networks have demonstrated strong performance by focusing on detailed local feature aggregation; however, global context is conveyed primarily through skip connections across encoder-decoder stages, which we argue is insufficient for full scene understanding. We hypothesize that augmenting skip connections with a learnable global feature extraction module allows the network to acquire scene-level knowledge before descending into local detail, leading to richer and more contextually grounded representations. To this end, we propose Point Transformer with Wavelet Neural Operato (PT-WNO), which integrates a shared Wavelet Neural Operator (WNO) branch alongside the skip connections of a point cloud transformer backbone. At each encoder-decoder transition, point features are projected onto a dense 3D volumetric grid where the WNO captures multi-scale global spectral context through learnable wavelet decomposition and reconstruction. These global features are fused back into the network via lightweight adapters, complementing rather than replacing the existing skip connections. Experiments on four large-scale 3D point cloud benchmarks demonstrate the effectiveness of PT-WNO. On S3DIS (Area 5), PT-WNO achieves 71.59% mIoU, outperforming the Point Transformer v3 (PTv3) baseline by +1.03 points. On DALES it achieves 81.05% mIoU (+1.47 over the baseline). On ScanNet~v2, PT-WNO obtains 76.19% mIoU, remaining competitive with the baseline (76.36%).",
+      "authors": [
+        "Nhut Le",
+        "Maryam Rahnemoonfar"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-09T21:41:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.11466v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "deep learning for point cloud semantic segmentation",
+      "llm_evidence_cn": "深度学习用于点云语义分割",
+      "llm_evidence": "深度学习用于点云语义分割",
+      "canonical_evidence": "深度学习用于点云语义分割",
+      "llm_tldr_en": "Proposes PT-WNO, augmenting point cloud segmentation transformers with wavelet neural operator for global context extraction.",
+      "llm_tldr_cn": "现有基于Transformer的点云分割网络主要通过跳跃连接传递全局上下文，信息不足。本文提出PT-WNO，在跳跃连接中加入可学习的全局特征提取模块（小波神经算子）以获取场景级知识。在多个三维点云分割基准上，该方法提升了语义分割性能，尤其增强了复杂场景下的上下文理解。虽非图像分割，但方法可迁移。",
+      "llm_tldr": "现有基于Transformer的点云分割网络主要通过跳跃连接传递全局上下文，信息不足。本文提出PT-WNO，在跳跃连接中加入可学习的全局特征提取模块（小波神经算子）以获取场景级知识。在多个三维点云分割基准上，该方法提升了语义分割性能，尤其增强了复杂场景下的上下文理解。虽非图像分割，但方法可迁移。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning for raw image segmentation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.14562v1",
+      "source": "arxiv",
+      "title": "NEST3D: A High-Resolution Multimodal Dataset of Sociable Weaver Tree Nests",
+      "abstract": "Sociable weaver nests function as complex ecological structures offering thermoregulatory microhabitats and sustaining diverse species; however, datasets used in prior studies lack fine-grained 3D structural detail. Producing usable and accurate 3D weaver nest data is challenging due to their irregular geometry and integration with complex host vegetation. We bridge this gap with an open-access, 1.4 TB multimodal drone dataset of 104 nest-bearing trees, comprising 27,945 RGB images, 111,780 multispectral images, approximately 781 million 3D points, and expert-annotated semantic segmentation labels. We benchmark semantic segmentation using KPConv, RandLA-Net, and Point Transformer V3, with PT-v3 achieving an mIoU of 86.35% on the test set. While the results demonstrate strong performance for transformer-based and point-wise methods, they also highlight architecture-dependent challenges, particularly for convolution-based approaches such as KPConv. By uniquely combining spectral, spatial, and structural information, the presented dataset advances 3D reconstruction, segmentation, and classification algorithms, enabling ecological applications from nest volume estimation to species conservation, and serves as a demanding benchmark that exposes architecture-dependent performance under extreme class imbalance.",
+      "authors": [
+        "Constanza A. Molina Catricheo",
+        "Simon Boeder",
+        "Ting-Jia Guo",
+        "Giacomo May",
+        "Clément Berthelot",
+        "Devis Tuia",
+        "Friedrich Fedor Reinhard",
+        "Fabio Remondino",
+        "Benjamin Risse"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-06-12T15:39:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.14562v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "semantic segmentation dataset and benchmarks for 3D nests",
+      "llm_evidence_cn": "巢穴3D语义分割数据集和基准",
+      "llm_evidence": "巢穴3D语义分割数据集和基准",
+      "canonical_evidence": "巢穴3D语义分割数据集和基准",
+      "llm_tldr_en": "Provides a 1.4TB multimodal dataset with semantic segmentation labels and benchmarks KPConv, RandLA-Net, PT-v3 reaching 86.35% mIoU.",
+      "llm_tldr_cn": "该论文发布了一个包含RGB图像、多光谱图像和3D点云的多模态巢穴数据集，并标注了语义分割标签。基准测试了KPConv、RandLA-Net和Point Transformer V3等分割方法，最高mIoU达86.35%。该数据集推动了3D语义分割发展，但用户需求侧重2D原始图像分割。",
+      "llm_tldr": "该论文发布了一个包含RGB图像、多光谱图像和3D点云的多模态巢穴数据集，并标注了语义分割标签。基准测试了KPConv、RandLA-Net和Point Transformer V3等分割方法，最高mIoU达86.35%。该数据集推动了3D语义分割发展，但用户需求侧重2D原始图像分割。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
