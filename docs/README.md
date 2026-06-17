@@ -6,54 +6,53 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-16
-- 运行时间：2026-06-16 21:46:10 UTC
+- 最新运行日期：2026-06-17
+- 运行时间：2026-06-17 20:58:20 UTC
 - 运行状态：成功
-- 本次总论文数：10
-- 精读区：6
-- 速读区：4
+- 本次总论文数：11
+- 精读区：4
+- 速读区：7
 
 ### 今日简报（AI）
-今日精读两篇高分解码力作，聚焦开放词汇分割效率提升与测地线投票鲁棒分割。
-
-最推荐ActiveSAM（9.0）的类别剪枝加速策略，以及Mask Proposal Voting（8.0）的测地线框架鲁棒性设计。
-
-建议优先尝试ActiveSAM的image-conditional剪枝思路，再结合测地线投票应对复杂场景。
-- 详情：[/202606/16/README](/202606/16/README)
+今日聚焦高保真长尾语义分割与多类语义分割，两篇精读论文均获9分高分。最值得关注GOOSE-M2F对非结构化室外场景的适应性，以及Reload-Mamba的抗稀释状态空间建模思路。建议深入阅读这两篇论文，掌握分割领域最新框架设计与长尾问题处理策略。
+- 详情：[/202606/17/README](/202606/17/README)
 
 ### 精读区论文标签
-1. [ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation](/202606/16/2606.16996v1-activesam-image-conditional-class-pruning-for-fast-and-accurate-open-vocabulary-segmentation)  
+1. [GOOSE-M2F: Adapting Mask2Former for High-Fidelity, Long-Tailed Fine-Grained Semantic Segmentation in Unstructured Outdoor Terrain](/202606/17/2606.15937v2-goose-m2f-adapting-mask2former-for-high-fidelity-long-tailed-fine-grained-semantic-segmentation-in-unstructured-outdoor-terrain)  
    标签：评分：9.0/10、query:raw-seg
-   evidence：使用SAM3进行开放词汇语义分割，含类别剪枝
-2. [Mask Proposal Voting Based on Geodesic Framework for Robust Image Segmentation](/202606/16/2606.14912v1-mask-proposal-voting-based-on-geodesic-framework-for-robust-image-segmentation)  
+   evidence：使用Mask2Former深度学习进行细粒度语义分割
+2. [Reload-Mamba: Hierarchical Anti-Dilution State-Space Modeling for Multi-Class Semantic Segmentation](/202606/17/2606.17966v1-reload-mamba-hierarchical-anti-dilution-state-space-modeling-for-multi-class-semantic-segmentation)  
+   标签：评分：9.0/10、query:raw-seg
+   evidence：基于Mamba的多类语义分割方法
+3. [SegTME-UNI2: A Foundation Model-Based Framework for Generalisable Multiclass Cell Segmentation and LLM-Driven Tumour Microenvironment Characterisation in Histopathology](/202606/17/2606.17702v1-segtme-uni2-a-foundation-model-based-framework-for-generalisable-multiclass-cell-segmentation-and-llm-driven-tumour-microenvironment-characterisation-in-histopathology)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：基于掩膜提议投票的鲁棒图像分割
-3. [Texture-Shape Bias Balancing for Robust Synthetic-to-Real Semantic Segmentation in Automotive NIR Imagery](/202606/16/2606.15072v1-texture-shape-bias-balancing-for-robust-synthetic-to-real-semantic-segmentation-in-automotive-nir-imagery)  
+   evidence：基于深度学习的组织病理图像多类语义分割
+4. [SegDINO: Introducing Multi-Scale Structure into DINO for Efficient Medical Image Segmentation](/202606/17/2606.17972v1-segdino-introducing-multi-scale-structure-into-dino-for-efficient-medical-image-segmentation)  
    标签：评分：8.0/10、query:raw-seg
-   evidence：近红外汽车图像语义分割的合成到真实域适应
-4. [Unlocking Diffusion Hierarchies: Adaptive Timestep Selection for Zero-Shot Segmentation](/202606/16/2606.15590v1-unlocking-diffusion-hierarchies-adaptive-timestep-selection-for-zero-shot-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：基于扩散模型的零样本语义分割
-5. [GOOSE-M2F: Adapting Mask2Former for High-Fidelity, Long-Tailed Fine-Grained Semantic Segmentation in Unstructured Outdoor Terrain](/202606/16/2606.15937v1-goose-m2f-adapting-mask2former-for-high-fidelity-long-tailed-fine-grained-semantic-segmentation-in-unstructured-outdoor-terrain)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：非结构化户外原始图像的细粒度语义分割
-6. [Attention-Based Prototype Calibration for Multi-Rater Few-Shot Medical Image Segmentation](/202606/16/2606.16325v1-attention-based-prototype-calibration-for-multi-rater-few-shot-medical-image-segmentation)  
-   标签：评分：8.0/10、query:raw-seg
-   evidence：少样本分割方法可直接应用于医学原始图像语义分割
+   evidence：基于DINOv3骨干的深度学习语义分割
 
 ### 速读区论文标签
-1. [CoMNeT: A MedNeXt-CorrDiff Framework for Volumetric Brain Tumor Segmentation](/202606/16/2606.15305v1-comnet-a-mednext-corrdiff-framework-for-volumetric-brain-tumor-segmentation)  
+1. [Open-World Video Segmentation](/202606/17/2606.15632v1-open-world-video-segmentation)  
    标签：评分：7.0/10、query:raw-seg
-   evidence：基于深度学习的医学图像分割方法可迁移
-2. [MNet++: Extended 2D/3D Networks for Anisotropic Medical Image Segmentation](/202606/16/2606.15370v1-mnet-extended-2d3d-networks-for-anisotropic-medical-image-segmentation)  
+   evidence：开放世界视频分割
+2. [Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery](/202606/17/2606.15861v1-object-tokens-as-a-bridge-between-segmentation-and-visual-question-answering-in-robotic-surgery)  
    标签：评分：7.0/10、query:raw-seg
-   evidence：医学图像分割，2D/3D混合网络，分割技术
-3. [MMDiff: Extending Diffusion Transformers for Multi-Modal Generation](/202606/16/2606.16673v1-mmdiff-extending-diffusion-transformers-for-multi-modal-generation)  
+   evidence：联合执行像素级分割与VQA
+3. [Attention-Based Prototype Calibration for Multi-Rater Few-Shot Medical Image Segmentation](/202606/17/2606.16325v1-attention-based-prototype-calibration-for-multi-rater-few-shot-medical-image-segmentation)  
    标签：评分：7.0/10、query:raw-seg
-   evidence：通过扩散变换器多时间步特征融合提升语义分割
-4. [HadBalance: A Plug-and-Play Unified Global Geometric Prior Framework for Generalizable Biomedical Segmentation](/202606/16/2606.15976v1-hadbalance-a-plug-and-play-unified-global-geometric-prior-framework-for-generalizable-biomedical-segmentation)  
+   evidence：基于注意力的原型校准的少样本医学图像分割
+4. [Pano3D: Unified 3D Reconstruction and Panoptic Segmentation](/202606/17/2606.14307v1-pano3d-unified-3d-reconstruction-and-panoptic-segmentation)  
    标签：评分：6.0/10、query:raw-seg
-   evidence：统一全局几何先验框架用于生物医学分割
+   evidence：基于深度学习的图像全景分割
+5. [Learning a Sampling-Free Variational DNN Plugin from Tiny Training Sets to Refine OOD Segmentation With Uncertainty Estimation](/202606/17/2606.15837v1-learning-a-sampling-free-variational-dnn-plugin-from-tiny-training-sets-to-refine-ood-segmentation-with-uncertainty-estimation)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：使用变分DNN精化分割图，可应用于原始图像分割
+6. [Federated Medical Image Segmentation under Real-World Label Noise: A Benchmark Suite for Noisy Label Learning Method Selection](/202606/17/2606.16868v1-federated-medical-image-segmentation-under-real-world-label-noise-a-benchmark-suite-for-noisy-label-learning-method-selection)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：联邦医学图像分割中的噪声标签处理
+7. [Beyond Visual Cues: CoT-Enhanced Reasoning for Semi-supervised Medical Image Segmentation](/202606/17/2606.17958v1-beyond-visual-cues-cot-enhanced-reasoning-for-semi-supervised-medical-image-segmentation)  
+   标签：评分：6.0/10、query:raw-seg
+   evidence：基于链式推理的半监督医学图像分割
 
 
 <div class="dpr-home-promo-card">

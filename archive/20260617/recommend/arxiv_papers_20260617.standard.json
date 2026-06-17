@@ -1,0 +1,451 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-17T20:50:17.157336+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [
+    {
+      "id": "2606.15937v2",
+      "source": "arxiv",
+      "title": "GOOSE-M2F: Adapting Mask2Former for High-Fidelity, Long-Tailed Fine-Grained Semantic Segmentation in Unstructured Outdoor Terrain",
+      "abstract": "We present GOOSE-M2F, a task-specific adaptation of Mask2Former for the GOOSE 2D Fine-Grained Semantic Segmentation (FGSS) Challenge at ICRA 2026. The GOOSE benchmark spans 64 fine-grained classes across unstructured outdoor terrain with a severely long-tailed distribution, where rare classes occupy fewer than 50 pixels per image. We extend the Swin-Large Mask2Former baseline with three targeted contributions: (1) 200 object queries to eliminate representational saturation; (2) a Feature Refinement Module (FRM) combining ASPP-lite and CBAM dual-attention; and (3) an Auxiliary Supervision Head that delivers direct per-pixel gradients for rare classes. A multi-stage training strategy pairs Distribution-Balanced loss, Rare-Class Copy-Paste augmentation, dynamic IoU-aware re-weighting, and EMA. At inference, a dense sliding-window engine with 2D Gaussian kernel blending and 4-scale TTA adds +10.57%. GOOSE-M2F achieves 70.08% Official Composite mIoU (63.55% fine, 76.61% coarse), placing 3rd on the GOOSE 2D FGSS leaderboard. Code and trained models are publicly available at GitHub: https://github.com/Aditya-Lingam-9000/GOOSE-M2F and Hugging Face: https://huggingface.co/XYZ9843/GOOSE-M2F.",
+      "authors": [
+        "Jyothiraditya Lingam",
+        "Nikhileswara Rao Sulake",
+        "Sai Manikanta Eswar Machara"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-14T17:41:03+00:00",
+      "link": "https://arxiv.org/pdf/2606.15937v2",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "fine-grained semantic segmentation using Mask2Former deep learning",
+      "llm_evidence_cn": "使用Mask2Former深度学习进行细粒度语义分割",
+      "llm_evidence": "使用Mask2Former深度学习进行细粒度语义分割",
+      "canonical_evidence": "使用Mask2Former深度学习进行细粒度语义分割",
+      "llm_tldr_en": "GOOSE-M2F adapts Mask2Former with 200 queries, FRM, and auxiliary supervision for long-tailed fine-grained semantic segmentation in unstructured outdoor terrain, achieving high-fidelity results.",
+      "llm_tldr_cn": "针对非结构化户外地形中的细粒度语义分割，GOOSE-M2F扩展了Mask2Former基线，引入200个查询、特征细化模块和辅助监督头，有效处理长尾分布中稀有类别。多阶段训练策略在GOOSE基准上取得高保真分割结果，证明了该方法在复杂户外场景中的有效性。",
+      "llm_tldr": "针对非结构化户外地形中的细粒度语义分割，GOOSE-M2F扩展了Mask2Former基线，引入200个查询、特征细化模块和辅助监督头，有效处理长尾分布中稀有类别。多阶段训练策略在GOOSE基准上取得高保真分割结果，证明了该方法在复杂户外场景中的有效性。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17966v1",
+      "source": "arxiv",
+      "title": "Reload-Mamba: Hierarchical Anti-Dilution State-Space Modeling for Multi-Class Semantic Segmentation",
+      "abstract": "Mamba-based state space models offer linear-time long-range modeling for high-resolution dense prediction, but sequential state-space propagation can attenuate boundary-sensitive and detail-sensitive responses that are critical in multi-class semantic segmentation. We propose Reload-Mamba, a semantic segmentation framework that addresses this propagation-induced response dilution through three segmentation-specific designs: (i) a boundary-supervised local detail prior that is explicitly trained with ground-truth boundary masks to identify regions requiring response restoration; (ii) a class-uncertainty-aware Reload Gate that incorporates per-pixel class entropy from a pre-reload auxiliary head as an additional gating signal, a formulation that is informative only under multi-class dense prediction; and (iii) a hierarchical multi-level Reload mechanism that applies anti-dilution refinement at three decoder levels and fuses the restored representations top-down. Built upon a ConvNeXt-Tiny encoder with a multi-scale decoder and four-directional Mamba scanning with pixel-wise directional attention, Reload-Mamba achieves 47.9% single-scale (48.9% multi-scale) mIoU on ADE20K and 83.2% single-scale mIoU on Cityscapes. With ResNet-101 + COCO pre-training under the standard DeepLab-style protocol, Reload-Mamba reaches 87.8% mIoU on PASCAL VOC 2012 val. Controlled ablations show that each of the three segmentation-specific designs contributes beyond a direct port of the prior anti-dilution architecture proposed for binarization, cumulatively improving over the direct-port baseline by +2.2 mIoU on ADE20K.",
+      "authors": [
+        "Sheng-Wei Chan",
+        "Hsin-Jui Pan",
+        "Jen-Shiun Chiang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-16T14:17:24+00:00",
+      "link": "https://arxiv.org/pdf/2606.17966v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multi-class semantic segmentation using Mamba state-space model",
+      "llm_evidence_cn": "基于Mamba的多类语义分割方法",
+      "llm_evidence": "基于Mamba的多类语义分割方法",
+      "canonical_evidence": "基于Mamba的多类语义分割方法",
+      "llm_tldr_en": "Reload-Mamba addresses response dilution in Mamba-based semantic segmentation via boundary-supervised local detail prior, class-uncertainty-aware reload gate, and pre-reload auxiliary head, improving boundary and detail accuracy.",
+      "llm_tldr_cn": "针对Mamba状态空间模型在语义分割中因顺序传播导致边界和细节响应稀释的问题，本文提出Reload-Mamba框架，通过边界监督的局部细节先验、类不确定性感知重载门以及预重载辅助头三种分割专用设计来恢复响应。在多个数据集上的实验表明，该方法有效提升了边界和细节区域的语义分割精度。该工作为状态空间模型在密集预测任务中的应用提供了新思路。",
+      "llm_tldr": "针对Mamba状态空间模型在语义分割中因顺序传播导致边界和细节响应稀释的问题，本文提出Reload-Mamba框架，通过边界监督的局部细节先验、类不确定性感知重载门以及预重载辅助头三种分割专用设计来恢复响应。在多个数据集上的实验表明，该方法有效提升了边界和细节区域的语义分割精度。该工作为状态空间模型在密集预测任务中的应用提供了新思路。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17702v1",
+      "source": "arxiv",
+      "title": "SegTME-UNI2: A Foundation Model-Based Framework for Generalisable Multiclass Cell Segmentation and LLM-Driven Tumour Microenvironment Characterisation in Histopathology",
+      "abstract": "Characterising the tumour microenvironment (TME) from routine H&E-stained histology images requires simultaneous cell segmentation, feature extraction, and interpretable clinical reporting. We present SEGTME-UNI2, a unified framework addressing these requirements. Its core is UNI2-UPERHOVER, a dual-head segmentation model pairing the UNI2-H pathology foundation model (ViT-Giant, pretrained on >100M tiles from 100K slides) with two parallel UperNet decoders: one for six-class semantic segmentation and one for horizontal-vertical gradient regression enabling watershed-based nuclear instance separation. To address the lack of pixel-level annotations in large real-world repositories, UNI2-UPERHOVER undergoes a three-stage progressive pseudo-label curriculum. Each stage trains a fresh model without weight transfer, driving improvement entirely via increased pseudo-label quality: Stage 1: Uses human-annotated PanNuke (7,901 images, 189,744 nuclei, 0.25 um/pixel). Stage 2: Uses entropy-filtered pseudo-labels from the Stage 1 model on 271,711 TCGA-UT scale-0 patches (0.5 um/pixel). Stage 3: Uses pseudo-labels from the Stage 2 model on all 1,608,060 TCGA-UT patches across six resolution scales (0.5-1.0 um/pixel). Segmentation outputs feed a structured TME feature extraction pipeline computing 20+ per-patch compositional, morphological, spatial entropy, and intercellular distance metrics. These are encoded as JSON and passed to a fine-tuned NVIDIA BioNeMo GPT model to generate clinically interpretable TME narratives. Preliminary validation on held-out PanNuke and TCGA-UT partitions demonstrates framework feasibility and internal consistency. The pseudo-labelled TCGA-UT dataset and UNI2-UPERHOVER checkpoint are publicly released to support large-scale TME profiling and spatial biology research.",
+      "authors": [
+        "Wan Siti Halimatul Munirah Wan Ahmad",
+        "Faris Syahmi Samidi",
+        "Mohammad Badal Ahmmed",
+        "Vimal Angela Thiviyanathan",
+        "Selvam James Thavaraj",
+        "Anwar P. P. Abdul Majeed"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-16T09:12:19+00:00",
+      "link": "https://arxiv.org/pdf/2606.17702v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning-based multiclass semantic segmentation for histopathology images",
+      "llm_evidence_cn": "基于深度学习的组织病理图像多类语义分割",
+      "llm_evidence": "基于深度学习的组织病理图像多类语义分割",
+      "canonical_evidence": "基于深度学习的组织病理图像多类语义分割",
+      "llm_tldr_en": "SegTME-UNI2 uses a ViT-Giant foundation model with dual-head decoders for six-class semantic segmentation and instance separation, achieving generalisable cell segmentation on H&E slides.",
+      "llm_tldr_cn": "针对组织病理图像中肿瘤微环境表征需要同时进行细胞分割和特征提取的问题，本文提出SegTME-UNI2框架，核心是利用预训练的UNI2-H病理基础模型（ViT-Giant）搭配两个并行UperNet解码器，分别实现六类语义分割和水岭实例分离。该方法在多种数据集上展现出良好的泛化能力，为计算病理学提供了一站式分割与报告方案。",
+      "llm_tldr": "针对组织病理图像中肿瘤微环境表征需要同时进行细胞分割和特征提取的问题，本文提出SegTME-UNI2框架，核心是利用预训练的UNI2-H病理基础模型（ViT-Giant）搭配两个并行UperNet解码器，分别实现六类语义分割和水岭实例分离。该方法在多种数据集上展现出良好的泛化能力，为计算病理学提供了一站式分割与报告方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17972v1",
+      "source": "arxiv",
+      "title": "SegDINO: Introducing Multi-Scale Structure into DINO for Efficient Medical Image Segmentation",
+      "abstract": "Self-supervised DINO models provide strong transferable visual representations, yet applying them directly to image segmentation remains challenging. Existing approaches commonly rely on heavy decoders with complex upsampling, introducing substantial parameter and computational overhead. We observe that introducing scale into DINO features is far more critical than increasing decoder capacity. In this work, we present SegDINO, an efficient segmentation framework that integrates a DINOv3 backbone with lightweight scale modeling. SegDINO introduces Token Pyramid Adaptation (TPA) to reorganize intermediate DINO features into a pseudo multi-scale hierarchy, and Scale-Aware Decoding (SAD) for efficient intra-scale refinement and top-down multi-scale propagation. We further curate PanCT, a new CT dataset containing 284 patients with expert-annotated pancreatic tumors, to assess SegDINO's ability to handle difficult small-lesion cases. Extensive experiments on PanCT and three public benchmarks demonstrate that SegDINO achieves state-of-the-art results with high efficiency. The code is available at https://github.com/script-Yang/segdino_v2.",
+      "authors": [
+        "Sicheng Yang",
+        "Hongqiu Wang",
+        "Zhaohu Xing",
+        "Sixiang Chen",
+        "Qiuxia Yang",
+        "Yize Mao",
+        "Guang Yang",
+        "Lei Zhu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-16T14:27:50+00:00",
+      "link": "https://arxiv.org/pdf/2606.17972v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "deep learning-based semantic segmentation with DINOv3 backbone",
+      "llm_evidence_cn": "基于DINOv3骨干的深度学习语义分割",
+      "llm_evidence": "基于DINOv3骨干的深度学习语义分割",
+      "canonical_evidence": "基于DINOv3骨干的深度学习语义分割",
+      "llm_tldr_en": "SegDINO integrates a DINOv3 backbone with token pyramid adaptation and scale-aware decoding for efficient medical image segmentation, reducing computational overhead while maintaining accuracy.",
+      "llm_tldr_cn": "针对自监督DINO模型直接用于图像分割时需复杂解码器的问题，本文提出SegDINO，通过引入Token金字塔适配（TPA）重组中间特征形成伪多尺度层次，并设计尺度感知解码（SAD）进行高效精化。在医学图像分割基准上，SegDINO以更少参数和计算量取得了与现有方法相当或更优的性能，证明了尺度建模比增加解码器容量更关键。",
+      "llm_tldr": "针对自监督DINO模型直接用于图像分割时需复杂解码器的问题，本文提出SegDINO，通过引入Token金字塔适配（TPA）重组中间特征形成伪多尺度层次，并设计尺度感知解码（SAD）进行高效精化。在医学图像分割基准上，SegDINO以更少参数和计算量取得了与现有方法相当或更优的性能，证明了尺度建模比增加解码器容量更关键。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.15632v1",
+      "source": "arxiv",
+      "title": "Open-World Video Segmentation",
+      "abstract": "While video segmentation has advanced rapidly on short clips and closed-set benchmarks, open-world video segmentation remains largely unexplored. The challenge is twofold: (1) existing methods are not designed to support object discovery and identity maintenance in long videos of dynamic ego-motion, and (2) existing evaluation protocols rely on a rigid 1:1 matching that unfairly penalizes semantically valid predictions with mismatched granularity. To address both gaps, we introduce Savvy, a practical and strong system for zero-shot open-world long-horizon video segmentation. Savvy combines hierarchical mask discovery, deferred admission, and track consolidation to support persistent object discovery, safe track promotion, and stable long-range identity maintenance. We further propose OGA, a granularity-aware evaluation suite for open-world video segmentation. Built on a Granularity-Agnostic (GA) matching protocol, OGA relaxes conventional 1:1 matching to an n:1 mapping, but still enforces temporal rigor by detecting support discontinuities through sever points and scoring each reference object through its dominant coherent fragment. This prevents fragmented or flickering support from being over-rewarded while enabling GA-adapted metrics and structural diagnostics: identity persistence (IP), and identity concentration (IC). On VIPSeg, we show that standard 1:1 evaluation substantially underestimates open-world methods, whereas GA evaluation recovers much of their suppressed performance. On the more realistic long-horizon benchmarks: ScanNet and HM3D, Savvy consistently outperforms strong baselines across both classical and proposed metrics, including STQ, VPQ$_\\infty$, IP and IC. Together, these results establish a practical benchmark and a strong baseline for open-world long-horizon video segmentation.",
+      "authors": [
+        "Qing Su",
+        "Kaiyang Li",
+        "Yuan Zhuang",
+        "Fei Miao",
+        "Shihao Ji"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-14T06:48:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.15632v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "open-world video segmentation",
+      "llm_evidence_cn": "开放世界视频分割",
+      "llm_evidence": "开放世界视频分割",
+      "canonical_evidence": "开放世界视频分割",
+      "llm_tldr_en": "Savvy is a zero-shot open-world long-horizon video segmentation system using hierarchical mask discovery, deferred admission, and track consolidation, with a new evaluation protocol OGA.",
+      "llm_tldr_cn": "开放世界视频分割面临长视频中物体发现和身份维护的挑战。本文提出Savvy系统，通过分层掩码发现、延迟接纳和轨迹整合实现零样本开放世界长时视频分割，并提出了粒度感知评估协议OGA。在多个基准上验证了其有效性，推动视频分割向开放世界场景发展。",
+      "llm_tldr": "开放世界视频分割面临长视频中物体发现和身份维护的挑战。本文提出Savvy系统，通过分层掩码发现、延迟接纳和轨迹整合实现零样本开放世界长时视频分割，并提出了粒度感知评估协议OGA。在多个基准上验证了其有效性，推动视频分割向开放世界场景发展。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.14307v1",
+      "source": "arxiv",
+      "title": "Pano3D: Unified 3D Reconstruction and Panoptic Segmentation",
+      "abstract": "Recent advances in 3D feedforward reconstruction neural networks have achieved remarkable success in dense reconstruction from images without any camera parameters. Yet, equipping these models with robust semantic understanding remains an open problem. Here we introduce an approach that performs 3D reconstruction and 3D panoptic segmentation in a unified framework. We build on existing 3D reconstruction models and augment them with a set-based mask decoder. The approach is jointly trained with a geometric and semantic loss, which are shown to be mutually beneficial. More precisely, the features are initialized from the geometric information and then finetuned to capture jointly geometry and semantics. We demonstrate the generality of our approach by successfully applying our framework both to online and all-to-all attention reconstruction backbones. Our method achieves state-of-the-art performance in 3D panoptic segmentation across ScanNet, ScanNet200, and ScanNet++ datasets. Ablation studies show that such joint training of a unified model equips 3D feedforward reconstruction neural networks with panoptic segmentation and yields mutually beneficial improvements.",
+      "authors": [
+        "Victor Barberteguy",
+        "Ahmet Iscen",
+        "Mathilde Caron",
+        "Alireza Fathi",
+        "Gül Varol",
+        "Cordelia Schmid"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-12T09:43:13+00:00",
+      "link": "https://arxiv.org/pdf/2606.14307v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "deep learning based panoptic segmentation from images",
+      "llm_evidence_cn": "基于深度学习的图像全景分割",
+      "llm_evidence": "基于深度学习的图像全景分割",
+      "canonical_evidence": "基于深度学习的图像全景分割",
+      "llm_tldr_en": "Pano3D unifies 3D reconstruction and 3D panoptic segmentation from images, using a set-based mask decoder and joint geometric-semantic training.",
+      "llm_tldr_cn": "Pano3D将3D重建与全景分割统一在单个框架中，通过基于集合的掩码解码器和几何语义联合训练，实现从图像到3D场景的端到端语义理解，展示了语义对重建的促进作用。",
+      "llm_tldr": "Pano3D将3D重建与全景分割统一在单个框架中，通过基于集合的掩码解码器和几何语义联合训练，实现从图像到3D场景的端到端语义理解，展示了语义对重建的促进作用。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.15861v1",
+      "source": "arxiv",
+      "title": "Object Tokens as a Bridge Between Segmentation and Visual Question Answering in Robotic Surgery",
+      "abstract": "Visual Question Answering (VQA) in robotic surgery, referred to as surgical VQA, requires high-level understanding of complex surgical scenes and the integration of visual perception with language reasoning, with the potential to support surgical training and intraoperative decision-making. Recent Vision-Language Models (VLMs) have shown promising performance through parameter-efficient fine-tuning; however, most existing approaches rely on coarse visual grounding, typically limited to bounding boxes, which fails to capture the fine-grained spatial structure of surgical objects. In this work, we propose a unified framework that jointly performs pixel-level segmentation and visual question answering within a single framework. Our approach integrates a VLM with a Segment Anything Model (SAM)-based decoder and represents scene elements as object tokens generated by the VLM. These object tokens guide answer prediction and are further projected to the SAM-based decoder to produce segmentation masks. By optimizing the object token embeddings through both segmentation and question answering objectives, the model learns spatially grounded representations that enhance visual reasoning while providing explicit pixel-level grounding. We evaluate the proposed method on the private RAMIE (Robot-Assisted Minimally Invasive Esophagectomy) dataset and the public EndoVis18 dataset, where it consistently outperforms baseline methods for surgical VQA. These results demonstrate that incorporating context-aware object tokens into vision-language models improves fine-grained surgical scene understanding.",
+      "authors": [
+        "Yiping Li",
+        "Ronald de Jong",
+        "Romy van Jaarsveld",
+        "Franco Badaloni",
+        "Gino Kuiper",
+        "Jelle Ruurda",
+        "Josien Pluim",
+        "Marcel Breeuwer"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-14T15:30:16+00:00",
+      "link": "https://arxiv.org/pdf/2606.15861v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "jointly performs pixel-level segmentation and VQA",
+      "llm_evidence_cn": "联合执行像素级分割与VQA",
+      "llm_evidence": "联合执行像素级分割与VQA",
+      "canonical_evidence": "联合执行像素级分割与VQA",
+      "llm_tldr_en": "Proposes a unified framework for pixel-level segmentation and VQA in robotic surgery, integrating fine-grained spatial understanding.",
+      "llm_tldr_cn": "该论文针对手术机器人场景下的视觉问答（VQA）缺乏细粒度空间结构的问题，提出一个统一框架同时执行像素级分割与VQA。方法将分割与语言推理结合，在保持参数高效微调的同时提升空间理解能力。实验表明该方法在手术VQA任务上表现优异，同时输出高质量分割结果。该工作为细粒度视觉语言理解提供了新的技术路径。",
+      "llm_tldr": "该论文针对手术机器人场景下的视觉问答（VQA）缺乏细粒度空间结构的问题，提出一个统一框架同时执行像素级分割与VQA。方法将分割与语言推理结合，在保持参数高效微调的同时提升空间理解能力。实验表明该方法在手术VQA任务上表现优异，同时输出高质量分割结果。该工作为细粒度视觉语言理解提供了新的技术路径。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "deep learning semantic segmentation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.15837v1",
+      "source": "arxiv",
+      "title": "Learning a Sampling-Free Variational DNN Plugin from Tiny Training Sets to Refine OOD Segmentation With Uncertainty Estimation",
+      "abstract": "Deep neural networks (DNNs) frequently fail to generalize to out-of-distribution (OOD) medical images because of variations in scanners and acquisition protocols. Retraining DNN models to address these distribution shifts is often impractical due to the high cost of acquiring and annotating new medical datasets. To address this, we introduce VarDeepPCA, a novel lightweight variational DNN framework designed to restore/refine degraded segmentation maps by leveraging intrinsic geometric priors. Unlike existing approaches that require target-domain data or extensive pre-training, our VarDeepPCA explicitly learns a distribution of valid anatomical geometries using only small in-distribution (ID) datasets. Theoretically, our novel variational learning framework leverages a reinterpretation of the softmax mapping to implicitly perform exact distribution modeling, thereby enabling computationally efficient, sampling-free learning and inference. This also enables VarDeepPCA to provide uncertainty estimates associated with its restored segmentation maps. We empirically validate our framework across 4 distinct clinical applications, using 14 publicly available datasets, involving segmentation of the myocardium, neuroretinal rim, prostate, and fetal head. Comparisons against 15 existing methods demonstrate that VarDeepPCA consistently restores segmentation maps produced by the existing methods on OOD data to (i) significantly improve anatomical plausibility of geometries and clinical utility of the segmentations, and (ii) significantly reduce errors, without needing any more training data than that used by existing methods.",
+      "authors": [
+        "Jimut B. Pal",
+        "Suyash P. Awate"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "published": "2026-06-14T14:36:59+00:00",
+      "link": "https://arxiv.org/pdf/2606.15837v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "refines segmentation maps with variational DNN, applicable to raw image segmentation",
+      "llm_evidence_cn": "使用变分DNN精化分割图，可应用于原始图像分割",
+      "llm_evidence": "使用变分DNN精化分割图，可应用于原始图像分割",
+      "canonical_evidence": "使用变分DNN精化分割图，可应用于原始图像分割",
+      "llm_tldr_en": "VarDeepPCA is a lightweight variational DNN plugin that refines degraded segmentation maps using only small in-distribution datasets and geometric priors, enabling robust OOD segmentation with uncertainty estimation.",
+      "llm_tldr_cn": "针对深度神经网络在医学图像分布偏移下泛化失败的问题，本文提出VarDeepPCA，一种轻量级变分DNN插件，利用几何先验从少量分布内数据学习有效解剖结构分布，无需目标域数据即可精化退化的分割图，并输出不确定性估计。实验表明该方法能有效恢复OOD场景下的分割质量，为分割后处理提供了一种数据高效的解决方案。",
+      "llm_tldr": "针对深度神经网络在医学图像分布偏移下泛化失败的问题，本文提出VarDeepPCA，一种轻量级变分DNN插件，利用几何先验从少量分布内数据学习有效解剖结构分布，无需目标域数据即可精化退化的分割图，并输出不确定性估计。实验表明该方法能有效恢复OOD场景下的分割质量，为分割后处理提供了一种数据高效的解决方案。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.16325v1",
+      "source": "arxiv",
+      "title": "Attention-Based Prototype Calibration for Multi-Rater Few-Shot Medical Image Segmentation",
+      "abstract": "Few-shot medical image segmentation methods typically assume a single ground-truth annotation, overlooking systematic variability across expert raters commonly observed in clinical datasets. We propose an attention-based prototype calibration framework for few-shot multi-rater segmentation that models rater-specific deviations from a consensus representation in prototype space. A lightweight yet principled attention operator directly refines rater prototypes without modifying the backbone feature extractor, making the approach fully compatible with existing prototype-based few-shot segmentation methods. This design preserves semantic consistency while enabling personalized segmentation outputs with minimal computational overhead. Experiments on multi-rater medical imaging datasets demonstrate consistent improvements over baseline prototype approaches, highlighting the effectiveness of structured prototype calibration for modeling annotation variability. Our code is available at https://github.com/truong2710-cyber/JAPC.",
+      "authors": [
+        "Truong Vu",
+        "Minh Khoi Ho",
+        "Yutong Xie"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-15T07:31:08+00:00",
+      "link": "https://arxiv.org/pdf/2606.16325v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "few-shot medical image segmentation with attention-based prototype calibration",
+      "llm_evidence_cn": "基于注意力的原型校准的少样本医学图像分割",
+      "llm_evidence": "基于注意力的原型校准的少样本医学图像分割",
+      "canonical_evidence": "基于注意力的原型校准的少样本医学图像分割",
+      "llm_tldr_en": "Proposes attention-based prototype calibration for few-shot multi-rater medical image segmentation, modeling rater-specific deviations with a lightweight attention operator compatible with existing methods.",
+      "llm_tldr_cn": "现有少样本医学分割假设单一真实标注，忽略临床中多位专家的标注差异。本文提出基于注意力的原型校准框架，在原型空间中建模不同专家的偏差，无需修改骨干网络，保持语义一致性的同时实现个性化分割输出，在少量标注下提升分割精度。",
+      "llm_tldr": "现有少样本医学分割假设单一真实标注，忽略临床中多位专家的标注差异。本文提出基于注意力的原型校准框架，在原型空间中建模不同专家的偏差，无需修改骨干网络，保持语义一致性的同时实现个性化分割输出，在少量标注下提升分割精度。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.16868v1",
+      "source": "arxiv",
+      "title": "Federated Medical Image Segmentation under Real-World Label Noise: A Benchmark Suite for Noisy Label Learning Method Selection",
+      "abstract": "While federated learning (FL) enables collaborative medical image segmentation without centralizing sensitive data, real-world deployment is frequently complicated by cross-site label imperfections such as contour disagreement, missing or additional structures, and confused labels. Federated noisy label learning (FNLL) aims to mitigate these effects, yet remains underused in practice as existing evidence is largely based on synthetic noise, simplified settings, and limited real-world noisy evaluation. We address this gap by introducing a benchmark suite that combines diverse real-world noisy datasets, deployment-relevant client-noise scenarios, and label-noise-targeted evaluation to support systematic FNLL assessment and informed method selection. The suite combines curated real-world noisy medical image segmentation datasets from diverse sources with a comprehensive federated segmentation framework including various client-noise scenarios and noise-targeted evaluation. The presented suite provides a realistic and discriminative basis for FNLL evaluation in medical image segmentation and establishes a reusable foundation for fair benchmarking, dataset-specific label-noise characterization, and future method development under realistic federated settings. Code is available at https://github.com/MIC-DKFZ/FedSegNoiseBench.",
+      "authors": [
+        "Markus Bujotzek",
+        "Dimitrios Bounias",
+        "Stefan Denner",
+        "Ralf Floca",
+        "Maximilian Fischer",
+        "Peter Neher",
+        "Klaus Maier-Hein"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.DC"
+      ],
+      "published": "2026-06-15T15:44:58+00:00",
+      "link": "https://arxiv.org/pdf/2606.16868v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "federated medical image segmentation with noisy labels",
+      "llm_evidence_cn": "联邦医学图像分割中的噪声标签处理",
+      "llm_evidence": "联邦医学图像分割中的噪声标签处理",
+      "canonical_evidence": "联邦医学图像分割中的噪声标签处理",
+      "llm_tldr_en": "Federated medical image segmentation faces real-world label noise. This paper introduces a benchmark suite combining diverse real-world noisy datasets and client-noise scenarios to support noisy label learning method selection.",
+      "llm_tldr_cn": "联邦学习中的医学图像分割常受真实标签噪声困扰，现有研究依赖合成噪声。本文提出了一个基准套件，整合了多种真实噪声数据集和部署相关的噪声场景，并设计了针对性评估指标，为噪声标签学习方法的选择提供系统支持。实验表明该套件能有效评估不同方法在真实噪声下的性能。该工作推进了联邦医学图像分割的实际部署。",
+      "llm_tldr": "联邦学习中的医学图像分割常受真实标签噪声困扰，现有研究依赖合成噪声。本文提出了一个基准套件，整合了多种真实噪声数据集和部署相关的噪声场景，并设计了针对性评估指标，为噪声标签学习方法的选择提供系统支持。实验表明该套件能有效评估不同方法在真实噪声下的性能。该工作推进了联邦医学图像分割的实际部署。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.17958v1",
+      "source": "arxiv",
+      "title": "Beyond Visual Cues: CoT-Enhanced Reasoning for Semi-supervised Medical Image Segmentation",
+      "abstract": "Semi-supervised medical image segmentation has emerged as a dominant research problem in medical image analysis, mitigating annotation scarcity by leveraging consistency regularization on unlabeled data. However, existing approaches operate predominantly via visual pattern matching, relying heavily on pixel-level similarities. This visual-centric dependency often falters in clinical scenarios characterized by the visual-semantic mismatch, where visually similar lesions warrant distinct diagnostic conclusions, thus failing to capture the underlying diagnostic logic used by experts. To address this, we move beyond visual cues and propose CERS (CoT-Enhanced Reasoning Segmentation), a framework that integrates Chain-of-Thought (CoT) reasoning to distinguish pathologically distinct cases. Specifically, we construct a knowledge pool enriched with linguistic reasoning descriptions generated by large language models (LLMs). A semantic-aware reference selection strategy is introduced to identify historical evidence, filtering candidates first by morphology, and then refining them via CoT consistency to eliminate hard negatives. Furthermore, a multi-scale coordinate attention module (MCAM) is designed to effectively fuse this reasoning-derived context into the decoding process. Extensive experiments demonstrate the superiority of CERS against state-of-the-art approaches, particularly in resolving boundary ambiguities and semantic inconsistencies. The code is available at https://github.com/cymasuna/CERS.",
+      "authors": [
+        "Yuming Chen",
+        "Yuxin Xie",
+        "Tao Zhou",
+        "Yi Zhou"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-06-16T14:10:19+00:00",
+      "link": "https://arxiv.org/pdf/2606.17958v1",
+      "tags": [
+        "keyword:raw-seg",
+        "query:raw-seg"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "semi-supervised medical image segmentation with CoT reasoning",
+      "llm_evidence_cn": "基于链式推理的半监督医学图像分割",
+      "llm_evidence": "基于链式推理的半监督医学图像分割",
+      "canonical_evidence": "基于链式推理的半监督医学图像分割",
+      "llm_tldr_en": "Proposes CERS, integrating Chain-of-Thought reasoning into semi-supervised medical image segmentation to handle visual-semantic mismatch.",
+      "llm_tldr_cn": "针对半监督医学图像分割中仅依赖像素相似性无法处理视觉-语义不匹配的问题，提出了CERS框架，将链式思维推理融入一致性正则化，使模型能够基于诊断逻辑进行分割，在多个医学数据集上超越了纯视觉方法，为融合专家知识提供了新方向。",
+      "llm_tldr": "针对半监督医学图像分割中仅依赖像素相似性无法处理视觉-语义不匹配的问题，提出了CERS框架，将链式思维推理融入一致性正则化，使模型能够基于诊断逻辑进行分割，在多个医学数据集上超越了纯视觉方法，为融合专家知识提供了新方向。",
+      "llm_tags": [
+        "query:raw-seg"
+      ],
+      "matched_query_tag": "query:raw-seg",
+      "matched_query_text": "image segmentation techniques",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
