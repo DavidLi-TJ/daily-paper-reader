@@ -1,0 +1,160 @@
+Title: Technical Report for ICRA 2026 GOOSE 2D Fine-Grained Semantic Segmentation Challenge: Leveraging DINOv3 for Robust Outdoor Scene Understanding in Field Robotics
+
+URL Source: https://arxiv.org/pdf/2606.18582v1
+
+Published Time: Thu, 18 Jun 2026 00:22:43 GMT
+
+Number of Pages: 5
+
+Markdown Content:
+# Technical Report for ICRA 2026 GOOSE 2D Fine-Grained Semantic Segmentation Challenge: Leveraging DINOv3 for Robust Outdoor Scene Understanding in Field Robotics 
+
+Jaeil Park 1,†, Hyobin Choi 1,†, Sangjin Lee 1,†, Hyungtae Lim 2,∗, Sung-Hoon Yoon 1,∗  
+
+> (a) RGB (b) Ours (c) Ground truth
+
+Fig. 1. Qualitative results of the final submission to the GOOSE 2D Fine-Grained Semantic Segmentation Challenge. (a) Input RGB image. (b) Predicted output from our final ensemble model. (c) Ground-truth annotation by a human labeler. 
+
+Abstract — The GOOSE 2D Fine-Grained Semantic Segmen-tation Challenge at the ICRA 2026 Workshop on Field Robotics evaluates dense semantic segmentation of off-road imagery over a fine-grained taxonomy of 64 classes and 11 evaluated non-void coarse categories. We present the first-place solution to this challenge. Our solution comprises two complementary improvements: (a) a network-level design that combines a self-supervised DINOv3 ViT-L/16 backbone, a ViT-Adapter, and a Mask2Former mask-classification decoder, together with a coarse-category auxiliary loss on the global [CLS] token; and (b) an inference-time aggregation strategy based on multi-scale and horizontal-flip test-time augmentation and an ensemble of the top three checkpoints selected using Codabench scores. Our method achieves an official composite score of 76 .57% ,consisting of 69 .32% fine-class mIoU and 83 .81% category-level mIoU, and ranks first on the final phase leaderboard: 
+
+www.codabench.org/competitions/14257/#/results-tab .
+
+> †
+
+Equal contribution; ∗Co-advised this work. 
+
+> 1
+
+Multimodal Intelligence and Perception Laboratory (MIP), Depart-ment of Electrical Engineering and Computer Science, Daegu Gyeong-buk Institute of Science and Technology (DGIST), Daegu, Republic of Korea. jaeill0510@gmail.com, {hyobin01, tkdwls237, shyoon }@dgist.ac.kr 
+
+> 2
+
+Laboratory for Information and Decision Systems (LIDS), Mas-sachusetts Institute of Technology (MIT), Cambridge, MA, USA. 
+
+shapelim@mit.edu 
+
+I. I NTRODUCTION 
+
+Semantic segmentation is a fundamental perception ca-pability for autonomous robots operating in real-world out-door environments. While many conventional benchmarks focus on structured urban or indoor scenes, field robots must perceive unstructured environments with irregular ter-rain, diverse lighting conditions, complex backgrounds, and platform-dependent viewpoints. The GOOSE 2D Fine-Grained Semantic Segmentation Challenge [1], [2] targets this problem by evaluating dense semantic segmentation in off-road field robotics scenarios. The challenge requires predictions over 64 fine-grained se-mantic classes and evaluates performance using both fine-class mIoU and category-level mIoU over 11 non-void coarse categories. The benchmark includes automotive, excavator, and quadruped platforms, which introduce substantial vari-ation in camera height, field of view, object scale, and scene composition. These properties reflect the perception challenges encountered by robots deployed in outdoor envi-ronments. In this report, we present our first-place solution to the challenge. Our approach leverages the strong visual represen-                       
+
+> arXiv:2606.18582v1 [cs.CV] 17 Jun 2026 (a) pipe (b) kick scooter (c) on rails (d) tunnel
+> (e) moss (f) crops (g) truck
+> by excavator platform (h) truck
+> by quadruped platform Fig. 2. Representative difficulty factors in the GOOSE and GOOSE-Ex datasets. For each example, the top sub-image shows the raw RGB image. For (a)–(f), the bottom sub-image highlights the target fine class in red. (a–d) Long-tailed fine classes whose spatial extent varies from tiny objects to image-dominating regions. (e, f) Locally ambiguous fine classes (moss vs. crops ) that share similar local texture and must be disambiguated by scene context. (g, h) Heterogeneous robotic platforms : the examples preserve the native image aspect ratios of the excavator and quadruped cameras ( i.e. , the dataset contains images with different width-to-height ratios), making the frame-geometry difference visible. The same truck class appears as distant horizon-level points in the excavator view, where the high-mounted sensor looks downward. In contrast, the quadruped view is captured from a low-mounted sensor looking upward, creating a large viewpoint difference for the same semantic class.
+
+tations of the self-supervised DINOv3 [3] ViT-L/16 backbone and the query-based mask prediction of the Mask2Former [4] decoder. We further incorporate a lightweight multi-hot aux-iliary loss on the DINOv3 global [CLS] token to encourage image-level awareness of the 11 coarse semantic categories. Our final submission achieves an official composite mIoU of 
+
+76 .57% , consisting of 69 .32% fine-class mIoU and 83 .81% 
+
+category-level mIoU, and ranks first on the final phase leaderboard. Fig. 1 shows representative qualitative results. II. O VERVIEW OF THE GOOSE 2D F INE -G RAINED 
+
+SEMANTIC SEGMENTATION CHALLENGE 
+
+A. Challenge and Dataset 
+
+We work with the GOOSE [1] and GOOSE-Ex [2] datasets, which together form the basis of the GOOSE 2D Fine-Grained Semantic Segmentation Challenge. Unlike structured urban benchmarks such as Cityscapes [5] and general-purpose scene-parsing datasets such as ADE20K [6], the GOOSE 2D Fine-Grained Semantic Segmentation Challenge evaluates models in unstructured off-road environments captured from heterogeneous platforms over a long-tailed fine-class taxonomy. It therefore tests not only segmentation accuracy but also robustness to the platform and class-distribution shifts characteristic of field-robotics deployment. The GOOSE-Ex dataset extends the original GOOSE benchmark by introducing diverse robotic platforms and additional off-road imagery. Each pixel must be labeled with one of K=64 fine-grained semantic classes, and the official final phase evaluation is performed on 1,815 hidden test images. In addition to the fine-class mIoU, the server reports category-level mIoU after collapsing the labels into 11 evaluated non-void coarse categories; the official ranking score is the composite of these two metrics. Beyond the taxonomy and evaluation protocol, three dataset properties influenced our design choices, as illus-trated in Fig. 2. 
+
+Long-tailed fine classes with large scale variation (Figs. 2(a)–(d)). The 64-class fine taxonomy is heavily imbalanced: frequent classes such as building , car ,and sky occupy many pixels, whereas safety-relevant classes such as traffic cone , barrier tape , and 
+
+road marking are much sparser. Some rare classes oc-cupy only a few pixels when they appear, as in pipe 
+
+and kick scooter in Figs. 2(a)–(b), while others can dominate nearly the whole image, as in on rails and 
+
+tunnel in Figs. 2(c)–(d). Locally ambiguous and context-dependent labels (Figs. 2(e)–(f)). Some fine-grained classes are visually ambiguous. moss and crops , shown in Figs. 2(e)–(f), can look similar at the local texture level, but forest-like scenes tend to favor moss whereas open-Fig. 3. Overview of the training pipeline. The DINOv3 backbone produces a global [CLS] token and patch-token features. (a) The patch-token features are processed by the ViT-Adapter into a multi-scale feature pyramid, fed into the Mask2Former decoder, and supervised by the segmentation loss LM2F .(b) The [CLS] token is passed through a linear classifier and supervised by a multi-hot binary cross-entropy auxiliary loss Lcls over 11 coarse categories derived from the fine-class ground-truth mask. The two losses form the final training objective; see Sec. III.B for details. 
+
+field vegetation tends to favor crops . In addition to these examples, the wall class does not always exhibit a visually consistent pattern, and structural classes such as bridge 
+
+and tunnel can be difficult to distinguish when the robot is far from the structure or passing beneath or through it. 
+
+Heterogeneous robotic platforms (Figs. 2(g)–(h)). Unlike many generic segmentation datasets captured from a single platform, the GOOSE and GOOSE-Ex datasets combine heterogeneous robotic platforms. The examples in Figs. 2(a)– (f) mostly follow a conventional vehicle-like viewpoint, whereas Figs. 2(g)–(h) highlight that the same truck class is observed from non-automotive platforms. The excavator and quadruped examples preserve their native image aspect ratios, emphasizing that platform heterogeneity changes not only the viewpoint but also frame geometry. As shown in Fig. 2(g), in the high-mounted excavator view, the sensor looks downward from above, and the trucks appear as tiny points near the horizon. In contrast, as seen in Fig. 2(h), the low-mounted quadruped sensor looks upward in an industrial quarry scene, creating a large viewpoint difference for the same semantic class. 
+
+B. Solution Overview 
+
+Our final submission combines established components rather than introducing a new segmentation architecture. The remainder of this report describes the network-level design (Secs. III.A and III.B) and the inference-time con-figuration (Sec. III.D) that together produced the first-place entry. III. A PPROACH 
+
+As shown in Fig. 3, the submitted pipeline consists of a DINOv3 ViT-L/16 backbone, a ViT-Adapter that con-structs multi-scale features, a Mask2Former decoder, and a lightweight auxiliary head on the encoder’s global [CLS] to-ken. At inference time, we apply multi-scale and horizontal-flip test-time augmentation (TTA) together with checkpoint ensembling. 
+
+A. Backbone and Decoder 
+
+DINOv3 backbone. We use the publicly released DINOv3 ViT-L/16 checkpoint pretrained on LVD-1689M [3] as the image encoder. Its self-supervised representation provides a strong initialization for the diverse off-road imagery in the GOOSE and GOOSE-Ex datasets, including the excavator and quadruped views that appear in the challenge data. During training, the backbone is fine-tuned jointly with the decoder using a lower learning rate than the task-specific layers, preserving the pretrained feature geometry while still adapting to the off-road domain. 
+
+ViT-Adapter. The DINOv3 ViT produces single-resolution patch-token features, whereas Mask2Former expects a multi-scale feature pyramid. To bridge this architectural gap, we employ a ViT-Adapter [7], which converts ViT represen-tations into a spatially structured feature pyramid suitable for dense prediction, as illustrated in Fig. 3(a). The spatial prior module (SPM) first extracts CNN-like feature maps at strides {4, 8, 16 , 32 } from the input image. These features provide the initial multi-scale pyramid, while the interaction blocks further refine them by injecting semantic information from intermediate DINOv3 patch tokens through deformable cross-attention [8]. The CNN tokens act as queries, while the ViT patch tokens serve as keys and values, enabling a one-way transfer of ViT semantics into the CNN feature pyramid. The refined CNN features are fused with the cor-responding ViT features by elementwise addition, producing the four-scale pyramid {f1, f 2, f 3, f 4} that is passed to the Mask2Former decoder. 
+
+Mask2Former decoder. On top of the four-scale fea-ture pyramid produced by the ViT-Adapter, we use Mask2Former [4]. Mask2Former predicts a fixed set of mask queries, classifies each query, and combines the query masks into a semantic segmentation map. In practice, this query-based decoder gave stable performance on both large stuff regions and small object-like classes. The decoder is initialized from a public ADE20K-pretrained Mask2Former checkpoint [6] when the weights are shape-compatible, and is then fine-tuned on the challenge data. B. Class-Token Coarse Auxiliary Loss 
+
+The main segmentation target remains the 64-way fine-class label map. For this objective, we use the standard Mask2Former loss, denoted by LM2F , which combines query classification, point-sampled binary mask loss, and Dice loss [4], [9]. In addition to this segmentation objective, we also supervise the global [CLS] token from the DI-NOv3 backbone to predict which coarse semantic groups are present in the image, as illustrated in Fig. 3(b). For each training image, we derive this target directly from the ground-truth segmentation map. Every fine label appearing in the mask is mapped to its parent non-void coarse category, and a coarse category is marked positive if at least one pixel from any of its fine classes appears. Therefore, the auxiliary target represents category presence rather than pixel location or region size. Since the auxiliary target is computed from the existing pixel-wise labels, it requires no additional annotation. Formally, we construct a multi-hot vector ycoarse ∈{0, 1}C , where C = 11 is the number of evaluated non-void coarse categories. Its c-th component is defined as 
+
+ycoarse  
+
+> c
+
+= 1 if at least one pixel in the image belongs to coarse category c, and zero otherwise. A linear classifier reads the DINOv3 class-token feature and predicts logits ˆz ∈ RC ,whose c-th component is denoted by ˆzc. The auxiliary loss is a binary cross-entropy loss, 
+
+Lcls = 1
+
+C
+
+> C
+
+X
+
+> c=1
+
+BCE( σ(ˆ zc), y coarse  
+
+> c
+
+) , (1) where σ(·) is the sigmoid function. Thus, the total training objective is 
+
+L = LM2F + λcls Lcls , (2) where λcls is the auxiliary-loss coefficient. This auxiliary loss therefore serves as a low-cost regularizer that adds only a single linear layer and encourages the encoder to retain global information about which coarse semantic groups are present in the scene. 
+
+C. Training Setup 
+
+We use an input resize setting of 1,440 pixels during training to better preserve small and distant objects. The optimizer is AdamW [10] with weight decay 0.01 . The encoder uses a base learning rate of 1.0 × 10 −6, while the decoder and auxiliary head use 4.0×10 −5. The learning rate follows a polynomial schedule [11] over the training run. For the final configuration, we set λcls in Eq. (2) to 0.1.
+
+D. Inference: Test-Time Augmentation With an Ensemble 
+
+At inference time, each checkpoint is evaluated with multi-scale and horizontal-flip test-time augmentation (TTA). Specifically, we use four scales relative to the base resize setting, 
+
+s ∈ { 0.9, 0.95 , 1.05 , 1.1},
+
+and evaluate both the original and horizontally flipped images at each scale. Predictions from flipped inputs are mapped                       
+
+> Configuration Composite mIoU (%) Gain (pp) ConvNeXt + Mask2Former 56.68 -DINOv3 + ViT-Adapter + Mask2Former 69.80 +13.12 +[CLS] coarse auxiliary loss 71.20 +1.40 + Multi-scale TTA & horizontal flip 73.02 +1.82
+> TABLE I. Ablation study on the development phase .Each row adds one component to the previous configuration. Scores are mIoU on the development split.
+
+back to the original orientation, all outputs are resized to the original image resolution, and the per-class scores are averaged before the pixelwise arg max .For the final submission, we further ensemble the top-
+
+Ne checkpoints selected by Codabench composite mIoU, with Ne = 3 . Each checkpoint uses the same multi-scale and flip TTA protocol, and the final prediction is produced by averaging per-class scores across checkpoints before the pixelwise arg max . This ensemble is a simple variance-reduction step that does not require any additional training. IV. E XPERIMENTAL RESULTS 
+
+A. Evaluation Protocol 
+
+The Codabench challenge consists of two evaluation phases. First, the development phase evaluates submissions on a subset of the hidden test pool and was used throughout our development for iterative feedback; all scores in Table I are development phase results. Second, the final phase evalu-ates submissions on the full 1,815 -image hidden test set and determines the official ranking; the per-category breakdown in Table II reports final phase scores. The main leaderboard metric is the composite mIoU, combining fine-class mIoU over the 64 fine classes and category-level mIoU over the 11 evaluated non-void coarse categories. The official results are available on the Codabench leaderboard. 
+
+B. Development Process and Observations 1) Backbone selection: from ConvNeXt to DINOv3: We first evaluated a ConvNeXt [12] backbone paired with an ADE20K-pretrained Mask2Former decoder as our baseline. As shown in Table I, this configuration achieved 56.68% mIoU on the development split. Replacing ConvNeXt with a DINOv3 ViT-L/16 encoder and ViT-Adapter substantially improved the score to 69.80%, a gain of 13 .12 percentage points. 
+
+2) Auxiliary objectives: Adding a lightweight 11-category multi-label auxiliary head on the [CLS] token (with λcls =0.1, as described in Sec. III.B) improved the development phase score from 69.80% to 71.20%, as shown in Table I, and the head was retained in the final configuration. This was the most consistent gain we obtained while exploring how to inject additional supervisory signal without disturbing the primary segmentation loss. 
+
+3) Test-time augmentation: Applying multi-scale and horizontal-flip TTA increased the development phase score from 71.20% to 73.02%, a further gain of 1.82 percentage points. This result motivated the use of the same TTA protocol for every checkpoint in the final ensemble. Original Prediction GT Error Map 
+
+Fig. 4. Qualitative comparison of semantic segmentation results. Each row shows the input RGB image, predicted semantic map, ground-truth annotation, and error map. Metric mIoU (%) Fine-class mIoU (64 fine classes) 69.32 Category-level mIoU (11 coarse categories) 83.81 Composite score 76.57 
+
+Per-category mIoU 
+
+Animal 77.96 Construction 85.66 Human 90.22 Object 69.71 Road 73.68 Sign 89.70 Sky 97.75 Terrain 91.89 Vegetation 94.34 Vehicle 93.04 Water 57.98 TABLE II. Official final phase detailed results of our final submission. The composite score is the official ranking metric. Category-level results are reported over the 11 evaluated non-void coarse categories. 
+
+C. Final Submission 
+
+The final training configuration combines DINOv3, ViT-Adapter, Mask2Former, and the class-token multi-hot aux-iliary loss, with an input resize setting of 1,440 pixels and a polynomial learning-rate schedule. At inference time, we use scales {0.9, 0.95 , 1.05 , 1.1}, horizontal flipping, and an ensemble of the top three checkpoints selected using Codabench composite mIoU. This submission achieves a composite score of 76 .57% , consisting of 69 .32% fine-class mIoU and 83 .81% category-level mIoU (Table II). Qualitative results are shown in Fig. 4. The submission ranks first on the official final phase leaderboard. 
+
+D. Decomposing the Composite Score 
+
+The gap between the category-level mIoU and the 64-way fine-class score is substantial, as expected for this benchmark. Many visually similar fine classes become easier after category-level aggregation, while the fine-class metric still penalizes rare or ambiguous labels such as bikeway ,
+
+pedestrian crossing , tunnel , and pipe . The com-posite score therefore reflects both the strong coarse semantic consistency of the predictions and the remaining difficulty of rare fine-grained labels. V. C ONCLUSION 
+
+This report presented our first-place solution to the GOOSE 2D Fine-Grained Semantic Segmentation Challenge. The system combines a DINOv3 ViT-L/16 backbone, a ViT-Adapter, a Mask2Former decoder, and a lightweight class-token multi-hot auxiliary loss over the 11 non-void coarse categories. In the development phase, the DINOv3-based architecture improved composite mIoU by 13 .12 percentage points over the ConvNeXt baseline, and the auxiliary loss provided a further 1.40 -point gain. With multi-scale and horizontal-flip TTA and checkpoint ensembling, the final submission achieved a composite score of 76 .57% and ranked first on the official final phase leaderboard. REFERENCES [1] P. Mortimer, R. Hagmanns, M. Granero, T. Luettel, J. Petereit, and H.-J. Wuensche, “The GOOSE Dataset for Perception in Unstructured Environments,” in IEEE International Conference on Robotics and Automation (ICRA) , 2024. [2] R. Hagmanns, P. Mortimer, M. Granero, T. Luettel, and J. Petereit, “Excavating in the Wild: The GOOSE-Ex Dataset for Semantic Segmentation,” arXiv preprint arXiv:2409.18788 , 2024. [3] O. Sim´ eoni, H. V. Vo, M. Seitzer, F. Baldassarre, M. Oquab, C. Jose, V. Khalidov, M. Szafraniec, S. Yi, M. Ramamonjisoa, F. Massa, D. Haziza, L. Wehrstedt, J. Wang, T. Darcet, T. Moutakanni, L. Sen-tana, C. Roberts, A. Vedaldi, J. Tolan, J. Brandt, C. Couprie, J. Mairal, H. J´ egou, P. Labatut, and P. Bojanowski, “DINOv3,” arXiv preprint arXiv:2508.10104 , 2025. [4] B. Cheng, I. Misra, A. G. Schwing, A. Kirillov, and R. Girdhar, “Masked-Attention Mask Transformer for Universal Image Segmen-tation,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2022. [5] M. Cordts, M. Omran, S. Ramos, T. Rehfeld, M. Enzweiler, R. Be-nenson, U. Franke, S. Roth, and B. Schiele, “The Cityscapes Dataset for Semantic Urban Scene Understanding,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2016. [6] B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso, and A. Torralba, “Scene Parsing through ADE20K Dataset,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2017. [7] Z. Chen, Y. Duan, W. Wang, J. He, T. Lu, J. Dai, and Y. Qiao, “Vision Transformer Adapter for Dense Predictions,” in International Conference on Learning Representations (ICLR) , 2023. [8] X. Zhu, W. Su, L. Lu, B. Li, X. Wang, and J. Dai, “Deformable DETR: Deformable transformers for end-to-end object detection,” in 
+
+International Conference on Learning Representations (ICLR) , 2021. [9] F. Milletari, N. Navab, and S.-A. Ahmadi, “V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation,” in 
+
+International Conference on 3D Vision (3DV) , 2016. [10] I. Loshchilov and F. Hutter, “Decoupled Weight Decay Regular-ization,” in International Conference on Learning Representations (ICLR) , 2019. [11] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, and A. L. Yuille, “DeepLab: Semantic image segmentation with deep convo-lutional nets, atrous convolution, and fully connected CRFs,” IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) ,vol. 40, no. 4, pp. 834–848, 2018. [12] Z. Liu, H. Mao, C.-Y. Wu, C. Feichtenhofer, T. Darrell, and S. Xie, “A ConvNet for the 2020s,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2022, pp. 11 976–11 986.
