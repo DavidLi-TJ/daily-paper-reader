@@ -1,0 +1,507 @@
+Title: Speeding up the annotation process in semantic segmentation industrial applications
+
+URL Source: https://arxiv.org/pdf/2606.19934v1
+
+Published Time: Fri, 19 Jun 2026 00:37:33 GMT
+
+Number of Pages: 32
+
+Markdown Content:
+# Speeding up the annotation process in semantic segmentation industrial applications 
+
+Marta Fernández-Moreno a, ∗, Margarita Guerrero b, Rosalia Rementeria c, Pablo Mesejo a, Raúl Moreno d
+
+> a
+
+Department of Computer Science and Artificial Intelligence, Andalusian Research Institute in Data Science and Computational Intelligence, DaSCI, University of Granada, 18071, Granada, Spain 
+
+> b
+
+Ingénica STS, Av. Pablo Iglesias 38, Bj, 33205, Gijón, Spain 
+
+> c
+
+ArcelorMittal Global R&D, SLab—Steel Labs, Calle Marineros 4, 33490, Avilés, Spain 
+
+> d
+
+Department of Computer Science and Automatic Control, National Distance Education University (UNED), Juan del Rosal 16, Madrid 28040, Spain 
+
+Abstract 
+
+Current machine learning models commonly require large and well-annotated datasets. However, the annotation process often becomes a bottleneck, with increased complexity leading to higher chances of human errors. Within this context, our goal in this paper is to leverage unsupervised algorithms to improve data annotation efficiency for complex semantic segmentation problems in in-dustrial materials science. Previous research has quantified labeling time and others explored unsupervised methods. However, to the best of our knowledge, this is the first study to quantify how much unsupervised algorithms accelerate the labeling process. We aim to validate the extent to which this laborious pro-cess can be accelerated, focusing on semantic segmentation tasks that involve annotating each pixel of high-resolution images, such as the microstructure char-acterization challenge in materials science. Specifically, we demonstrate that by using unsupervised computer vision algorithms, the time required for the label-ing process can be reduced from 170 hours to 37 hours, achieving an approximate reduction of 78%. The dataset we work with includes large images of dimensions 
+
+> ∗
+
+Corresponding author 
+
+Email addresses: martafdezm95@gmail.com (Marta Fernández-Moreno), 
+
+marga.guerrero@ingenicasts.es (Margarita Guerrero), 
+
+rosalia.rementeria@arcelormittal.com (Rosalia Rementeria), pmesejo@decsai.ugr.es 
+
+(Pablo Mesejo), raul.moreno.salinas@gmail.com (Raúl Moreno) 
+
+> arXiv:2606.19934v1 [cs.CV] 18 Jun 2026
+
+1280x959 and 960x703, which further increases the complexity of the annota-tion task. Despite these challenges, we create and share the largest public steel microstructure segmentation dataset to date, available under MIT License with permanent DOI, contributing a fully annotated, high-resolution dataset to the field. Additionally, this is the first work to compare the labeling time from scratch (a common approach in previous studies) to the labeling time when us-ing these unsupervised algorithms as a pre-annotation step. Furthermore, we provide a Deep Learning model trained on this dataset, validated by field ex-perts, and deployed in an industrial setting, serving as an initial benchmark for this public dataset. 
+
+Keywords: Semantic Segmentation, Steel Microstructure Dataset, AI-Powered Data labeling System, Industrial applications, Unsupervised learning, Deep convolutional neural networks 
+
+1. Introduction 
+
+The advances in the field of machine learning (ML) over the last few years have increased notably its presence in different fields such as industry [1], ma-terial science [2], healthcare [3] and economics [4]. Data quality plays a key role in these applications as it can affect predictions such as disease detection [3]. However, more attention is often paid to algorithmic tasks and model op-timization, leaving data acquisition and data quality in the background. After interviewing more than 50 data scientists, the authors of [5] have identified the various negative effects and problems triggered by putting data quality behind. One of these problems is the huge amount of time spent on fine-tuning a model based on incorrect data that might be the root of the poor performance of the model. Researching and enhancing models is essential, but data is equally crucial. Generating a dataset while tackling an ML project, requires selecting meaningful samples and generating clear labels for the given task. However, the labeling process is often a tedious and time-consuming task, which leads to the introduction of human errors. Previous research as [6] has shown that 2mislabeling in datasets, including popular computer vision (CV) datasets like ImageNet, can contribute significantly to model inefficiencies, finding out that approximately 3.3% of the labels are erroneous, rising to 6% in cases such as ImageNet [7]. Moreover, semantic segmentation is a CV task where the label of each image is manually annotated pixel by pixel, turning it into one of the most effort-intensive labeling tasks. This can be seen in public datasets such as MS COCO [8], where image-level labeling for classification tasks took an average of 4.1 seconds, while pixel-level labeling for semantic segmentation tasks took 10.1 minutes. Depending on the labeling taxonomy and the nature of the images, the labeling time can vary greatly. One example is the Camvid dataset [9], where images count with a high number of classes, so the labeling of each image took 60 minutes on average. Another example is Cityscapes [10], a public dataset with high-resolution images (1024 ×2048). These studies clearly indicate that the annotation process is a major bottleneck in the development of reliable datasets for machine learning. At higher resolutions, the annotation effort increases due to the finer granu-larity of the labeling unit, which is the pixel. This higher resolution introduces additional complexities in the labeling task, including difficulties in identifying objects in challenging areas, even for an expert annotator, as well as dealing with a larger number of objects and ensuring the continuity of labels across adjacent pixels. Moreover, the level of detail required in the annotations, such as precise contours or identification of very small yet important sections, in-creases the complexity of the task. Due to this, labeling a Cityscapes image takes 90 minutes on average. MetalDAM [2], requiring 140 min/image due to its complexity, serves as reference for MicroSteel’s challenges (Section 3.2). Currently, there are unsupervised methods [11, 12] and foundation models that, while not precise enough as a standalone solution, are accurate enough to serve as an initial label for general tasks. However, they cannot be directly applied for highly specific tasks requiring greater precision and real-world in-dustrial applications. In the case of the segment-anything (SAM) model, the 3authors acknowledge its general nature and note that SAM may not achieve op-timal results in specific domains, often being outperformed by other approaches [13]. Previous research on annotation-efficient semantic segmentation has relied on active-learning clicks [14, 15] and weak or coarse supervision [16, 17]; nev-ertheless, all those approaches still require some form of human interaction or image-level labels before the first mask is produced. In the case of semantic segmentation problems, these methods usually per-form well in segmenting majority classes, requiring only annotating minor classes and fixing very few errors. In the case of microstructure characterization datasets, both [2] and the one presented in this paper contain two highly unstructured majority classes with very complex boundaries. The present paper demonstrates that, based on these datasets, the performance of unsupervised deep learning segmentation algorithms is sufficiently strong to be valuable in a subsequent phase of label refinement conducted by a human. In this paper, we address the first study that explicitly compares labeling time from scratch to labeling time when using pre-annotations generated by un-supervised algorithms. By comparing these two approaches, we quantify the sig-nificant efficiency gained in the annotation process. In practical terms, material characterization often requires human experts to manually label microstructure images, a process that is both time-consuming and error-prone. Quantifying these classes by hand introduces variability and inefficiency, which motivates the need for automating this procedure. To fully automate the material charac-terization task, it is necessary to train a robust model. However, the challenge lies in the need for large annotated datasets to train such a model, making the annotation process a key bottleneck. This paper proposes a methodology that accelerates the labeling process, ultimately facilitating the creation of a model capable of automating the entire task. We empirically prove how much this labeling process can be accelerated by applying unsupervised algorithms for image segmentation. Since our interest is to study to what extent labeling time can be reduced, we choose a complex and challenging problem whose datasets require very time-consuming manual 4annotation. For this reason, we start from a problem similar to the one presented by MetalDAM (segmentation of microstructures in metallography)[2]. Then, we proceed as follows: 1. First, we select an industrial problem in material science where a certain material needs to be characterized. Therefore, images of steel microstruc-tures are collected using microscopes by material science experts. 2. As a first procedure, every pixel in the images is labeled by experts. 3. As a second procedure, some labels are also generated by using CV algo-rithms with a low computational cost for training and inference. These labels are later refined by a material science expert. 4. Finally, the labeling time and the quality of the labels are compared be-tween both procedures (manual vs semi-automatic). In addition, this work presents a procedure for solving a computer vision use case in a quick manner by making use of CV algorithms in both the dataset generation process and use case resolution. In summary, the main contributions of this article are: 
+
+• We demonstrate how unsupervised machine learning algorithms can re-duce the manual annotation time for real-world problems by approxi-mately 78% , decreasing the effort from 170 hours to just 37 hours. 
+
+• Following the previously mentioned unsupervised methodology, we cre-ate the largest publicly available semantic segmentation dataset of steel microstructures to date, consisting of 82 fully-annotated high-resolution images (1280 ×959 and 960 ×703). The dataset will be made available at https://github.com/martafdezmAM/microsteel.git. 
+
+• We apply the two aforementioned contributions to solve a real-world indus-trial use case in material science, showing how the proposed methodology can significantly improve efficiency in automatic material characterization. 5Figure 1: Comparison of Manual Labeling and Pre-Annotation-Based Labeling Strategies: This figure illustrates the two labeling strategies compared in this study.The first labeling strategy is described in the upper part of the image, which involves manual labeling, where an expert annotates each image from scratch. The second labeling strat-egy is therefore described at the bottom of the image, where pre-annotations generated by unsupervised algorithms are then refined by the expert to produce the final annotations. 
+
+2. Proposed Methodology 
+
+The main goal of this paper is to provide a deep study and an optimiza-tion of one of the main bottlenecks in ML projects: the process of generating a reliable labeled and curated dataset. To do so, we employ as a benchmark a semantic segmentation problem due to the high complexity of its pixel-wise labels. MicroSteel exhibits the annotation challenges detailed in Section 3.2. Every dataset usually contains majority classes, so in the case of highly unbal-anced datasets like this one, automating the labeling of majority classes helps to drastically speed up the annotation process. In this study, two labeling strategies are compared: labeling from scratch and labeling from pre-annotations. As shown in Figure 1, in the first strat-6egy, a materials science expert labels each image from scratch to produce the final label. In the second strategy, the expert is provided with an initial pre-annotation, which is modified to generate the final annotation. For the second strategy, pre-annotations are generated using various image segmentation tech-niques, and these pre-annotations are loaded into a standard annotation tool such as Labelbox 1, where experts can refine them. The goal is to maximize the similarity of pre-annotations to the final labels while minimizing the time needed for manual correction. The annotation process consisted in organizing and uploading all images and pre-annotations to Labelbox. This platform automatically recorded the precise time spent on each annotation task, from initial loading to final submis-sion, for both strategies. We calculated median annotation times across experts to compare the efficiency of both approaches while accounting for inter-expert variability. The pre-annotation process involves the following key considerations: i) Unsupervised semantic segmentation algorithms are used to automatically label each pixel without prior information. ii) Simple, fast algorithms are pri-oritized to avoid training or execution processes that would take hours or days. Several methods have been evaluated, such as [11, 18, 19], but due to their re-liance on deep learning models requiring extensive training, they were deemed unsuitable for pre-annotation purposes. Instead, the following simpler tech-niques were selected: 
+
+• Thresholding : We apply the multi-Otsu thresholding method [20], an enhancement of Otsu’s threshold [21], which is based on grey-level his-tograms. 
+
+• Superpixels : The graph-based superpixel segmentation algorithm [22] is used, which segments the image based on local neighborhoods. 
+
+• Clustering : The k-means clustering algorithm [23] is applied, treating  
+
+> 1Labeling tool: https://labelbox.com/
+
+7each pixel as a data point. 
+
+• DL method : A fully unsupervised convolutional neural network proposed by [12] is used. This method trains from scratch on each individ-ual image using a loss function that jointly optimizes feature similarity, spatial continuity, and the number of unique clusters K. No pre-training or labeled data is required. This approach has been validated on similar microstructure characterization datasets in [24] and [25]. 
+
+• Segment Anything (SAM) : We also include Segment Anything (SAM) ,a state-of-the-art segmentation model developed by Meta AI [13]. SAM is a general-purpose segmentation model that generates high-quality masks for a wide range of objects. For our dataset, SAM was used to generate preliminary masks, which were then post-processed to merge overlapping regions and extract majority classes. The hardware (Intel Core i9-11900K, 126 GB RAM, NVIDIA RTX 3090) used classical methods such as multi-Otsu and superpixels run in sub-second time per image, while k-means typically takes a few seconds per image. GPU based methods range from sub-second to a few seconds for SAM inference, and tens of seconds for the DL-based method due to per-image optimization.  
+
+> Table 1: Computational cost of pre-annotation methods measured on Intel Core i9-11900K and NVIDIA RTX 3090.
+
+Method Runtime per image Hardware req. 
+
+Multi-Otsu <1 s CPU (Intel Core i9-11900K) Superpixels <1 s CPU (Intel Core i9-11900K) K-means 2–5 s CPU (Intel Core i9-11900K) SAM 1–3 s GPU (NVIDIA RTX 3090) DL-based 10–20 s GPU (NVIDIA RTX 3090) Table 1 summarizes the computational cost of each pre-annotation tech-nique. Classical methods (multi-Otsu, superpixels, k-means) run efficiently on 8CPU and complete pre-annotation for the entire dataset (82 images) in 1-6 min-utes. GPU-based methods (SAM, DL-based) require dedicated hardware but remain practical for industrial workflows: SAM processes the full dataset in approximately 4 minutes, while the DL-based method requires approximately 20 minutes. These pre-annotation times (ranging from minutes to less than one hour) are negligible compared to the 37–170 hours required for manual an-notation, confirming that computational overhead does not limit the practical applicability of our approach. The DL-based pre-annotation method was trained independently for each image using a fixed and small number of optimization epochs (typically 100–150 epochs), following the original implementation in [12], which is designed for fast convergence without requiring large-scale training. As the pre-annotation process takes place before the dataset is fully labeled, a qualitative evaluation was performed by an expert in the field to select the best mask for each image from the five techniques. The unsupervised DL-based algorithm and SAM were consistently among the top performers, with SAM excelling in images where objects were well-defined and not highly intermixed (e.g., Type I), while our DL-based method showed superior performance in handling complex boundaries and intermixed classes (e.g., Type II and Type III). The selected pre-annotations were then loaded into annotation tools for refinement by the expert. As shown in Figure 1, the final labels are generated by minor adjustments to these pre-annotations, resulting in two distinct labels per image, one from scratch and one from pre-annotations. Both the labeling quality and time will be compared between these strategies later in this study. 
+
+3. MicroSteel dataset 
+
+This section introduces the data that was generated, utilized, and shared in this study, as well as the problem that this type of dataset aims to solve. As mentioned before, one of the contributions of this paper is the generation of a 9fully annotated industrial dataset for steel microstructure characterization. This dataset was efficiently produced using unsupervised segmentation methods. The MicroSteel dataset is publicly available at github.com/martafdezmAM/microsteel (MIT License) and archived on Zenodo (DOI: 10.5281/zenodo.18826160) for permanent preservation. 
+
+3.1. Microstructure characterization 
+
+In materials science the size, amount, distribution, and morphology of the microstructure constituents are studied in the literature, frequently to find cor-relations with the mechanical properties of the materials [26]. This analysis depends on either manual measurement of optical microscopy images or auto-mated measurements of electron backscatter diffraction scans. However, these techniques are limited to simple and coarse microstructures and are also time-consuming for materials science experts. In recent years, semantic segmentation techniques have become very popular in this field, they can provide automati-cally all this information of great interest to experts [27]. Table 2 summarizes the most relevant information from the existing material characterization datasets. As can be seen, [2] and [28] are the only annotated datasets which are public. As mentioned in [2], labeling an image with these characteristics takes an average of 4 hours, which complicates the generation of such datasets, so speeding up this process is crucial. Moreover, making data publicly available is essential to enable the potential of AI and it is also an impor-tant aspect of materials science, as this data is made available to organizations specialising in different fields of research for their usage. 
+
+3.2. MicroSteel 
+
+MicroSteel is a new image segmentation benchmark in material science. It consists of 82 images with resolutions 1280 ×959 and 960 ×703, annotated at the pixel level. Compared with datasets in Table 2, MicroSteel not only is fully labeled and publicly accessible, but also has a much higher volume of fully 10 Table 2: Summary of the currently available metallography datasets [2]                                 
+
+> Dataset Images Resolution labeled Availability
+> Zhang et al. [29] 5086 2560 ×1920 no private UHCSDB [30] 961 645 ×484 no public Roberts et al. [31] 22048 ×2048 yes private Zhang et al. [29] (subset) [32] [33] 30 1024 ×768 yes private UHCSDB (subset) [28] 24 645 ×484 yes public MetalDAM [2] 42 1280 ×895, 1024 ×703 yes public MetalDAM (unlabeled) [2] 164 1280 ×895, 1024 ×703 no public
+
+annotated images than any other labeled dataset in this field (public or pri-vate). This makes MicroSteel the largest public semantic segmentation dataset of microstructures available to the best of the authors’ knowledge. In this dataset, 5 different classes have been identified, related to each of the microconstituents to be analysed, and are represented by a different color in Figure 2. In addition, we differentiate the dataset into 3 types according to the type of industrial processing each material has undergone, Figure 2 shows an example of an image and its mask for each type. From the knowledge of experts in materials science we know that depending on the type, they may contain different classes, Table 3 shows the correspondence between the types and their classes. 11 Figure 2: Example micrographs and corresponding pixel-wise masks from the MicroSteel dataset for the three industrial processing routes (Type I, Type II and Type III) in steel microstructure characterization. Each row shows an original optical micrograph (left) and its final expert-generated mask (right), used as ground truth for training and evaluation. Each class represents a distinct phase in the steel microstructure, color-coded as follows: Alpha (index 0, purple), TiB2 (index 1, red), TiN (index 2, yellow), FeTiB (index 3, green) and Fe2B (index 4, pink) 
+
+a) Type I 
+
+b) Type II 
+
+c) Type III 
+
+Table 4 shows, for each class: the assigned index (from 0 to 4), the color 12 Table 3: Further details of the different types of images in the dataset, based on its industrial processing. This table shows information such as image resolution and the classes present on each type. 
+
+Type # images Resolution Present classes Type I 29 1280 ×959 & 960 ×703 Alpha, TiB2, TiN and FeTiB Type II 17 1280 ×959 Alpha, TiB2 and TiN Type III 36 1280 ×959 Alpha, TiB2, TiN and Fe2B Total 82 1280 ×959 & 960 ×703 Alpha, TiB2, TiN, FeTiB and Fe2B and its percentage in the whole dataset. From this table we notice that it is a highly unbalanced dataset, and, Figure 3 shows a more detailed analysis of the percentage distribution of each class. There are minority classes such as TiN, which are small white dots that form within the TiB2 zones. On the colored label in Figure 2, the TiN zones are represented as small yellow dots always inside the red zones. Additionally, it is worth noting the variation in the distribution of majority classes across different types. For instance, in Type I, the combination of Alpha and FeTiB accounts for 98.99% of the dataset, while in Type II, Alpha and TiB2 make up 99.67%. Similarly, in Type III, the majority classes consist of Alpha and Fe2B, which represent 95.12% of the dataset. This means that, for each type, if we can automate or accelerate the labeling of the 2 majority classes, we will have more than 95% of the dataset labeled. However, the minority TiN class, together with the TiB2 class, are of greater interest than the other classes from a materials science point of view. Therefore, additional labeling is still required to further enhance the dataset. By dividing the dataset into 3 types despite being the same material, it allows working on individual types or treating the 3 of them globally by training a generic model, which allows testing the generalization capacity of DL models on these datasets. 13 Figure 3: Histograms of class distribution per image in the dataset. For each of the three types of images into which the dataset is divided, a graph showing the representation at the level of number of pixels in the whole dataset of each of the classes is displayed. Each color represents a target class: Alpha (purple), TiB2 (red), TiN (yellow), Fe2B (pink), and FeTiB (green). 60 65 70 75 80 85 
+
+Per centage per image 
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+> # images
+
+Alpha 
+
+Alpha 
+
+0 2 4 6 8
+
+Per centage per image 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+> # images
+
+TiB2 
+
+TiB2 
+
+15 20 25 30 35 40 
+
+Per centage per image 
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+> # images
+
+FeT iB 
+
+FeT iB 
+
+0.00 0.02 0.04 0.06 0.08 0.10 0.12 
+
+Per centage per image 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+> # images
+
+TiN 
+
+TiN 
+
+Distribution of the classes in type I75 80 85 
+
+Per centage per image 
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+> # images
+
+Alpha 
+
+Alpha 
+
+15 20 25 
+
+Per centage per image 
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+> # images
+
+TiB2 
+
+TiB2 
+
+0.0 0.2 0.4 0.6 
+
+Per centage per image 
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+> # images
+
+TiN 
+
+TiN 
+
+Distribution of the classes in type II 
+
+14 40 50 60 70 80 
+
+Per centage per image 
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+> # images
+
+Alpha 
+
+Alpha 
+
+0 5 10 15 
+
+Per centage per image 
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10 
+
+> # images
+
+TiB2 
+
+TiB2 
+
+0.0 0.2 0.4 0.6 0.8 1.0 
+
+Per centage per image 
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10 
+
+12 
+
+14 
+
+> # images
+
+TiN 
+
+TiN 
+
+10 20 30 40 50 60 
+
+Per centage per image 
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10 
+
+> # images
+
+Fe2B 
+
+Fe2B 
+
+Distribution of the classes in type III Table 4: Average ratio of pixels representing each class in the whole dataset 
+
+Class Color Ratio (%) 0 - Alpha purple 74.22% 1 - TiB2 red 5.97% 2 - TiN yellow 0.17% 3 - FeTiB green 9.22% 4 - Fe2B pink 10.42% 15 4. Experiments 
+
+In this section, we conduct a series of experiments to evaluate and validate the proposed methodology for generating a new dataset on image segmentation. We aim to compare two different labeling strategies and assess the effectiveness of using DL techniques to accelerate the annotation process. Furthermore, we include our experiments with supervised models provide an approximate indi-cation of the performance of DL models on the dataset. 
+
+4.1. Validation of the proposed methodology 
+
+Within this subsection, we validate the effectiveness of the proposed method-ology by comparing the two strategies. To do this, three materials-science ex-perts participated in the annotation study. Each image was annotated under both strategies (from scratch and from pre-annotation) in Labelbox, which au-tomatically recorded annotation time. We report the median time across an-notators for each image and then aggregate by type. Following standard ma-terials science practice, the dataset was distributed across three experts, each annotating different subsets of images under both strategies. Majority classes (e.g., Alpha, FeTiB/Fe2B) required manual contour tracing rather than tech-nical judgement, while complex minority regions (e.g., TiN inclusions) were marked “doubtful” and resolved through consensus meetings among the three experts. 
+
+4.1.1. Pre-annotation analysis 
+
+To proceed with the second strategy, we begin by generating pre-annotations using 5 distinct unsupervised image segmentation techniques. Through quan-titative and qualitative analysis, we identify the pre-annotations that closely resemble the actual labels, enabling us to determine the most effective starting point for the annotation process. 16 Table 5: IOU comparison of pre-annotations: This table shows, divided into each of the three types of images on the dataset, the performance achieved by the five segmentation algorithms tested as possible pre-annotations. Mean IOU as well as the IOU of each class are given for each of the algorithms. 
+
+Type I 
+
+Method IOU 0 IOU 1 IOU 2 IOU 3 IOU 4 Mean IOU k-means 67 .27% 15 .20% 0.00% 36 .07% - 44 .06% 
+
+multi-Otsu 68 .11% 16.60 % 0.00% 34 .96% - 44 .40% 
+
+superpixel 58 .91% 10 .63% 0.00% 24 .87% - 34 .64% 
+
+SAM 87.07% 0.17% 0.00% 72.06% - 65.38% 
+
+DL-based 60 .89% 7.57% 0.00% 47 .18% - 44 .63% 
+
+Type II 
+
+Method IOU 0 IOU 1 IOU 2 IOU 3 IOU 4 Mean IOU k-means 93.66% 70 .83% 0.00% - - 54.83% 
+
+multi-Otsu 93 .56% 70 .18% 0.00% - - 54 .58% 
+
+superpixel 87 .00% 52 .26% 0.00% - - 46 .42% 
+
+SAM 72 .30% 25 .14% 0.00% - - 32 .48% 
+
+DL-based 70 .00% 76.89% 0.10% - - 48 .84% 
+
+Type III 
+
+Method IOU 0 IOU 1 IOU 2 IOU 3 IOU 4 Mean IOU k-means 75.44% 34 .63% 0.00% - 8.82% 30 .05% 
+
+multi-Otsu 75 .32% 35.38% 0.00% - 8.07% 30 .01% 
+
+superpixel 74 .23% 18 .60% 0.00% - 14 .99% 27 .45% 
+
+SAM 72.30% 25 .14% 0.00% - 0.00% 31.59% 
+
+DL-based 67 .11% 18 .48% 0.04% - 42.30% 32.40% 
+
+Table 6 presents Jaccard Index, Dice coefficient, Boundary F1-score, and Hausdorff Distance comparing raw DL-based pre-annotations to final expert 17 labels across Types I-III, confirming strong pre-annotation quality for majority classes while objectively quantifying refinement needs for minority classes and boundaries (Boundary F1 32.6%, Hausdorff Distance 18.7 pixels). These metrics demonstrate that DL-based pre-annotations achieve substan-tial region overlap for dominant microstructure phases (Alpha, FeTiB/Fe2B representing 74–98% pixels per type), directly enabling the 78% time savings reported in Table 7. Lower boundary metrics highlight targeted expert refine-ment for complex interfaces (TiN inclusions, intricate Alpha/Fe2B boundaries), where manual correction focuses despite comprising <6% total pixels.                     
+
+> Table 6: Raw DL-based pre-annotations quality vs. final labels
+> Type Jaccard Dice Boundary F1 Hausdorff distance (px)
+> Type I 44.6% 88.4% 20.1% 12.5 Type II 48.8% 77.0% 43.9% 15.3 Type III 32.4% 53.8% 33.7% 22.1 Overall 41.5% 73.1% 32.6% 18.7
+
+Quantitative evaluation: 
+
+This analysis focuses on comparing algorithms performance across the entire dataset rather than selecting optimal methods per individual image. This ap-proach ensures statistically meaningful comparisons while reflecting real-world pre-annotation scenarios where complete ground truth is unavailable during initial labeling. The Intersection over Union (IoU) metrics presented in Ta-ble 5 represent aggregate performance across all images of each material type. This dataset-level analysis illustrates the alignment between pre-annotations and expert-annotated labels. For Type I images, SAM achieves the highest mean IoU (65.38%), ex-celling in the segmentation of the majority classes, Alpha (87.07%) and FeTiB (72.06%). The DL-based method demonstrates balanced performance across majority classes compared to traditional methods (k-means, multi-Otsu), de-spite similar mean IoU values. 18 In Type II images, k-means outperforms other methods for the Alpha class (93.66%) and achieves the best mean IoU (54.83%). In contrast, SAM shows limited effectiveness, with a mean IoU of 32.48% and particularly poor perfor-mance in TiB2 segmentation (25.14%). For Type III images, the DL-based method delivers the best overall per-formance (mean IoU: 32.40%), especially in Fe2B detection (42.30%). SAM, however, fails completely in Fe2B segmentation (0.0%) despite moderate suc-cess in Alpha detection (72.30%). In summary, the results highlight significant variations in algorithm perfor-mance across different image types. SAM excels in Type I images with well-defined objects but struggles in more complex scenarios (Types II and III). This analysis reveals that SAM’s general-purpose architecture, while achieving strong performance on Type I images (65.38% mean IoU), struggles with the more intricate microstructures of Types II–III (32.48% and 31.59% mean IoU, respectively). We suggest that the DL model’s loss, which encourages spatial continuity and groups feature-similar pixels, better captures the morphology of metallographic phases and thereby explains the observed gap [20]. Prompt-engineering variants of SAM could narrow this difference, but they require domain-specific interaction that exceeds the scope of our fully unsupervised setting. The DL-based method demonstrates consistent reliability across all material types, particularly for critical minority classes like TiB2 and Fe2B. Its ability to detect TiB2 areas is especially valuable from a materials science perspective. Although the DL-based method tends to over-segment the Alpha class, experts prefer this over-segmentation, as it is easier to correct by removing erroneous regions than to manually annotate entire boundaries. 
+
+Qualitative evaluation: 
+
+Figure 4 presents a visual comparison of the image, pre-annotation generated by the DL-based algorithm, and the final label. The figure demonstrates that the pre-annotations, particularly from the DL-based algorithm, are accurate in types I and II, with only minor discrepancies in minority classes. In Type III, 19 the DL-based approach stands out by accurately segmenting complex boundaries between the major classes Alpha and Fe2B, which experts identified as one of the most challenging aspects of the dataset. 
+
+Final pre-annotation selection protocol: 
+
+Five candidate pre-annotation methods were evaluated (multi-Otsu, super-pixels, k-means, SAM, and a DL-based unsupervised method). Their quanti-tative IOU comparison in Table 5 served as a retrospective validation rather than an operational selection criterion. Although the best-performing method varied by subset (SAM for Type I, k-means for Type II, and DL-based for Type III), the DL-based method was selected as the uniform strategy for the final workflow. This choice was justified by its robustness in the most challenging scenarios (Type III), including superior Fe2B delineation, and its ability to gen-erate boundary structures that minimized manual expert refinement across all image types. 
+
+4.1.2. Annotation quantitative analysis 
+
+In this section, we will compare annotation effort of the two strategies: la-beling from scratch and labeling from pre-annotations. For this purpose, the images of the dataset have been labeled with both criteria and their labeling time has been measured for each of the images. Table 7 reports median an-notation times across image types, demonstrating 73-84% time savings with DL pre-annotations. Statistical analysis reveals that pre-annotations not only reduce median time but also dramatically lower inter-image dispersion: 
+
+• Manual scratch annotation: high variability (std 71.7-99.8 min) across Types I-III 
+
+• DL pre-annotation: 8-17 × lower dispersion (std 1.6-12.3 min), with annotators converging to consistent refinement times The use of pre-annotations substantially reduces the time needed for an-notation, with an average time saved of 78%. This demonstrates that pre-annotations can drastically accelerate the labeling process, making the task 20 Figure 4: Comparison of (from left to right) original image, pre-annotation and final label for the three MicroSteel types. For each type, the pre-annotation shown is the automatic output of the DL-based method selected by the materials science expert. Class colors are consistent across all panels: Alpha (purple), TiB2 (red), TiN (yellow), Fe2B (pink) and FeTiB (green). This visual comparison illustrates how pre-annotations already capture the majority classes and complex boundaries, requiring only limited expert refinement. 
+
+a) Type I 
+
+b) Type II 
+
+c) Type III 
+
+21 Table 7: Labeling time details: The median time it takes to annotate from scratch and from pre-annotations is compared. For each type, we report the median time per image, total time spent for all images, and the standard deviation of annotation times. * refers to % of time saved by using pre-annotations 
+
+Type Time per img [min] Total time [h] Standard deviation [min] Time saved* From scratch From pre-ann. From scratch From pre-ann. From scratch From pre-ann. I 102 20 58 10 73.4 1.6 80.39% II 128 22 36 6 99.8 9.0 82.81% III 128 35 76 21 71.7 12.3 72.66% 
+
+Average time saved 78% 
+
+more feasible in industrial contexts where time and budget constraints often limit the scope of manual labeling. Specifically, for Type I, using pre-annotations saves 80.39% of the time, reducing the total labeling effort from 58 hours to just 10 hours. Type II sees an even greater time reduction of 82.81%, while Type III, although more complex, still achieves a 72.66% reduction in time. This time reduction for Type III, despite its complex Fe2B/Alpha boundaries, highlights how even imperfect pre-annotations (mean IoU of 32.40%) provide a starting point that accelerates annotation. The efficiency of our approach stems from the DL model’s ability to automate majority-class segmentation while preserving structural coherence. By prioritiz-ing spatial continuity in its loss function, the model groups pixels with similar features into contiguous regions, reducing the need for exhaustive boundary ad-justments and allowing experts to focus on refining smaller or critical regions. Notably, the DL method’s tendency to over-segment large regions automates the labeling of majority classes, allowing experts to concentrate on critical mi-nority classes: 
+
+• The DL method achieves 60.89–76.89% IoU on majority classes (Alpha, FeTiB, Fe2B), which together cover 74–98% of pixels (Table 4), thus au-tomating the largest portion of the annotation work. 22 • Experts then dedicate most of their effort to refine minority classes (TiB2, TiN), which occupy less than 6% of pixels. 
+
+• Pre-annotations make labeling less tedious: experts refine TiB2/TiN more easily by iterating over multiple small objects, rather than spending most of the time drawing thin, complex boundaries between majority classes. From these results, it is evident that annotating the entire dataset from scratch would require approximately 6 days and 18 hours of non-stop work, whereas using DL-based pre-annotations reduces this to just 1 day and 13 hours. This significant reduction not only highlights the practical advantages of DL techniques in materials science applications but also demonstrates their poten-tial to make otherwise infeasible projects viable. 
+
+4.2. Model development for industrial application 
+
+Finally, we present the results obtained by fully supervised DL models trained on each type of material, with their test results verified by materials science experts. These models have proven to be effective, leading to their de-ployment for industrial purposes. It is important to note that the main scope of this article is the labeling, analysis, and dataset generation process, so the examination of various network architectures and hyperparameter optimization falls beyond the scope of this study. We have used PyTorch Segmentation Models library 2 for training four mod-els with a DeepLabV3+ [34] with EfficientNet-b0 backbone [35]. This selection was based on its proven success in similar cases within the field of materials science. One of the four models has been trained on all three types, considering them collectively as a unified set. It was subsequently tested on each type indi-vidually, and its corresponding results are depicted in Table 8 as G-X, where X denotes the type index. On the other hand, the remaining 3 models were trained and tested exclusively on individual types, denoted as S-X. All supervised mod-els were trained for a fixed number of epochs (200 epochs with a patience of 
+
+> 2https://smp.readthedocs.io/en/latest/
+
+23 30 epochs for early stopping), which was sufficient to ensure convergence on all dataset splits, as verified by expert validation of the resulting segmentations. The results presented in Table 8 reveal several key insights into the perfor-mance and applicability of supervised models for microstructure segmentation: 
+
+• Type-Specific Models Outperform General Models : The S-X mod-els consistently achieve higher mean IoU than the G-X models. For exam-ple, the S-III model achieves 67.14% mean IoU compared to 54.81% for G-III. This highlights the significance of distinguishing between the three subsets of types in this dataset, as each type have different phase distri-butions and boundary complexities. Models trained on distinct subsets learn phase morphology differences, and the general model struggles with inter-type variations, particularly in distinguishing visually similar classes like FeTiB (Class 3) and Fe2B (Class 4). 
+
+• Importance of majority classes : The models are specially good in segmenting majority classes (like Alpha, FeTiB, Fe2B), with higher IoU scores. 
+
+• Challenges of minority classes : The models achieve relatively lower results for minority classes, particularly TiN (0.00–37.90% IoU). This is due to several factors: 
+
+– Class imbalance : TiN occupies only 0.17% of pixels (Table 4), making it statistically insignificant during training, despite loss pe-nalization being adjusted based on class distribution 
+
+– Noisy labels : TiN particles often blend with TiB2 in optical mi-croscopy, leading to inconsistent annotations even among experts. These results demonstrate that the DL-based pre-annotation strategy not only accelerates dataset generation but also enables the development of robust supervised models tailored to industrial needs. By automating majority-class labeling and providing a consistent foundation for supervised training, the DL 24 method ensures that experts can focus on refining critical minority classes, ul-timately leading to more accurate and reliable models.   
+
+> Table 8: Results of supervised models: G*-X** approaches refer to the general model trained over all data and evaluated on type X, S***-X approaches are trained and tested on a single type X. *G refers to the model tested on all three types of images. ** X Denotes the index of the type of image subset. ***S refers to the model trained and tested exclusively on individual types.
+
+Model IOU 0 IOU 1 IOU 2 IOU 3 IOU 4 Mean IOU G 92 .41% 62 .85% 26 .91% 72 .65% 76 .03% 66 .17% 
+
+G-I 93 .93% 31.74% 3.39% 73 .31% - 40 .37% 
+
+S-I 94.31% 18 .15% 0.00% 81.11% - 48.39% 
+
+G-II 91 .99% 63 .14% 19 .40% - - 34 .91% 
+
+S-II 92.25% 66.28% 37.90% - - 65.48% 
+
+G-III 91.22% 67.27% 33 .25% - 82.31% 54 .81% 
+
+S-III 90 .54% 61 .59% 36.37% - 80 .07% 67.14% 5. Conclusions 
+
+In this paper, we have addressed the challenge of accelerating the data an-notation process for industrial semantic segmentation applications. We have quantified and explored ways to speed up the laborious task of manual data annotation, which can be a significant bottleneck in real-world projects, partic-ularly in industrial settings such as materials characterization. By leveraging unsupervised deep neural networks, we have demonstrated significant reductions in the time and effort required for data labeling. Our study has shown that using a deep model for pre-annotations can reduce the time to label a complex industrial dataset from 6 days and 18 hours to 1 day and 13 hours, with a mean percentage reduction of approximately 78% . These results are crucial in scenarios where time or budget constraints play a significant role in project decision-making. 25 Furthermore, we share the new real-world dataset MicroSteel under MIT Li-cense with permanent archival on Zenodo [DOI: 10.5281/zenodo.18826160]: to the best of our knowledge, the largest existing dataset in the field of microstruc-ture characterization. The proposed annotation process enables the generation of larger volumes of annotations and facilitates the development of semantic segmentation models. We also provide metrics on the test set for both unsuper-vised and supervised models validated by an expert in the field and deployed in production. 
+
+6. Limitations and Future Work 
+
+While our methods have shown significant improvements in annotation ef-ficiency, there are some limitations to consider. While our study demonstrates significant benefits of pre-annotation in accelerating the annotation process for metallographic images (an average of 78% time reduction, as shown in Table 7), it is important to acknowledge that the effectiveness can be context-dependent. However, for the specific metallography problem addressed, expert feedback consistently indicated that refining pre-annotations, particularly for prevalent majority classes (e.g., Alpha, FeTiB), was considerably less burdensome than starting from scratch. This allowed experts to efficiently dedicate their focus to critical, often minority, classes (e.g., TiN), confirming a net benefit in annotation efficiency for this domain. Although the proposed annotation workflow can potentially benefit other semantic-segmentation problems characterized by high-resolution images, class imbalance, and large homogeneous regions, the quantitative speedup is expected to vary across domains. In the present dataset, gains were consistent across all three subsets (Type I: 80.39%, Type II: 82.81%, Type III: 72.66%; average: 78%), supporting internal robustness. In addition, prior cross-domain evidence from MetalDAM, CamVid, FloodNet, and NuCLS showed meaningful unsuper-vised pre-annotation quality with 0% manually labeled pixels (mean IoU range: 19.30%–32.24%) [25], providing preliminary evidence that the pre-annotation 26 principle can recover useful structure across domains. However, as is intrinsic to machine-learning systems, transfer performance and operational gains depend on data distribution, class structure, and annotation protocol. Accordingly, the 78% reduction should be interpreted as representative of this case study rather than universally fixed. Furthermore, it is critical to address potential failure cases where pre-annotation could hinder the workflow rather than accelerate it. In our protocol, the primary qualitative criterion for selecting the DL-based method over classical alternatives was its capacity to generate highly continuous contours, avoiding the fragmented or ’granular’ over-segmentation that requires tedious pixel-by-pixel corrections. By successfully automating the definition of complex main boundaries between unstructured phases, the most demanding technical effort is mitigated, leav-ing experts with the straightforward task of introducing thicker, linear features that do not demand highly meticulous refinement. If an optimized algorithm suffers from severe over-segmentation or hallucinates incorrect boundaries, a phenomenon of negative transfer occurs. In such failure scenarios, the mechani-cal effort required to fix the initial mask can ultimately exceed the time required to annotate the raw image from scratch. In this context, while foundation models such as SAM can potentially bene-fit from prompt engineering, such techniques require domain-specific interaction that contradicts our objective of minimizing human intervention and taking as much advantage as possible of fully unsupervised pre-annotations. Future work could therefore explore hybrid strategies that leverage recent advances in foun-dation and multimodal models while preserving annotation efficiency. In par-ticular, newer generations of segmentation foundation models (e.g., SAM-2 and emerging SAM-3-style architectures) could be evaluated as pre-annotation en-gines, especially in challenging cases with ambiguous or fragmented boundaries. In addition, vision-language models (e.g., CLIP-based approaches) could provide high-level semantic cues that help constrain segmentation, for instance by guid-ing region selection or filtering candidate masks. An important open direction is to study the trade-off between additional human interaction (prompts) and 27 further reductions in expert refinement time, and to design weakly supervised or fully automatic variants that retain the scalability of our workflow. In conclusion, our work provides valuable insights and practical solutions for accelerating the annotation process in industrial semantic segmentation appli-cations, with implications beyond the specific use case of materials characteri-zation. 
+
+7. Acknowledgements 
+
+The authors acknowledge Valérie Daeschler and Frédéric Bonnet in Arcelor-Mittal Global R&D Maizières for acquiring and providing the micrographs for the MicroSteel dataset. Funding for open access charge: Universidad de Granada / CBUA. This work was supported by grant CONFIA (PID2021-122916NB-I00) funded by MCIN/AEI/ 10.13039/501100011033 , and by grant FORAGE (B-TIC-456-UGR20) funded by Consejería de Universidad, Investi-gación e Innovación, both funded by “ERDF A way of making Europe" 
+
+References 
+
+[1] Z. Ge, Z. Song, S. X. Ding, B. Huang, Data mining and analytics in the process industry: The role of machine learning, IEEE Access 5 (2017) 20590–20616. [2] J. Luengo, R. Moreno, I. Sevillano, D. Charte, A. Peláez-Vegas, M. Fernández-Moreno, P. Mesejo, F. Herrera, A tutorial on the segmen-tation of metallographic images: Taxonomy, new metaldam dataset, deep learning-based ensemble model, experimental analysis and challenges, In-formation Fusion 78 (2022) 232–253. [3] M. Ferdous, J. Debnath, N. R. Chakraborty, Machine learning algorithms in healthcare: A literature survey, in: International Conference on Com-puting, Communication and Networking Technologies, 2020, pp. 1–6. 28 [4] S. Athey, The impact of machine learning on economics, in: The economics of artificial intelligence: An agenda, University of Chicago Press, 2018, pp. 507–547. [5] N. Sambasivan, S. Kapania, H. Highfill, D. Akrong, P. Paritosh, L. M. Aroyo, “everyone wants to do the model work, not the data work”: Data cascades in high-stakes ai, in: Conference on Human Factors in Computing Systems, 2021, pp. 1–15. [6] C. G. Northcutt, A. Athalye, J. Mueller, Pervasive label errors in test sets destabilize machine learning benchmarks, in: Conference on Neural Information Processing Systems, 2021. [7] J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, L. Fei-Fei, Imagenet: A large-scale hierarchical image database, in: 2009 IEEE conference on computer vision and pattern recognition, 2009, pp. 248–255. [8] T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dol-lár, C. L. Zitnick, Microsoft coco: Common objects in context, in: Euro-pean Conference on Computer Vision, 2014, pp. 740–755. [9] G. J. Brostow, J. Fauqueur, R. Cipolla, Semantic object classes in video: A high-definition ground truth database, Pattern Recognition Letters 30 (2009) 88–97. [10] M. Cordts, M. Omran, S. Ramos, T. Rehfeld, M. Enzweiler, R. Benenson, U. Franke, S. Roth, B. Schiele, The cityscapes dataset for semantic ur-ban scene understanding, in: IEEE Conference on Computer Vision and Pattern Recognition, 2016, pp. 3213–3223. [11] X. Ji, J. F. Henriques, A. Vedaldi, Invariant information clustering for unsupervised image classification and segmentation, in: IEEE International Conference on Computer Vision, 2019, pp. 9865–9874. 29 [12] A. Kanezaki, Unsupervised image segmentation by backpropagation, in: IEEE International Conference on Acoustics, Speech and Signal Processing, 2018, pp. 1543–1547. [13] A. Kirillov, E. Mintun, N. Ravi, H. Mao, C. Rolland, L. Gustafson, T. Xiao, S. Whitehead, A. C. Berg, W.-Y. Lo, et al., Segment anything, in: Pro-ceedings of the IEEE/CVF International Conference on Computer Vision, 2023, pp. 4015–4026. [14] J. Ge, Z. Zhang, M. H. Phan, B. Zhang, A. Liu, Y. Zhao, Esa: Annotation-efficient active learning for semantic segmentation, arXiv preprint arXiv:2408.13491 (2024). [15] L. Cai, X. Xu, J. H. Liew, C. S. Foo, Revisiting superpixels for active learn-ing in semantic segmentation with realistic annotation costs, in: Proceed-ings of the IEEE/CVF conference on computer vision and pattern recog-nition, 2021, pp. 10988–10997. [16] X. Li, H. Ma, X. Luo, Weaklier supervised semantic segmentation with only one image level annotation per category, IEEE Transactions on Image Processing 29 (2019) 128–141. [17] L. Jing, Y. Chen, Y. Tian, Coarse-to-fine semantic segmentation from image-level labels, IEEE transactions on image processing 29 (2019) 225– 236. [18] J. H. Cho, U. Mall, K. Bala, B. Hariharan, Picie: Unsupervised semantic segmentation using invariance and equivariance in clustering, in: IEEE Conference on Computer Vision and Pattern Recognition, 2021, pp. 16794– 16804. [19] J.-J. Hwang, S. X. Yu, J. Shi, M. D. Collins, T.-J. Yang, X. Zhang, L.-C. Chen, Segsort: Segmentation by discriminative sorting of segments, in: IEEE International Conference on Computer Vision, 2019, pp. 7333–7343. 30 [20] P. Liao, T.-S. Chen, P. Chung, A fast algorithm for multilevel thresholding, Journal of Information Science and Engineering 17 (2001) 713–727. [21] N. Otsu, A threshold selection method from gray-level histograms, IEEE Transactions on Systems, Man, and Cybernetics 9 (1979) 62–66. [22] P. F. Felzenszwalb, D. P. Huttenlocher, Efficient graph-based image seg-mentation, International Journal of Computer Vision 59 (2004) 167–181. [23] J. A. Hartigan, M. A. Wong, Algorithm as 136: A k-means clustering algo-rithm, Journal of the Royal Statistical Society Series C (Applied Statistics) 28 (1979) 100–108. [24] H. Kim, J. Inoue, T. Kasuya, Unsupervised microstructure segmentation by mimicking metallurgists’ approach to pattern recognition, Scientific Reports 10 (2020) 1–11. [25] M. Fernández-Moreno, B. Lei, E. A. Holm, P. Mesejo, R. Moreno, Exploring the trade-off between performance and annotation complexity in semantic segmentation, Engineering Applications of Artificial Intelligence 123 (2023) 106299. [26] R. E. Reed-Hill, R. Abbaschian, R. Abbaschian, Physical metallurgy prin-ciples, volume 17, Van Nostrand New York, 1973. [27] E. A. Holm, R. Cohn, N. Gao, A. R. Kitahara, T. P. Matson, B. Lei, S. R. Yarasi, Overview: Computer vision and machine learning for mi-crostructural characterization and analysis, Metallurgical and Materials Transactions A 51 (2020) 5985–5999. [28] B. L. DeCost, T. Francis, E. Holm, High throughput quantitative metal-lography for complex microstructures using deep learning: A case study in ultrahigh carbon steel, Microscopy and Microanalysis 25 (2019) 21–29. [29] S. Zhang, D. Chen, S. Liu, P. Zhang, W. Zhao, Aluminum alloy microstruc-tural segmentation method based on simple noniterative clustering and 31 adaptive density-based spatial clustering of applications with noise, Jour-nal of Electronic Imaging 28 (2019) 033–035. [30] B. DeCost, M. Hecht, T. Francis, B. Webler, Y. Picard, E. Holm, Uhcsdb: Ultrahigh carbon steel micrograph database: Tools for exploring large het-erogeneous microstructure datasets, Integrating Materials and Manufac-turing Innovation 6 (2017). [31] G. Roberts, S. Y. Haile, R. Sainju, D. J. Edwards, B. Hutchinson, Y. Zhu, Deep learning for semantic segmentation of defects in advanced stem images of steels, Scientific Reports 9 (2019) 1–12. [32] M. Li, D. Chen, S. Liu, D. Guo, Online learning method based on support vector machine for metallographic image segmentation, Signal, Image and Video Processing (2020) 1–8. [33] D. Chen, D. Sun, J. Fu, S. Liu, Semi-supervised learning framework for aluminum alloy metallographic image segmentation, IEEE Access 9 (2021) 30858–30867. [34] L.-C. Chen, Y. Zhu, G. Papandreou, F. Schroff, H. Adam, Encoder-decoder with atrous separable convolution for semantic image segmentation, in: Proceedings of the European Conference on Computer Vision, 2018, pp. 801–818. [35] M. Tan, Q. Le, Efficientnet: Rethinking model scaling for convolutional neural networks, in: International Conference on Machine Learning, 2019, pp. 6105–6114. 32
