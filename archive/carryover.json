@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-25T20:41:53.096106+00:00",
-  "updated_date": "20260825",
+  "generated_at": "2026-08-26T21:24:51.577886+00:00",
+  "updated_date": "20260826",
   "carryover_days": 9,
   "tag_states": {
     "raw-seg": {
-      "updated_date": "20260825",
+      "updated_date": "20260826",
       "carryover_days": 9,
       "items": []
     }
